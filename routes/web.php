@@ -25,6 +25,10 @@ Route::get('/home', function(){
     return view('home');
 });
 
+Route::get('/myprofile', function(){
+    return view('myprofile');
+});
+
 Route::get('/dashboard', function() {
     return view();
 });
