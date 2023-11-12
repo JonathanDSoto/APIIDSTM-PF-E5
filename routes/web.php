@@ -29,6 +29,10 @@ Route::get('/myprofile', function(){
     return view('myprofile');
 });
 
+Route::get('/editprofile', function(){
+    return view('editprofile');
+});
+
 Route::get('/dashboard', function() {
     return view();
 });
