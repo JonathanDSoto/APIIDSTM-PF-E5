@@ -1,15 +1,10 @@
 <!-- Content -->
-
 <div class="container-xxl flex-grow-1 container-p-y">
-
-
     <h4 class="py-3 mb-4">
         Edit Profile
     </h4>
-
     <div class="row">
         <div class="col-md-12">
-            @include('layouts.optionedit')
             <div class="card mb-4">
                 <h5 class="card-header">Profile Details</h5>
                 <!-- Account -->
@@ -39,12 +34,13 @@
                         <div class="row">
                             <div class="mb-3 col-md-6">
                                 <label for="firstName" class="form-label">First Name</label>
-                                <input class="form-control" type="text" id="firstName" name="firstName" value="John"
-                                    autofocus />
+                                <input class="form-control" type="text" id="firstName" name="firstName"
+                                    value="John" autofocus />
                             </div>
                             <div class="mb-3 col-md-6">
                                 <label for="lastName" class="form-label">Last Name</label>
-                                <input class="form-control" type="text" name="lastName" id="lastName" value="Doe" />
+                                <input class="form-control" type="text" name="lastName" id="lastName"
+                                    value="Doe" />
                             </div>
                             <div class="mb-3 col-md-6">
                                 <label for="email" class="form-label">E-mail</label>
@@ -76,8 +72,8 @@
                             </div>
                             <div class="mb-3 col-md-6">
                                 <label for="zipCode" class="form-label">Zip Code</label>
-                                <input type="text" class="form-control" id="zipCode" name="zipCode" placeholder="231465"
-                                    maxlength="6" />
+                                <input type="text" class="form-control" id="zipCode" name="zipCode"
+                                    placeholder="231465" maxlength="6" />
                             </div>
                             <div class="mb-3 col-md-6">
                                 <label class="form-label" for="country">Country</label>
@@ -161,14 +157,68 @@
                     </form>
                 </div>
                 <!-- /Account -->
+
             </div>
+
+            <div class="card mb-4">
+                <h5 class="card-header">Change Password</h5>
+                <div class="card-body">
+                    <form id="formAccountSettings" method="POST" onsubmit="return false">
+                        <div class="row">
+                            <div class="mb-3 col-md-6 form-password-toggle">
+                                <label class="form-label" for="currentPassword">Current Password</label>
+                                <div class="input-group input-group-merge">
+                                    <input class="form-control" type="password" name="currentPassword"
+                                        id="currentPassword"
+                                        placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" />
+                                    <span class="input-group-text cursor-pointer"><i class="ti ti-eye-off"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="mb-3 col-md-6 form-password-toggle">
+                                <label class="form-label" for="newPassword">New Password</label>
+                                <div class="input-group input-group-merge">
+                                    <input class="form-control" type="password" id="newPassword" name="newPassword"
+                                        placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" />
+                                    <span class="input-group-text cursor-pointer"><i class="ti ti-eye-off"></i></span>
+                                </div>
+                            </div>
+
+                            <div class="mb-3 col-md-6 form-password-toggle">
+                                <label class="form-label" for="confirmPassword">Confirm New Password</label>
+                                <div class="input-group input-group-merge">
+                                    <input class="form-control" type="password" name="confirmPassword"
+                                        id="confirmPassword"
+                                        placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" />
+                                    <span class="input-group-text cursor-pointer"><i class="ti ti-eye-off"></i></span>
+                                </div>
+                            </div>
+                            <div class="col-12 mb-4">
+                                <h6>Password Requirements:</h6>
+                                <ul class="ps-3 mb-0">
+                                    <li class="mb-1">Minimum 8 characters long - the more, the better</li>
+                                    <li class="mb-1">At least one lowercase character</li>
+                                    <li>At least one number, symbol, or whitespace character</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <button type="submit" class="btn btn-primary me-2">Save changes</button>
+                                <button type="reset" class="btn btn-label-secondary">Cancel</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
             <div class="card">
                 <h5 class="card-header">Delete Account</h5>
                 <div class="card-body">
                     <div class="mb-3 col-12 mb-0">
                         <div class="alert alert-warning">
                             <h5 class="alert-heading mb-1">Are you sure you want to delete your account?</h5>
-                            <p class="mb-0">Once you delete your account, there is no going back. Please be certain.</p>
+                            <p class="mb-0">Once you delete your account, there is no going back. Please be certain.
+                            </p>
                         </div>
                     </div>
                     <form id="formAccountDeactivation" onsubmit="return false">
@@ -184,7 +234,5 @@
             </div>
         </div>
     </div>
-
-
 </div>
 <!-- / Content -->

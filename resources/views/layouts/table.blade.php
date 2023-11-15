@@ -12,8 +12,6 @@
                     <th>Servicio</th>
                     <th>in charge</th>
                     <th>Users</th>
-                    <th>Status</th>
-                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody class="table-border-bottom-0">
@@ -36,19 +34,6 @@
                             </li>
                         </ul>
                     </td>
-                    <td><span class="badge bg-label-primary me-1">Active</span></td>
-                    <td>
-                        <div class="dropdown">
-                            <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
-                                data-bs-toggle="dropdown"><i class="ti ti-dots-vertical"></i></button>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="javascript:void(0);"><i class="ti ti-pencil me-1"></i>
-                                    Edit</a>
-                                <a class="dropdown-item" href="javascript:void(0);"><i class="ti ti-trash me-1"></i>
-                                    Delete</a>
-                            </div>
-                        </div>
-                    </td>
                 </tr>
                 <tr>
                     <td><i class="ti ti-brand-react-native ti-lg text-info me-3"></i> <span class="fw-medium">Neumatico</span></td>
@@ -68,19 +53,6 @@
                                 <img src="../../assets/img/avatars/7.png" alt="Avatar" class="rounded-circle">
                             </li>
                         </ul>
-                    </td>
-                    <td><span class="badge bg-label-success me-1">Completed</span></td>
-                    <td>
-                        <div class="dropdown">
-                            <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
-                                data-bs-toggle="dropdown"><i class="ti ti-dots-vertical"></i></button>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="javascript:void(0);"><i class="ti ti-pencil me-2"></i>
-                                    Edit</a>
-                                <a class="dropdown-item" href="javascript:void(0);"><i class="ti ti-trash me-2"></i>
-                                    Delete</a>
-                            </div>
-                        </div>
                     </td>
                 </tr>
                 <tr>
@@ -102,19 +74,6 @@
                             </li>
                         </ul>
                     </td>
-                    <td><span class="badge bg-label-info me-1">Scheduled</span></td>
-                    <td>
-                        <div class="dropdown">
-                            <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
-                                data-bs-toggle="dropdown"><i class="ti ti-dots-vertical"></i></button>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="javascript:void(0);"><i class="ti ti-pencil me-2"></i>
-                                    Edit</a>
-                                <a class="dropdown-item" href="javascript:void(0);"><i class="ti ti-trash me-2"></i>
-                                    Delete</a>
-                            </div>
-                        </div>
-                    </td>
                 </tr>
                 <tr>
                     <td><i class="ti ti-brand-bootstrap ti-lg text-primary me-3"></i> <span class="fw-medium">Electrico</span></td>
@@ -134,19 +93,6 @@
                                 <img src="../../assets/img/avatars/7.png" alt="Avatar" class="rounded-circle">
                             </li>
                         </ul>
-                    </td>
-                    <td><span class="badge bg-label-warning me-1">Pending</span></td>
-                    <td>
-                        <div class="dropdown">
-                            <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
-                                data-bs-toggle="dropdown"><i class="ti ti-dots-vertical"></i></button>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="javascript:void(0);"><i class="ti ti-pencil me-2"></i>
-                                    Edit</a>
-                                <a class="dropdown-item" href="javascript:void(0);"><i class="ti ti-trash me-2"></i>
-                                    Delete</a>
-                            </div>
-                        </div>
                     </td>
                 </tr>
             </tbody>

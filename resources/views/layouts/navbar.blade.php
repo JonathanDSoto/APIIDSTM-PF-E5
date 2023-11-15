@@ -23,66 +23,6 @@ id="layout-navbar">
     </div>
     <!-- /Search -->
     <ul class="navbar-nav flex-row align-items-center ms-auto">
-
-        <!-- Language -->
-        <li class="nav-item dropdown-language dropdown me-2 me-xl-0">
-            <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);"
-                data-bs-toggle="dropdown">
-                <i class='ti ti-language rounded-circle ti-md'></i>
-            </a>
-            <ul class="dropdown-menu dropdown-menu-end">
-                <li>
-                    <a class="dropdown-item" href="javascript:void(0);" data-language="en">
-                        <span class="align-middle">English</span>
-                    </a>
-                </li>
-                <li>
-                    <a class="dropdown-item" href="javascript:void(0);" data-language="fr">
-                        <span class="align-middle">French</span>
-                    </a>
-                </li>
-                <li>
-                    <a class="dropdown-item" href="javascript:void(0);" data-language="de">
-                        <span class="align-middle">German</span>
-                    </a>
-                </li>
-                <li>
-                    <a class="dropdown-item" href="javascript:void(0);" data-language="pt">
-                        <span class="align-middle">Portuguese</span>
-                    </a>
-                </li>
-            </ul>
-        </li>
-        <!--/ Language -->
-
-
-        <!-- Style Switcher -->
-        <li class="nav-item dropdown-style-switcher dropdown me-2 me-xl-0">
-            <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);"
-                data-bs-toggle="dropdown">
-                <i class='ti ti-md'></i>
-            </a>
-            <ul class="dropdown-menu dropdown-menu-end dropdown-styles">
-                <li>
-                    <a class="dropdown-item" href="javascript:void(0);" data-theme="light">
-                        <span class="align-middle"><i class='ti ti-sun me-2'></i>Light</span>
-                    </a>
-                </li>
-                <li>
-                    <a class="dropdown-item" href="javascript:void(0);" data-theme="dark">
-                        <span class="align-middle"><i class="ti ti-moon me-2"></i>Dark</span>
-                    </a>
-                </li>
-                <li>
-                    <a class="dropdown-item" href="javascript:void(0);" data-theme="system">
-                        <span class="align-middle"><i
-                                class="ti ti-device-desktop me-2"></i>System</span>
-                    </a>
-                </li>
-            </ul>
-        </li>
-        <!-- / Style Switcher-->
-
         <!-- Quick links  -->
         <li class="nav-item dropdown-shortcuts navbar-dropdown dropdown me-2 me-xl-0">
             <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);"

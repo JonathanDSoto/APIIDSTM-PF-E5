@@ -3,7 +3,6 @@
         <a href="index.html" class="app-brand-link">
             <span class="app-brand-logo demo">
                 <img src="../assets/img/machape/logo.png" alt="auth-login-cover" class="img-fluid my-1 auth-illustration">
-
             </span>
             <span class="app-brand-text demo menu-text fw-bold">Machape</span>
         </a>
@@ -53,7 +52,7 @@
         <li class="menu-item">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons ti ti-layout-sidebar"></i>
-                <div data-i18n="Layouts">Electrivo</div>
+                <div data-i18n="Layouts">Electrico</div>
             </a>
 
             <ul class="menu-sub">
