@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\reservation;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,6 +29,10 @@ Route::get('/myprofile', function(){
 
 Route::get('/editprofile', function(){
     return view('editprofile');
+});
+
+Route::get('/reservation', function() {
+    return view('reservation');
 });
 
 Route::get('/dashboard', function() {

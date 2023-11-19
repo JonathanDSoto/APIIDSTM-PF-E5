@@ -393,13 +393,13 @@ id="layout-navbar">
                     <div class="dropdown-divider"></div>
                 </li>
                 <li>
-                    <a class="dropdown-item" href="pages-profile-user.html">
+                    <a class="dropdown-item" href="/myprofile">
                         <i class="ti ti-user-check me-2 ti-sm"></i>
                         <span class="align-middle">My Profile</span>
                     </a>
                 </li>
                 <li>
-                    <a class="dropdown-item" href="pages-account-settings-account.html">
+                    <a class="dropdown-item" href="/editprofile">
                         <i class="ti ti-settings me-2 ti-sm"></i>
                         <span class="align-middle">Edit</span>
                     </a>

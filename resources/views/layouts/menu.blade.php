@@ -1,8 +1,8 @@
 <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
     <div class="app-brand demo ">
-        <a href="index.html" class="app-brand-link">
+        <a href="/home" class="app-brand-link">
             <span class="app-brand-logo demo">
-                <img src="../assets/img/machape/logo.png" alt="auth-login-cover" class="img-fluid my-1 auth-illustration">
+                <img src="../assets/img/machape/Logo.png" alt="auth-login-cover" class="img-fluid my-4 auth-illustration" style="width: 50px; height: auto;">
             </span>
             <span class="app-brand-text demo menu-text fw-bold">Machape</span>
         </a>
@@ -17,7 +17,7 @@
         <li class="menu-item">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons ti ti-smart-home"></i>
-                <div data-i18n="Dashboards">Motor</div>
+                <div data-i18n="Dashboards">Engine</div>
                 <div class="badge bg-primary rounded-pill ms-auto">5</div>
             </a>
             <ul class="menu-sub">
