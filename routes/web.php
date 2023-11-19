@@ -31,6 +31,11 @@ Route::get('/editprofile', function(){
     return view('editprofile');
 });
 
+Route::get('/servicesmotors', function() {
+    return view('servicesmotors');
+});
+
+
 Route::get('/reservation', function() {
     return view('reservation');
 });

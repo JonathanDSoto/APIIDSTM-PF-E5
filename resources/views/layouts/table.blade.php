@@ -4,12 +4,12 @@
 
 <!-- Basic Bootstrap Table -->
 <div class="card">
-    <h5 class="card-header">Servicios</h5>
+    <h5 class="card-header">Welcome</h5>
     <div class="table-responsive text-nowrap">
         <table class="table">
             <thead>
                 <tr>
-                    <th>Servicio</th>
+                    <th>Services</th>
                     <th>in charge</th>
                     <th>Users</th>
                 </tr>
