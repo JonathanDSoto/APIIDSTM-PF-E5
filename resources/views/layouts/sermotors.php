@@ -6,7 +6,7 @@
             <h5 class="card-title">Change the  engine oil</h5>
             <p class="card-text">Replacing engine oil is crucial to maintaining high performance.</p>
                 <p class="card-text">$350</p>
-            <a href="#" class="btn btn-primary">Buy</a>
+            <a href="/detailsservices" class="btn btn-primary">Buy</a>
         </div>
     </div>
     <div class="card" style="width: 18rem;">

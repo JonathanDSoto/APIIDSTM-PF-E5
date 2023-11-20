@@ -35,6 +35,9 @@ Route::get('/servicesmotors', function() {
     return view('servicesmotors');
 });
 
+Route::get('/detailsservices', function() {
+    return view('detailsservices');
+});
 
 Route::get('/reservation', function() {
     return view('reservation');
