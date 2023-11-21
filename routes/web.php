@@ -31,12 +31,12 @@ Route::get('/editprofile', function(){
     return view('editprofile');
 });
 
-Route::get('/servicesmotors', function() {
-    return view('servicesmotors');
+Route::get('/motors', function() {
+    return view('motors');
 });
 
-Route::get('/detailsservices', function() {
-    return view('detailsservices');
+Route::get('/details', function() {
+    return view('details');
 });
 
 Route::get('/reservation', function() {
