@@ -45,5 +45,5 @@ Route::get('/reservation', function() {
 });
 
 Route::get('/dashboard', function() {
-    return view();
-});
+    return view('dashboard');
+})->name('dashboard');
