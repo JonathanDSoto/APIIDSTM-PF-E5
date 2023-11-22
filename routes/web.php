@@ -47,3 +47,7 @@ Route::get('/reservation', function() {
 Route::get('/dashboard', function() {
     return view('dashboard');
 })->name('dashboard');
+
+Route::get('/clients', function() {
+    return view('clients');
+})->name('clients');

@@ -9,27 +9,25 @@ document.addEventListener("DOMContentLoaded", function (e) {
             e &&
                 e.addEventListener("click", function () {
                     (offCanvasEl = new bootstrap.Offcanvas(t)),
-                        (t.querySelector(".dt-full-name").value = ""),
-                        (t.querySelector(".dt-post").value = ""),
+                        (t.querySelector(".dt-name").value = ""),
+                        (t.querySelector(".dt-last-name").value = ""),
                         (t.querySelector(".dt-email").value = ""),
-                        (t.querySelector(".dt-date").value = ""),
-                        (t.querySelector(".dt-salary").value = ""),
                         offCanvasEl.show();
                 });
         }, 200),
         (fv = FormValidation.formValidation(t, {
             fields: {
-                basicFullname: {
+                name: {
                     validators: {
                         notEmpty: { message: "The name is required" },
                     },
                 },
-                basicPost: {
+                last_name: {
                     validators: {
                         notEmpty: { message: "Post field is required" },
                     },
                 },
-                basicEmail: {
+                email: {
                     validators: {
                         notEmpty: { message: "The Email is required" },
                         emailAddress: {

@@ -72,12 +72,31 @@
 
 <!-- Page CSS -->
 
-<link rel="stylesheet" href="../../assets/vendor/css/pages/app-academy.css" />
+<link
+    rel="stylesheet"
+    href="{{ asset('assets/vendor/css/pages/app-academy.css') }}"
+/>
 
 <!-- Helpers -->
-<script src="../../assets/vendor/js/helpers.js"></script>
+<script src="{{ asset('assets/vendor/js/helpers.js') }}"></script>
 <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
 <!--? Template customizer: To hide customizer set displayCustomizer value false in config.js.  -->
-<script src="../../assets/vendor/js/template-customizer.js"></script>
+<script src="{{ asset('assets/vendor/js/template-customizer.js') }}"></script>
 <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
-<script src="../../assets/js/config.js"></script>
+<script src="{{ asset('assets/js/config.js') }}"></script>
+<!-- Vendors CSS -->
+
+<link
+    rel="stylesheet"
+    href="{{
+        asset('assets/vendor/libs/datatables-bs5/datatables.bootstrap5.css')
+    }}"
+/>
+
+<!-- Form Validation -->
+<link
+    rel="stylesheet"
+    href="{{
+        asset('assets/vendor/libs/@form-validation/umd/styles/index.min.css')
+    }}"
+/>

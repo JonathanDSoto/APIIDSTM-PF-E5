@@ -43,6 +43,13 @@
                 <div data-i18n="Dashboard">Dashboard</div>
             </a>
         </li>
+        <!-- cliente -->
+        <li class="menu-item {{ request()->is('clients') ? 'active' : '' }}">
+            <a href="{{ route('clients') }}" class="menu-link">
+                <i class="menu-icon tf-icons ti ti-smart-home"></i>
+                <div data-i18n="Clients">Clients</div>
+            </a>
+        </li>
 
         <!-- ...existing code... -->
     </ul>

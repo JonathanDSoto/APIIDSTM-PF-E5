@@ -1,6 +1,6 @@
 <h1>Details</h1>
 <!-- card detail -->
-<div class="card mb-3 p-1" style="max-width: 540px">
+<div class="mb-3 p-1" style="max-width: 540px">
     <div class="row">
         <div class="col-md-4">
             <img
@@ -67,9 +67,9 @@
                 onsubmit="return false"
             >
                 <div class="col-sm-12">
-                    <label class="form-label" for="basicFullname"
-                        >Full Name</label
-                    >
+                    <label class="form-label" for="basicFullname">
+                        Full Name
+                    </label>
                     <div class="input-group input-group-merge">
                         <span id="basicFullname2" class="input-group-text"
                             ><i class="ti ti-user"></i
