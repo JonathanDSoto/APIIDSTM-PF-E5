@@ -2,6 +2,7 @@
 
 use App\Models\reservation;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ClientsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,3 +47,11 @@ Route::get('/reservation', function() {
 Route::get('/dashboard', function() {
     return view();
 });
+
+Route::get('/clients', [ClientsController::Class])->name('client.index');
+Route::get('/client/create', [ClientsController::Class])->name('client.create');
+/* Route::post('/client', [ClientsController::Class])->name('client.store'); */
+Route::get('/client/{id}/edit', [ClientsController::Class])->name('client.edit');
+Route::put('/client/{client}', [ClientsController::Class])->name('client.update');
+Route::get('/client/{id}/delete', [ClientsController::Class])->name('client.destroy');
+
