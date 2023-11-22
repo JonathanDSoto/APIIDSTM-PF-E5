@@ -11,10 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('sales', function (Blueprint $table) {
+        Schema::disableForeignKeyConstraints();
+
+        Schema::create('images', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->enum('type', ['service','product'])->nullable();
+            $table->string('url');
         });
+
+        Schema::enableForeignKeyConstraints();
     }
 
     /**
@@ -22,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('sales');
+        Schema::dropIfExists('images');
     }
 };

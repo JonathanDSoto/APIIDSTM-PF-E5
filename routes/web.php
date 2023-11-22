@@ -2,6 +2,7 @@
 
 use App\Models\reservation;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ClientsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,6 +45,5 @@ Route::get('/reservation', function() {
 });
 
 Route::get('/dashboard', function() {
-    return view('dashboard');
-})->name('dashboard');
-
+    return view();
+});

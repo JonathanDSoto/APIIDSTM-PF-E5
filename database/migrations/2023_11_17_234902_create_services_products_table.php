@@ -11,10 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('reservations', function (Blueprint $table) {
+        Schema::disableForeignKeyConstraints();
+
+        Schema::create('services_products', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->foreignId('services_id')->constrained();
+            $table->foreignId('products_id')->constrained();
         });
+
+        Schema::enableForeignKeyConstraints();
     }
 
     /**
@@ -22,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('reservations');
+        Schema::dropIfExists('services_products');
     }
 };
