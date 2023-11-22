@@ -11,10 +11,21 @@ return new class extends Migration
      */
     public function up(): void
     {
+        Schema::disableForeignKeyConstraints();
+
         Schema::create('services', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('name');
+            $table->longText('description');
+            $table->bigInteger('associatedProduct')->nullable();
+            $table->boolean('isAvailable');
+            $table->float('price');
+            $table->float('rating');
+            $table->bigInteger('category_id');
+            $table->foreign('category_id')->references('id')->on('categories');
         });
+
+        Schema::enableForeignKeyConstraints();
     }
 
     /**

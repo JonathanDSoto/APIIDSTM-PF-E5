@@ -11,10 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('reservations', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+        Schema::disableForeignKeyConstraints();
+
+        Schema::create('scheduals', function (Blueprint $table) {
+            $table->id()->foreign('serviceStatus.scheduals_id');
+            $table->bigInteger('date_start');
+            $table->bigInteger('date_end');
         });
+
+        Schema::enableForeignKeyConstraints();
     }
 
     /**
@@ -22,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('reservations');
+        Schema::dropIfExists('scheduals');
     }
 };
