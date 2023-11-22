@@ -3,6 +3,7 @@
 use App\Models\reservation;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClientsController;
+use App\Http\Controllers\ServicesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,8 +51,12 @@ Route::get('/dashboard', function() {
 
 Route::get('/clients', [ClientsController::Class])->name('client.index');
 Route::get('/client/create', [ClientsController::Class])->name('client.create');
-/* Route::post('/client', [ClientsController::Class])->name('client.store'); */
 Route::get('/client/{id}/edit', [ClientsController::Class])->name('client.edit');
 Route::put('/client/{client}', [ClientsController::Class])->name('client.update');
 Route::get('/client/{id}/delete', [ClientsController::Class])->name('client.destroy');
 
+Route::get('/services', [ServicesController::class])->name('services.index');
+Route::get('/service/create', [ServicesController::class])->name('services.create');
+Route::get('/service/{id}/edit', [ServicesController::class])->name('services.edit');
+Route::put('/service/{client}', [ServicesController::class])->name('services.update');
+Route::get('/service/{id}/delete', [ServicesController::class])->name('services.destroy');
