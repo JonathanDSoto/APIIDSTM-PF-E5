@@ -23,7 +23,7 @@ Route::get('/', function(){
 
 Route::get('/home', function(){
     return view('home');
-});
+})->name('home');
 
 Route::get('/myprofile', function(){
     return view('myprofile');
@@ -35,7 +35,7 @@ Route::get('/editprofile', function(){
 
 Route::get('/motors', function() {
     return view('motors');
-});
+})->name('motors');
 
 Route::get('/details', function() {
     return view('details');
