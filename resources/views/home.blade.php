@@ -28,6 +28,7 @@
                         <!-- Content -->
                         <div class="container-xxl flex-grow-1 container-p-y">
                             @include('layouts.table')
+                            <x-widget-card />
                         </div>
                         <!-- / Content -->
                         <div class="content-backdrop fade"></div>

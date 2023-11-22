@@ -4,7 +4,7 @@
 <div class="card">
     <h5 class="card-header">Welcome</h5>
     <div class="table-responsive text-nowrap">
-        <table class="table">
+        <table class="table table-hover">
             <thead>
                 <tr>
                     <th>Services</th>
@@ -15,10 +15,10 @@
             <tbody class="table-border-bottom-0">
                 <tr>
                     <td>
-                        <i
-                            class="ti ti-brand-angular ti-lg text-danger me-3"
-                        ></i>
-                        <span class="fw-medium">Motor</span>
+                        <i class="ti ti-brand-angular ti-lg text-info me-3"></i>
+                        <a href="{{ route('services', 'Motor') }}">
+                            <span class="fw-medium">Motor</span>
+                        </a>
                     </td>
                     <td>Angel</td>
                     <td>
@@ -33,9 +33,7 @@
                                 title="Lilian Fuller"
                             >
                                 <img
-                                    src="{{
-                                        asset('assets/img/avatars/5.png')
-                                    }}"
+                                    src="../../assets/img/avatars/5.png"
                                     alt="Avatar"
                                     class="rounded-circle"
                                 />
@@ -48,9 +46,7 @@
                                 title="Sophia Wilkerson"
                             >
                                 <img
-                                    src="{{
-                                        asset('assets/img/avatars/6.png')
-                                    }}"
+                                    src="../../assets/img/avatars/6.png"
                                     alt="Avatar"
                                     class="rounded-circle"
                                 />
@@ -63,9 +59,7 @@
                                 title="Christina Parker"
                             >
                                 <img
-                                    src="{{
-                                        asset('assets/img/avatars/7.png')
-                                    }}"
+                                    src="../../assets/img/avatars/7.png"
                                     alt="Avatar"
                                     class="rounded-circle"
                                 />
@@ -78,7 +72,9 @@
                         <i
                             class="ti ti-brand-react-native ti-lg text-info me-3"
                         ></i>
-                        <span class="fw-medium">Neumatico</span>
+                        <a href="{{ route('services', 'Motor') }}">
+                            <span class="fw-medium">Neumatico</span>
+                        </a>
                     </td>
                     <td>Alexander</td>
                     <td>
@@ -93,9 +89,7 @@
                                 title="Lilian Fuller"
                             >
                                 <img
-                                    src="{{
-                                        asset('assets/img/avatars/5.png')
-                                    }}"
+                                    src="../../assets/img/avatars/5.png"
                                     alt="Avatar"
                                     class="rounded-circle"
                                 />
@@ -108,9 +102,7 @@
                                 title="Sophia Wilkerson"
                             >
                                 <img
-                                    src="{{
-                                        asset('assets/img/avatars/6.png')
-                                    }}"
+                                    src="../../assets/img/avatars/6.png"
                                     alt="Avatar"
                                     class="rounded-circle"
                                 />
@@ -123,9 +115,7 @@
                                 title="Christina Parker"
                             >
                                 <img
-                                    src="{{
-                                        asset('assets/img/avatars/7.png')
-                                    }}"
+                                    src="../../assets/img/avatars/7.png"
                                     alt="Avatar"
                                     class="rounded-circle"
                                 />
@@ -135,10 +125,12 @@
                 </tr>
                 <tr>
                     <td>
-                        <i class="ti ti-brand-vue ti-lg text-success me-3"></i>
-                        <span class="fw-medium">Refaccion</span>
+                        <i class="ti ti-brand-vue ti-lg text-info me-3"></i>
+                        <a href="{{ route('services', 'Motor') }}">
+                            <span class="fw-medium">Refaccion</span>
+                        </a>
                     </td>
-                    <td>Alanr</td>
+                    <td>Alan</td>
                     <td>
                         <ul
                             class="list-unstyled users-list m-0 avatar-group d-flex align-items-center"
@@ -151,9 +143,7 @@
                                 title="Lilian Fuller"
                             >
                                 <img
-                                    src="{{
-                                        asset('assets/img/avatars/5.png')
-                                    }}"
+                                    src="../../assets/img/avatars/5.png"
                                     alt="Avatar"
                                     class="rounded-circle"
                                 />
@@ -166,9 +156,7 @@
                                 title="Sophia Wilkerson"
                             >
                                 <img
-                                    src="{{
-                                        asset('assets/img/avatars/6.png')
-                                    }}"
+                                    src="../../assets/img/avatars/6.png"
                                     alt="Avatar"
                                     class="rounded-circle"
                                 />
@@ -181,9 +169,7 @@
                                 title="Christina Parker"
                             >
                                 <img
-                                    src="{{
-                                        asset('assets/img/avatars/7.png')
-                                    }}"
+                                    src="../../assets/img/avatars/7.png"
                                     alt="Avatar"
                                     class="rounded-circle"
                                 />
@@ -194,9 +180,11 @@
                 <tr>
                     <td>
                         <i
-                            class="ti ti-brand-bootstrap ti-lg text-primary me-3"
+                            class="ti ti-brand-react-native ti-lg text-info me-3"
                         ></i>
-                        <span class="fw-medium">Electrico</span>
+                        <a href="{{ route('services', 'Motor') }}">
+                            <span class="fw-medium">Electrico</span>
+                        </a>
                     </td>
                     <td>Eddy</td>
                     <td>
@@ -211,9 +199,7 @@
                                 title="Lilian Fuller"
                             >
                                 <img
-                                    src="{{
-                                        asset('assets/img/avatars/5.png')
-                                    }}"
+                                    src="../../assets/img/avatars/5.png"
                                     alt="Avatar"
                                     class="rounded-circle"
                                 />
@@ -226,9 +212,7 @@
                                 title="Sophia Wilkerson"
                             >
                                 <img
-                                    src="{{
-                                        asset('assets/img/avatars/6.png')
-                                    }}"
+                                    src="../../assets/img/avatars/6.png"
                                     alt="Avatar"
                                     class="rounded-circle"
                                 />
@@ -241,9 +225,7 @@
                                 title="Christina Parker"
                             >
                                 <img
-                                    src="{{
-                                        asset('assets/img/avatars/7.png')
-                                    }}"
+                                    src="../../assets/img/avatars/7.png"
                                     alt="Avatar"
                                     class="rounded-circle"
                                 />

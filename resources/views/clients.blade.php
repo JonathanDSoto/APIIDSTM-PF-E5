@@ -53,10 +53,17 @@
                                                 <td class="col-1"></td>
                                                 <td></td>
                                                 <td>1</td>
-                                                <td>sdfdv</td>
-                                                <td>dxfdsf</td>
-                                                <td>esfsdf</td>
-                                                <td>drgdg</td>
+                                                <td>
+                                                    <a
+                                                        href="{{
+                                                            route('client.show')
+                                                        }}"
+                                                        >Angel Daniel</a
+                                                    >
+                                                </td>
+                                                <td>Almanza Trejo</td>
+                                                <td>trejo@gmail.com</td>
+                                                <td>NONE</td>
                                             </tr>
                                         </table>
                                     </table>

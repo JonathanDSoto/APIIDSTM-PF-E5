@@ -1,18 +1,9 @@
 <!DOCTYPE html>
-
-<html
-    lang="en"
-    class="light-style layout-navbar-fixed layout-menu-fixed layout-compact"
-    dir="ltr"
-    data-theme="theme-default"
-    data-assets-path="../../assets/"
-    data-template="vertical-menu-template"
->
+<html lang="en">
     <head>
         @include('layouts.head')
-        <title>Motors</title>
+        <title>Cliente</title>
     </head>
-
     <body>
         <!-- Layout wrapper -->
         <div class="layout-wrapper layout-content-navbar">
@@ -28,11 +19,11 @@
                     <div class="content-wrapper">
                         <!-- Content -->
                         <div class="container-xxl flex-grow-1 container-p-y">
-                            @include('layouts.sermotors')
+                            @include('layouts.client')
                         </div>
                         <!-- / Content -->
                         <div class="content-backdrop fade"></div>
-                    </div>  
+                    </div>
                     <!-- Content wrapper -->
                 </div>
                 <!-- / Layout page -->
