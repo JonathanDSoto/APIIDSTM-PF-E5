@@ -21,8 +21,7 @@ return new class extends Migration
             $table->boolean('isAvailable');
             $table->float('price');
             $table->float('rating');
-            $table->bigInteger('category_id');
-            $table->foreign('category_id')->references('id')->on('categories');
+            $table->foreignId('category_id')->constrained();
         });
 
         Schema::enableForeignKeyConstraints();

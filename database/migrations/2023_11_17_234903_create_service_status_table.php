@@ -15,8 +15,7 @@ return new class extends Migration
 
         Schema::create('service_status', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('service_id');
-            $table->foreign('service_id')->references('id')->on('services');
+            $table->foreignId('service_id')->constrained();
             $table->tinyInteger('maxService');
             $table->tinyInteger('activeService');
             $table->tinyInteger('completedServices');

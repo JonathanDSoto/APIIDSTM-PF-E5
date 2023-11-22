@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::disableForeignKeyConstraints();
 
-        Schema::create('images', function (Blueprint $table) {
+        Schema::create('images_services', function (Blueprint $table) {
             $table->id();
-            $table->enum('type')->nullable();
-            $table->string('url');
+            $table->foreignId('image_id')->constrained();
+            $table->foreignId('service_id')->constrained();
         });
 
         Schema::enableForeignKeyConstraints();
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('images');
+        Schema::dropIfExists('images_services');
     }
 };

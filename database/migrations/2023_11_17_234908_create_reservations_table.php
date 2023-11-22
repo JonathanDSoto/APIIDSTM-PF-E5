@@ -16,16 +16,14 @@ return new class extends Migration
         Schema::create('reservations', function (Blueprint $table) {
             $table->id();
             $table->timestamp('date_start');
-            $table->timestamp('date_end');
-            $table->timestamp('updated');
-            $table->enum('status');
+            $table->timestamp('date_end')->nullable();
+            $table->timestamp('updated')->nullable();
+            $table->enum('status', ['pending','accepted','rejected', 'onService', 'completed'])->default('pending');
             $table->float('total');
-            $table->bigInteger('client_id');
-            $table->foreign('client_id')->references('id')->on('clients');
-            $table->bigInteger('user_id')->nullable();
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->bigInteger('service_id');
-            $table->foreign('service_id')->references('id')->on('services');
+
+            $table->foreignId('client_id')->constrained();
+            $table->foreignId('user_id')->constrained();
+            $table->foreignId('service_id')->constrained();
         });
 
         Schema::enableForeignKeyConstraints();

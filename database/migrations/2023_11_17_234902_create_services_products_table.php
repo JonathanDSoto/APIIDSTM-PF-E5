@@ -15,10 +15,8 @@ return new class extends Migration
 
         Schema::create('services_products', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('services_id');
-            $table->foreign('services_id')->references('id')->on('products');
-            $table->bigInteger('products_id');
-            $table->foreign('products_id')->references('id')->on('services');
+            $table->foreignId('services_id')->constrained();
+            $table->foreignId('products_id')->constrained();
         });
 
         Schema::enableForeignKeyConstraints();

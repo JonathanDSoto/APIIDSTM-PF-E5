@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('name');
             $table->longText('description')->nullable();
             $table->bigInteger('price')->nullable();
-            $table->bigInteger('image_id');
-            $table->foreign('image_id')->references('id')->on('images');
+
+            $table->foreignId('image_id')->constrained();
         });
 
         Schema::enableForeignKeyConstraints();
