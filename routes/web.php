@@ -42,12 +42,6 @@ Route::middleware(['auth'])->group(function (){
     // Crud de los clientes
 });
 
-
-/*
-Route::get('/', function(){
-    return view('login');
-});
-
 Route::get('/home', function(){
     return view('home');
 })->name('home');
@@ -90,7 +84,7 @@ Route::get('/clients', function() {
 
 Route::get('/client', function(){
     return view('clientDetails');
-})->name('client.show'); */
+})->name('client.show');
 
 /*
 Route::get('/clients', [ClientsController::class])->name('client.index');
