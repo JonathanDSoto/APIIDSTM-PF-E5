@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->float('adult');
             $table->float('children');
-            $table->foreignIdFor(Discount::class)->constrained();
+            $table->foreignIdFor(Discount::class)->constrained()->nullable();
             $table->timestamps();
         });
     }

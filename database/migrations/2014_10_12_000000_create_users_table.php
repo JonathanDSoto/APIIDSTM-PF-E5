@@ -16,12 +16,13 @@ return new class extends Migration
             $table->string('name');
             $table->string('lastname')->nullable();
             $table->string('email')->unique();
+            $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->tinyInteger("role")->default(0);
             $table->string('primaryPhone')->nullable();
             $table->string('secondaryPhone')->nullable();
-            $table->string('location')->nullable();
             $table->rememberToken();
+            $table->foreignId('current_team_id')->nullable();
+            /* $table->string('profile_photo_path', 2048)->nullable(); */
             $table->timestamps();
         });
     }
