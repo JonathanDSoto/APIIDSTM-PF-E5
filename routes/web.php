@@ -20,7 +20,7 @@ use App\Http\Controllers\ServicesController;
 
 Route::get('/', function(){
     return view('login');
-});
+})->name('login');
 
 Route::get('/home', function(){
     return view('home');

@@ -49,7 +49,7 @@
                 </li>
             </ul>
         </div>
-        <div class="tab-content">
+        <div class="tab-content card-datatable table-responsive">
             <div
                 class="tab-pane fade active show"
                 id="form-tabs-inproccess"
@@ -92,7 +92,7 @@
                 </table>
             </div>
         </div>
-        <div class="tab-content">
+        <div class="tab-content card-datatable table-responsive">
             <div
                 class="tab-pane fade active show"
                 id="form-tabs-performed"

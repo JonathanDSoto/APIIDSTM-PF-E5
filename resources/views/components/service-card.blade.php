@@ -11,7 +11,8 @@
         <a
             href="{{ route('service-details', ['slug' => 'Motor', 'service' => 'Oil Change']) }}"
             class="btn btn-primary"
-            >Detalles</a
         >
+            Detalles
+        </a>
     </div>
 </div>

@@ -8,7 +8,7 @@
     data-assets-path="../../assets/"
 >
     <head>
-        <title>Logistics</title>
+        <title>Dashboard</title>
         @include('layouts.head')
     </head>
 
@@ -176,9 +176,7 @@
                             <!--/ Card Border Shadow -->
                             <div class="row">
                                 <!-- Services-->
-                                <div
-                                    class="col-lg-6 col-xxl-6 mb-4 order-3 order-xxl-1 w-60"
-                                >
+                                <div class="col-lg-6 w-100 order-3 order-xxl-1">
                                     <div class="card">
                                         <div
                                             class="card-header d-flex align-items-center justify-content-between"
@@ -652,17 +650,69 @@
                                                     <th>Repair</th>
                                                     <th>Nissan</th>
                                                     <th>
-                                                        Lorem ipsum dolor sit,
-                                                        amet consectetur
-                                                        adipisicing elit. Eaque
-                                                        ullam doloremque modi
-                                                        velit odit perferendis,
-                                                        provident sed maiores
-                                                        dolore excepturi tenetur
-                                                        esse quia incidunt
-                                                        saepe, recusandae
-                                                        nostrum ratione libero
-                                                        quidem.
+                                                        <div
+                                                            class="accordion"
+                                                            id="accordionExample"
+                                                        >
+                                                            <div
+                                                                class="accordion-item"
+                                                            >
+                                                                <h2
+                                                                    class="accordion-header"
+                                                                    id="headingOne"
+                                                                >
+                                                                    <button
+                                                                        class="accordion-button"
+                                                                        type="button"
+                                                                        data-bs-toggle="collapse"
+                                                                        data-bs-target="#collapseOne"
+                                                                        aria-expanded="true"
+                                                                        aria-controls="collapseOne"
+                                                                    >
+                                                                        Whatch
+                                                                    </button>
+                                                                </h2>
+                                                                <div
+                                                                    id="collapseOne"
+                                                                    class="accordion-collapse collapse show"
+                                                                    aria-labelledby="headingOne"
+                                                                    data-bs-parent="#accordionExample"
+                                                                >
+                                                                    <div
+                                                                        class="accordion-body"
+                                                                    >
+                                                                        Lorem,
+                                                                        ipsum
+                                                                        dolor
+                                                                        sit amet
+                                                                        consectetur
+                                                                        adipisicing
+                                                                        elit.
+                                                                        Illum,
+                                                                        unde
+                                                                        distinctio
+                                                                        aspernatur
+                                                                        a quam
+                                                                        exercitationem,
+                                                                        harum
+                                                                        veritatis
+                                                                        quis
+                                                                        quia
+                                                                        laudantium
+                                                                        fugit
+                                                                        laborum,
+                                                                        deleniti
+                                                                        porro
+                                                                        eum
+                                                                        reprehenderit!
+                                                                        Recusandae
+                                                                        voluptatum
+                                                                        atque
+                                                                        quo.
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                     </th>
                                                     <th>$1222</th>
                                                 </tr>

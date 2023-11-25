@@ -31,7 +31,7 @@
                         <!-- table detail -->
                         <div class="container-xxl flex-grow-1 container-p-y">
                             <!-- DataTable with Buttons -->
-                            <div class="card">
+                            <div class="card p-2">
                                 <div
                                     class="card-datatable table-responsive pt-0"
                                 >
@@ -47,7 +47,6 @@
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
-                                        '
                                         <table class="table">
                                             <tr>
                                                 <td class="col-1"></td>
@@ -63,7 +62,29 @@
                                                 </td>
                                                 <td>Almanza Trejo</td>
                                                 <td>trejo@gmail.com</td>
-                                                <td>NONE</td>
+                                                <td>
+                                                    <button
+                                                        type="button"
+                                                        class="btn btn-danger p-2"
+                                                        data-bs-toggle="modal"
+                                                        data-bs-target="#modalDelete"
+                                                    >
+                                                        <i
+                                                            class="ti ti-trash"
+                                                        ></i>
+                                                    </button>
+                                                    <button
+                                                        type="button"
+                                                        class="btn btn-primary p-2"
+                                                        data-bs-toggle="modal"
+                                                        data-bs-target="#modalEdit"
+                                                        data-bs-whatever="@mdo"
+                                                    >
+                                                        <i
+                                                            class="ti ti-pencil"
+                                                        ></i>
+                                                    </button>
+                                                </td>
                                             </tr>
                                         </table>
                                     </table>
@@ -191,6 +212,151 @@
                                     </form>
                                 </div>
                             </div>
+                            <!-- Modal  delete -->
+                            <div
+                                class="modal fade"
+                                id="modalDelete"
+                                tabindex="-1"
+                                aria-labelledby="exampleModalLabel"
+                                aria-hidden="true"
+                            >
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5
+                                                class="modal-title"
+                                                id="exampleModalLabel"
+                                            >
+                                                Are you sure to delete this
+                                                user?
+                                            </h5>
+                                            <button
+                                                type="button"
+                                                class="btn-close"
+                                                data-bs-dismiss="modal"
+                                                aria-label="Close"
+                                            ></button>
+                                        </div>
+                                        <div class="modal-body col">
+                                            <span class="row">
+                                                ID: <strong>1</strong>
+                                            </span>
+                                            <span class="row">
+                                                Name:
+                                                <strong>Angel Daniel</strong>
+                                            </span>
+                                            <span class="row">
+                                                Last name:
+                                                <strong>Almanza Trejo</strong>
+                                            </span>
+                                            <span class="row">
+                                                Email:
+                                                <strong>trejo@gmail.com</strong>
+                                            </span>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button
+                                                type="button"
+                                                class="btn btn-secondary"
+                                                data-bs-dismiss="modal"
+                                            >
+                                                Cancel
+                                            </button>
+                                            <button
+                                                type="button"
+                                                class="btn btn-primary"
+                                            >
+                                                Delete
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /Modal delete -->
+
+                            <!-- Modal edit -->
+                            <div
+                                class="modal fade"
+                                id="modalEdit"
+                                tabindex="-1"
+                                aria-labelledby="exampleModalLabel"
+                                aria-hidden="true"
+                            >
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5
+                                                class="modal-title"
+                                                id="exampleModalLabel"
+                                            >
+                                                Edit User
+                                            </h5>
+                                            <button
+                                                type="button"
+                                                class="btn-close"
+                                                data-bs-dismiss="modal"
+                                                aria-label="Close"
+                                            ></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form>
+                                                <div class="mb-3">
+                                                    <label
+                                                        for="name"
+                                                        class="col-form-label"
+                                                        >Name:</label
+                                                    >
+                                                    <input
+                                                        type="text"
+                                                        class="form-control"
+                                                        id="name"
+                                                    />
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label
+                                                        for="lastName"
+                                                        class="col-form-label"
+                                                        >Last Name:</label
+                                                    >
+                                                    <input
+                                                        type="text"
+                                                        class="form-control"
+                                                        id="lastName"
+                                                    />
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label
+                                                        for="email"
+                                                        class="col-form-label"
+                                                        >Email:</label
+                                                    >
+                                                    <input
+                                                        type="text"
+                                                        class="form-control"
+                                                        id="email"
+                                                    />
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button
+                                                type="button"
+                                                class="btn btn-secondary"
+                                                data-bs-dismiss="modal"
+                                            >
+                                                Cancel
+                                            </button>
+                                            <button
+                                                type="button"
+                                                class="btn btn-primary"
+                                            >
+                                                Edit
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /Modal edit -->
                             <!--/ DataTable with Buttons -->
                         </div>
                         <!-- /table detail  -->

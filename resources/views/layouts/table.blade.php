@@ -33,7 +33,9 @@
                                 title="Lilian Fuller"
                             >
                                 <img
-                                    src="../../assets/img/avatars/5.png"
+                                    src="{{
+                                        asset('assets/img/avatars/5.png')
+                                    }}"
                                     alt="Avatar"
                                     class="rounded-circle"
                                 />
@@ -46,7 +48,9 @@
                                 title="Sophia Wilkerson"
                             >
                                 <img
-                                    src="../../assets/img/avatars/6.png"
+                                    src="{{
+                                        asset('assets/img/avatars/6.png')
+                                    }}"
                                     alt="Avatar"
                                     class="rounded-circle"
                                 />
@@ -59,7 +63,9 @@
                                 title="Christina Parker"
                             >
                                 <img
-                                    src="../../assets/img/avatars/7.png"
+                                    src="{{
+                                        asset('assets/img/avatars/7.png')
+                                    }}"
                                     alt="Avatar"
                                     class="rounded-circle"
                                 />
@@ -89,7 +95,9 @@
                                 title="Lilian Fuller"
                             >
                                 <img
-                                    src="../../assets/img/avatars/5.png"
+                                    src="{{
+                                        asset('assets/img/avatars/5.png')
+                                    }}"
                                     alt="Avatar"
                                     class="rounded-circle"
                                 />
@@ -102,7 +110,9 @@
                                 title="Sophia Wilkerson"
                             >
                                 <img
-                                    src="../../assets/img/avatars/6.png"
+                                    src="{{
+                                        asset('assets/img/avatars/6.png')
+                                    }}"
                                     alt="Avatar"
                                     class="rounded-circle"
                                 />
@@ -115,7 +125,9 @@
                                 title="Christina Parker"
                             >
                                 <img
-                                    src="../../assets/img/avatars/7.png"
+                                    src="{{
+                                        asset('assets/img/avatars/7.png')
+                                    }}"
                                     alt="Avatar"
                                     class="rounded-circle"
                                 />
@@ -143,7 +155,9 @@
                                 title="Lilian Fuller"
                             >
                                 <img
-                                    src="../../assets/img/avatars/5.png"
+                                    src="{{
+                                        asset('assets/img/avatars/5.png')
+                                    }}"
                                     alt="Avatar"
                                     class="rounded-circle"
                                 />
@@ -156,7 +170,9 @@
                                 title="Sophia Wilkerson"
                             >
                                 <img
-                                    src="../../assets/img/avatars/6.png"
+                                    src="{{
+                                        asset('assets/img/avatars/6.png')
+                                    }}"
                                     alt="Avatar"
                                     class="rounded-circle"
                                 />
@@ -169,7 +185,9 @@
                                 title="Christina Parker"
                             >
                                 <img
-                                    src="../../assets/img/avatars/7.png"
+                                    src="{{
+                                        asset('assets/img/avatars/7.png')
+                                    }}"
                                     alt="Avatar"
                                     class="rounded-circle"
                                 />
@@ -199,7 +217,9 @@
                                 title="Lilian Fuller"
                             >
                                 <img
-                                    src="../../assets/img/avatars/5.png"
+                                    src="{{
+                                        asset('assets/img/avatars/5.png')
+                                    }}"
                                     alt="Avatar"
                                     class="rounded-circle"
                                 />
@@ -212,7 +232,9 @@
                                 title="Sophia Wilkerson"
                             >
                                 <img
-                                    src="../../assets/img/avatars/6.png"
+                                    src="{{
+                                        asset('assets/img/avatars/6.png')
+                                    }}"
                                     alt="Avatar"
                                     class="rounded-circle"
                                 />
@@ -225,7 +247,9 @@
                                 title="Christina Parker"
                             >
                                 <img
-                                    src="../../assets/img/avatars/7.png"
+                                    src="{{
+                                        asset('assets/img/avatars/7.png')
+                                    }}"
                                     alt="Avatar"
                                     class="rounded-circle"
                                 />

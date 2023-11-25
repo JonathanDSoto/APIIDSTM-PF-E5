@@ -21,11 +21,12 @@
                                 class="list-inline mb-0 d-flex align-items-center flex-wrap justify-content-sm-start justify-content-center gap-2"
                             >
                                 <li class="list-inline-item d-flex gap-1">
-                                    <i class="ti ti-map-pin"></i> San Jose del Cabo, Los Cabos, Baja California Sur, Mexico
+                                    <i class="ti ti-map-pin"></i> San Jose del
+                                    Cabo, Los Cabos, Baja California Sur, Mexico
                                 </li>
                                 <li class="list-inline-item d-flex gap-1">
-                                    <i class="ti ti-calendar"></i> Se unio en Abril
-                                    2021
+                                    <i class="ti ti-calendar"></i>
+                                    joined in April 2021
                                 </li>
                             </ul>
                         </div>
@@ -35,72 +36,135 @@
         </div>
     </div>
 </div>
+<div class="card-datatable table-responsive">
+    <table class="table table-hover table-responsive">
+        <thead>
+            <tr>
+                <th>Reservation</th>
+                <th>Date</th>
+                <th>State</th>
+                <th>Operator</th>
+                <th>In charge</th>
+                <th></th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody class="table-border-bottom-0">
+            <tr>
+                <td>
+                    {{--
+                    <i class="ti ti-brand-angular ti-lg text-info me-3"></i>
+                    --}} {{--
+                    <a href="{{ route('services', 'Motor') }}"> </a> --}}
+                    <span class="fw-medium">Cambio de Aceite</span>
+                </td>
+                <td>2022-03-21</td>
+                <td><span class="btn btn-success">Completado</span></td>
+                <td>Alan</td>
+                <td>Duverney</td>
+                <td></td>
+                <td>
+                    <button
+                        type="button"
+                        class="btn btn-danger p-2"
+                        data-bs-toggle="modal"
+                        data-bs-target="#modalDelete"
+                    >
+                        <i class="ti ti-trash"></i>
+                    </button>
+                    <button
+                        type="button"
+                        class="btn btn-primary p-2"
+                        data-bs-toggle="modal"
+                        data-bs-target="#modalEdit"
+                    >
+                        <i class="ti ti-eye"></i>
+                    </button>
+                </td>
+            </tr>
 
-<table class="table table-hover">
-    <thead>
-        <tr>
-            <th>Reservaciones</th>
-            <th>Fecha</th>
-            <th>Estado</th>
-            <th>Operador</th>
-            <th>Encargado</th>
-            <th></th>
-            <th>Acciones</th>
-        </tr>
-    </thead>
-    <tbody class="table-border-bottom-0">
-        <tr>
-            <td>
-                {{-- <i class="ti ti-brand-angular ti-lg text-info me-3"></i> --}}
-                {{-- <a href="{{ route('services', 'Motor') }}">
-                    
-                </a> --}}
-                <span class="fw-medium">Cambio de Aceite</span>
-            </td>
-            <td>2022-03-21</td>
-            <td><span class="btn btn-success">Completado</span></td>
-            <td>Alan</td>
-            <td>Duverney</td>
-            <td></td>
-            <td>
-                <div class="text-center">
-                    <div class="row">
-                        <div class="col-6">
-                            <a href="" class="btn btn-primary d-flex    ">Ver</a>
-                        </div>
-                        <div class="col-6">
-                            <a href="" class="btn btn-danger d-flex">Eliminar</a>
-                        </div>
-                    </div>
-                </div>
-            </td>
-        </tr>
-
-        <tr>
-            <td>
-                {{-- <i class="ti ti-brand-angular ti-lg text-info me-3"></i> --}}
-                {{-- <a href="{{ route('services', 'Motor') }}">
-                    
-                </a> --}}
-                <span class="fw-medium">Cambio de Rines</span>
-            </td>
-            <td>2024-01-11</td>
-            <td><span class="btn btn-info">En espera</span></td>
-            <td>Almanza</td>
-            <td>Eduardo</td>
-            <td></td>
-            <td>
-                <div class="text-center">
-                    <div class="row">
-                        <div class="col-6">
-                            <a href="" class="btn btn-primary d-flex    ">Ver</a>
-                        </div>
-                        <div class="col-6">
-                            <a href="" class="btn btn-danger d-flex">Eliminar</a>
-                        </div>
-                    </div>
-                </div>
-            </td>
-        </tr>
-    </tbody>
-</table>
+            <tr>
+                <td>
+                    {{--
+                    <i class="ti ti-brand-angular ti-lg text-info me-3"></i>
+                    --}} {{--
+                    <a href="{{ route('services', 'Motor') }}"> </a> --}}
+                    <span class="fw-medium">Cambio de Rines</span>
+                </td>
+                <td>2024-01-11</td>
+                <td><span class="btn btn-info">En espera</span></td>
+                <td>Almanza</td>
+                <td>Eduardo</td>
+                <td></td>
+                <td>
+                    <button
+                        type="button"
+                        class="btn btn-danger p-2"
+                        data-bs-toggle="modal"
+                        data-bs-target="#modalDelete"
+                    >
+                        <i class="ti ti-trash"></i>
+                    </button>
+                    <button
+                        type="button"
+                        class="btn btn-primary p-2"
+                        data-bs-toggle="modal"
+                        data-bs-target="#modalEdit"
+                    >
+                        <i class="ti ti-eye"></i>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!-- Modal  delete -->
+<div
+    class="modal fade"
+    id="modalDelete"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">
+                    Are you sure to delete this user?
+                </h5>
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                ></button>
+            </div>
+            <div class="modal-body col">
+                <span class="row"> ID: <strong>1</strong> </span>
+                <span class="row">
+                    Name:
+                    <strong>Angel Daniel</strong>
+                </span>
+                <span class="row">
+                    Last name:
+                    <strong>Almanza Trejo</strong>
+                </span>
+                <span class="row">
+                    Email:
+                    <strong>trejo@gmail.com</strong>
+                </span>
+            </div>
+            <div class="modal-footer">
+                <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                >
+                    Cancel
+                </button>
+                <button type="button" class="btn btn-primary">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Modal delete -->

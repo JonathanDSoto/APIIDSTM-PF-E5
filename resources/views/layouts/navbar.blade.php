@@ -525,50 +525,10 @@
                         </a>
                     </li>
                     <li>
-                        <a
-                            class="dropdown-item"
-                            href="pages-account-settings-billing.html"
-                        >
-                            <span
-                                class="d-flex align-items-center align-middle"
-                            >
-                                <i
-                                    class="flex-shrink-0 ti ti-credit-card me-2 ti-sm"
-                                ></i>
-                                <span class="flex-grow-1 align-middle"
-                                    >Billing</span
-                                >
-                                <span
-                                    class="flex-shrink-0 badge badge-center rounded-pill bg-label-danger w-px-20 h-px-20"
-                                    >2</span
-                                >
-                            </span>
-                        </a>
-                    </li>
-                    <li>
                         <div class="dropdown-divider"></div>
                     </li>
                     <li>
-                        <a class="dropdown-item" href="pages-faq.html">
-                            <i class="ti ti-help me-2 ti-sm"></i>
-                            <span class="align-middle">FAQ</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item" href="pages-pricing.html">
-                            <i class="ti ti-currency-dollar me-2 ti-sm"></i>
-                            <span class="align-middle">Pricing</span>
-                        </a>
-                    </li>
-                    <li>
-                        <div class="dropdown-divider"></div>
-                    </li>
-                    <li>
-                        <a
-                            class="dropdown-item"
-                            href="auth-login-cover.html"
-                            target="_blank"
-                        >
+                        <a class="dropdown-item" href="{{ route('login') }}">
                             <i class="ti ti-logout me-2 ti-sm"></i>
                             <span class="align-middle">Log Out</span>
                         </a>
