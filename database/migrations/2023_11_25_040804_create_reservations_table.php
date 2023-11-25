@@ -13,6 +13,14 @@ return new class extends Migration
     {
         Schema::create('reservations', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained();
+            $table->foreignId('service_id')->constrained();
+            $table->foreignId('schedual_id')->constrained();
+            $table->foreignId('coupon_id')->constrained();
+            $table->foreignId('discount_id')->constrained();
+            $table->integer('adultTotal');
+            $table->integer('childTotal');
+            $table->float('total');
             $table->timestamps();
         });
     }

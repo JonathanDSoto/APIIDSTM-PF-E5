@@ -11,11 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('discounts', function (Blueprint $table) {
+        Schema::create('image_service', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->enum('type', ['adult', 'child'])->nullable();
-            $table->integer('discount');
+            $table->unsignedBigInteger('image_id');
+            $table->unsignedBigInteger('service_id');
+            $table->foreign('image_id')->references('id')->on('images')->onDelete('cascade');
+            $table->foreign('service_id')->references('id')->on('services')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -25,6 +26,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('discounts');
+        //
+        Schema::dropIfExists('image_service');
     }
 };

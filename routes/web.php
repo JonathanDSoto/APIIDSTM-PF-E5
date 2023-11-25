@@ -17,10 +17,6 @@ use App\Http\Controllers\ServicesController;
 */
 
 Route::get('/', function(){
-<<<<<<< HEAD
-    return view('login');
-})->name('login');
-=======
     return view('auth.login');
 })->middleware('guest');
 
@@ -45,7 +41,6 @@ Route::middleware(['auth'])->group(function (){
 
     // Crud de los clientes
 });
->>>>>>> 3029bd32d4fb65ca6339ced4567ffc231ccc0520
 
 Route::get('/home', function(){
     return view('home');
