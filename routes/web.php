@@ -16,11 +16,36 @@ use App\Http\Controllers\ServicesController;
 |
 */
 
-
-
 Route::get('/', function(){
+<<<<<<< HEAD
     return view('login');
 })->name('login');
+=======
+    return view('auth.login');
+})->middleware('guest');
+
+Route::get('/login', function(){
+    return redirect('/');
+})->name('login');
+
+Route::get('logout/view', function () {
+    return view('logout');
+});
+
+Route::get('register', function () {
+    return redirect('registro');
+});
+
+Route::middleware(['auth'])->group(function (){
+    Route::get('/home', function(){
+        return view('home');
+    })->name('home');
+
+
+
+    // Crud de los clientes
+});
+>>>>>>> 3029bd32d4fb65ca6339ced4567ffc231ccc0520
 
 Route::get('/home', function(){
     return view('home');
