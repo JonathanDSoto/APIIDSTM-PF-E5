@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class role extends Model
 {
     use HasFactory;
+    public $timestamps = false;
+    protected $fillable = [
+        'name',
+    ];
 }

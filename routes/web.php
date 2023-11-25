@@ -16,8 +16,34 @@ use App\Http\Controllers\ServicesController;
 |
 */
 
+Route::get('/', function(){
+    return view('auth.login');
+})->middleware('guest');
+
+Route::get('/login', function(){
+    return redirect('/');
+})->name('login');
+
+Route::get('logout/view', function () {
+    return view('logout');
+});
+
+Route::get('register', function () {
+    return redirect('registro');
+});
+
+Route::middleware(['auth'])->group(function (){
+    Route::get('/home', function(){
+        return view('home');
+    })->name('home');
 
 
+
+    // Crud de los clientes
+});
+
+
+/*
 Route::get('/', function(){
     return view('login');
 });
@@ -64,7 +90,7 @@ Route::get('/clients', function() {
 
 Route::get('/client', function(){
     return view('clientDetails');
-})->name('client.show');
+})->name('client.show'); */
 
 /*
 Route::get('/clients', [ClientsController::class])->name('client.index');
