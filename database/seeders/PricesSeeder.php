@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Prices;
 
 class PricesSeeder extends Seeder
 {
@@ -13,5 +14,10 @@ class PricesSeeder extends Seeder
     public function run(): void
     {
         //
+        Prices::create([
+            'adult' => 100,
+            'children' => 50,
+            'discount_id' => 1,
+        ]);
     }
 }

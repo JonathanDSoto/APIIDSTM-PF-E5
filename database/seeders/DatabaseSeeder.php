@@ -21,5 +21,11 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         $this->call([UserSeeder::class]);
+        $this->call([DiscountSeeder::class]);
+        $this->call([CategorySeeder::class]);
+        $this->call([PricesSeeder::class]);
+        $this->call([CouponSeeder::class]);
+        $this->call([ServicesSeeder::class]);
+
     }
 }
