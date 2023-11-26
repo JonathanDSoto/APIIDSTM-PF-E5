@@ -29,16 +29,13 @@ Route::get('logout/view', function () {
 });
 
 Route::get('register', function () {
-    return redirect('registro');
-});
+    return view('auth.register');
+})->name('register');
 
 Route::middleware(['auth'])->group(function (){
     Route::get('/home', function(){
         return view('home');
     })->name('home');
-
-
-
     // Crud de los clientes
 });
 
