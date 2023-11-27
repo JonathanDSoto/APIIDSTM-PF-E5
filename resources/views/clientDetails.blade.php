@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         @include('layouts.head')
-        <title>Cliente</title>
+        <title>Client</title>
     </head>
     <body>
         <!-- Layout wrapper -->

@@ -23,7 +23,7 @@
                 >
                     <i class="ti ti-search ti-md me-2"></i>
                     <span class="d-none d-md-inline-block text-muted"
-                        >Search (Ctrl+/)</span
+                        >Search</span
                     >
                 </a>
             </div>
