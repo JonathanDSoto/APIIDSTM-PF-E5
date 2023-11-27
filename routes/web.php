@@ -39,9 +39,9 @@ Route::middleware(['auth'])->group(function (){
     // Crud de los clientes
 });
 
-Route::get('/home', function(){
+/* Route::get('/home', function(){
     return view('home');
-})->name('home');
+})->name('home'); */
 
 Route::get('/services/{slug}', function () {
     return view('services', ['slug' => 'Motor']);
