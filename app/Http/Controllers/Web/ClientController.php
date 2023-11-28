@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Client;
 use Illuminate\Http\Request;
-use Illuminate\View\View;
-use App\Models\User;
 
-class UserController extends Controller
+class ClientController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,6 +13,9 @@ class UserController extends Controller
     public function index()
     {
         //
+        return view('client.index', [
+            'clients' => Client::all()
+        ]);
     }
 
     /**
@@ -30,29 +32,20 @@ class UserController extends Controller
     public function store(Request $request)
     {
         //
-        $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => bcrypt($request->password)
-        ]);
-        
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id): View
+    public function show(Client $client)
     {
         //
-        return view('user.profile', [ // SE OCUPA CREAR LA CARPETA USER EN VIEWS CON EL BLADE PHP DE PROFILE
-            'user' => User::findOrFail($id)
-        ]);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Client $client)
     {
         //
     }
@@ -60,7 +53,7 @@ class UserController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Client $client)
     {
         //
     }
@@ -68,7 +61,7 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Client $client)
     {
         //
     }

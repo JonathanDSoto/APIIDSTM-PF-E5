@@ -2,8 +2,9 @@
 
 use App\Models\reservation;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ClientsController;
+use App\Http\Controllers\ClientController;
 use App\Http\Controllers\ServicesController;
+use App\Http\Controllers\ReservationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,14 +37,36 @@ Route::middleware(['auth'])->group(function (){
     Route::get('/home', function(){
         return view('home');
     })->name('home');
+
+    Route::get('/dashboard', function() {
+        return view('dashboard');
+    })->name('dashboard');
+
     // Crud de los clientes
+    Route::group(['prefix' => 'clients'], function () {
+        Route::get('/', [ClientController::class, 'index'])->name('client.index');
+        Route::get('/create', [ClientController::class, 'create'])->name('client.create');
+    });
+
+    // Crud de los servicios
+    Route::group(['prefix' => 'services'], function () {
+        Route::get('/', [ServicesController::class, 'index'])->name('service.index');
+        Route::get('/create', [ServicesController::class, 'create'])->name('service.create');
+    });
+
+    // Crud de las reservaciones
+    Route::group(['prefix' => 'reservations'], function () {
+        Route::get('/', [ReservationController::class, 'index'])->name('reservation.index');
+        Route::get('/create', [ReservationController::class, 'create'])->name('reservation.create');
+    });
+
 });
 
 /* Route::get('/home', function(){
     return view('home');
 })->name('home'); */
 
-Route::get('/services/{slug}', function () {
+/* Route::get('/services/{slug}', function () {
     return view('services', ['slug' => 'Motor']);
 })->name('services');
 
@@ -71,9 +94,7 @@ Route::get('/reservation', function() {
     return view('reservation');
 });
 
-Route::get('/dashboard', function() {
-    return view('dashboard');
-})->name('dashboard');
+
 
 Route::get('/clients', function() {
     return view('clients');
@@ -81,7 +102,7 @@ Route::get('/clients', function() {
 
 Route::get('/client', function(){
     return view('clientDetails');
-})->name('client.show');
+})->name('client.show'); */
 
 /*
 Route::get('/clients', [ClientsController::class])->name('client.index');
