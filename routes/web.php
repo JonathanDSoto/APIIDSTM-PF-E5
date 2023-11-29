@@ -35,9 +35,7 @@ Route::get('register', function () {
 })->name('register');
 
 Route::middleware(['auth'])->group(function (){
-    Route::get('/home', function(){
-        return view('home');
-    })->name('home');
+    Route::get('/home', [CategoryController::class, 'home'])->name('home');
 
     /* Route::get('/dashboard', function() {
         return view('dashboard');

@@ -2,9 +2,12 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use Illuminate\Database\Seeder;
 use App\Models\Category;
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Http\Request;
 
 class CategorySeeder extends Seeder
 {
@@ -13,9 +16,19 @@ class CategorySeeder extends Seeder
      */
     public function run(): void
     {
-        //
+
+        $response = Http::get('https://placehold.co/600x400/000000/FFFFFF/png');
+
+        if ($response->ok()) {
+            $contents = $response->body();
+            $filename = 'public/images/placeholder.png';
+            Storage::put($filename, $contents);
+            $imageUrl = Storage::url($filename);
+        }
+
         Category::create([
             'name' => 'Senderismo',
+            'image_url' => $imageUrl ?? null
         ]);
 
         Category::create([
