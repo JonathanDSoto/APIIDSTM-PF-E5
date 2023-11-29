@@ -23,28 +23,56 @@
                 <li
                     class="menu-item {{ Request::is('services/motor') ? 'active' : '' }}"
                 >
+<<<<<<< HEAD
                     <a href="{{ route('service.index') }}" class="menu-link">
+=======
+                    <a
+                        {{-- href="{{ route('services', 'motor') }}" --}}
+                        class="menu-link"
+                    >
+>>>>>>> e219604eaa6cb524804907644b51b2c1a542db58
                         <div>Motor Service</div>
                     </a>
                 </li>
                 <li
                     class="menu-item {{ Request::is('services/refaccion') ? 'active' : '' }}"
                 >
+<<<<<<< HEAD
                     <a href="{{ route('service.index') }}" class="menu-link">
+=======
+                    <a
+                        {{-- href="{{ route('services', 'refaccion') }}" --}}
+                        class="menu-link"
+                    >
+>>>>>>> e219604eaa6cb524804907644b51b2c1a542db58
                         <div>Refaccion Service</div>
                     </a>
                 </li>
                 <li
                     class="menu-item {{ Request::is('services/neumatico') ? 'active' : '' }}"
                 >
+<<<<<<< HEAD
                     <a href="{{ route('service.index') }}" class="menu-link">
+=======
+                    <a
+                        {{-- href="{{ route('services', 'neumatico') }}" --}}
+                        class="menu-link"
+                    >
+>>>>>>> e219604eaa6cb524804907644b51b2c1a542db58
                         <div>Neumatico Service</div>
                     </a>
                 </li>
                 <li
                     class="menu-item {{ Request::is('services/electrico') ? 'active' : '' }}"
                 >
+<<<<<<< HEAD
                     <a href="{{ route('service.index') }}" class="menu-link">
+=======
+                    <a
+                        {{-- href="{{ route('services', 'electrico') }}" --}}
+                        class="menu-link"
+                    >
+>>>>>>> e219604eaa6cb524804907644b51b2c1a542db58
                         <div>Electrico Service</div>
                     </a>
                 </li>
@@ -52,11 +80,12 @@
         </li>
         <!-- dashboard -->
         <li class="menu-item {{ request()->is('dashboard') ? 'active' : '' }}">
-            <a href="{{ route('dashboard') }}" class="menu-link">
+            <a href="{{ route('home') }}" class="menu-link">
                 <i class="menu-icon tf-icons ti ti-chart-bar"></i>
                 <div data-i18n="Dashboard">Dashboard</div>
             </a>
         </li>
+<<<<<<< HEAD
         <!-- cliente -->
         <li class="menu-item {{ request()->is('client') ? 'active' : '' }}">
             <a href="{{ route('client.index') }}" class="menu-link">
@@ -64,5 +93,7 @@
                 <div data-i18n="Clients">Clients</div>
             </a>
         </li>
+=======
+>>>>>>> e219604eaa6cb524804907644b51b2c1a542db58
     </ul>
 </aside>

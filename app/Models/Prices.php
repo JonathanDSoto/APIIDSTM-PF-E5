@@ -14,4 +14,9 @@ class Prices extends Model
         'adult',
         'child'
     ];
+
+    public function services()
+    {
+        return $this->belongsToMany(Services::class);
+    }
 }

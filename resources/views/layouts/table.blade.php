@@ -16,7 +16,11 @@
                 <tr>
                     <td>
                         <i class="ti ti-brand-angular ti-lg text-info me-3"></i>
+<<<<<<< HEAD
                         <a href="{{ route('service.index') }}">
+=======
+                        {{-- <a href="{{ route('services', 'Motor') }}"> --}}
+>>>>>>> e219604eaa6cb524804907644b51b2c1a542db58
                             <span class="fw-medium">Motor</span>
                         </a>
                     </td>
@@ -78,7 +82,11 @@
                         <i
                             class="ti ti-brand-react-native ti-lg text-info me-3"
                         ></i>
+<<<<<<< HEAD
                         <a href="{{ route('service.index') }}">
+=======
+                        {{-- <a href="{{ route('services', 'Motor') }}"> --}}
+>>>>>>> e219604eaa6cb524804907644b51b2c1a542db58
                             <span class="fw-medium">Neumatico</span>
                         </a>
                     </td>
@@ -138,7 +146,11 @@
                 <tr>
                     <td>
                         <i class="ti ti-brand-vue ti-lg text-info me-3"></i>
+<<<<<<< HEAD
                         <a href="{{ route('service.index') }}">
+=======
+                        {{-- <a href="{{ route('services', 'Motor') }}"> --}}
+>>>>>>> e219604eaa6cb524804907644b51b2c1a542db58
                             <span class="fw-medium">Refaccion</span>
                         </a>
                     </td>
@@ -200,7 +212,11 @@
                         <i
                             class="ti ti-brand-react-native ti-lg text-info me-3"
                         ></i>
+<<<<<<< HEAD
                         <a href="{{ route('service.index') }}">
+=======
+                        {{-- <a href="{{ route('services', 'Motor') }}"> --}}
+>>>>>>> e219604eaa6cb524804907644b51b2c1a542db58
                             <span class="fw-medium">Electrico</span>
                         </a>
                     </td>

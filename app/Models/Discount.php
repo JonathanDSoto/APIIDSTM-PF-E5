@@ -14,8 +14,8 @@ class Discount extends Model
         'discount'
     ];
 
-    public function services()
+    public function prices()
     {
-        return $this->belongsToMany(Service::class);
+        return $this->belongsToMany(Prices::class);
     }
 }
