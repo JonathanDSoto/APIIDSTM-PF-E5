@@ -31,7 +31,6 @@
                     class="menu-item {{ Request::is('services/refaccion') ? 'active' : '' }}"
                 >
                     <a href="{{ route('service.index') }}" class="menu-link">
-
                         <div>Refaccion Service</div>
                     </a>
                 </li>
@@ -39,7 +38,6 @@
                     class="menu-item {{ Request::is('services/neumatico') ? 'active' : '' }}"
                 >
                     <a href="{{ route('service.index') }}" class="menu-link">
-
                         <div>Neumatico Service</div>
                     </a>
                 </li>
@@ -47,12 +45,6 @@
                     class="menu-item {{ Request::is('services/electrico') ? 'active' : '' }}"
                 >
                     <a href="{{ route('service.index') }}" class="menu-link">
-
-                    <a
-                        {{-- href="{{ route('services', 'electrico') }}" --}}
-                        class="menu-link"
-                    >
-
                         <div>Electrico Service</div>
                     </a>
                 </li>
@@ -66,7 +58,9 @@
             </a>
         </li>
         <!-- cliente -->
-        <li class="menu-item {{ request()->routeIs('client.index') ? 'active' : '' }}">
+        <li
+            class="menu-item {{ request()->routeIs('client.index') ? 'active' : '' }}"
+        >
             <a href="{{ route('client.index') }}" class="menu-link">
                 <i class="menu-icon tf-icons ti ti-user"></i>
                 <div data-i18n="Clients">Clients</div>
