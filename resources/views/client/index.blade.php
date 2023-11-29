@@ -66,7 +66,9 @@
                                                     data-client-name="{{ $client->name }}"
                                                     data-client-lastname="{{ $client->lastname }}"
                                                     data-client-email="{{ $client->email }}"
-                                                    data-client-phone-number={{ $client->phone }}>
+                                                    data-client-phone-number={{ $client->phone }}
+                                                    data-client-delete-route={{ route('client.destroy', $client->id) }}
+                                                    >
                                                     <i class="ti ti-trash"></i>
                                                 </button>
                                                 <button type="button" class="btn btn-primary p-2" data-bs-toggle="modal"
@@ -111,13 +113,15 @@
             var clientLastname = button.data('client-lastname');
             var clientEmail = button.data('client-email');
             var clientPhoneNumber = button.data('client-phone-number');
+            var clientDeleteRoute = button.data('client-delete-route');
 
             // Update the modal's content with the extracted info
             $('#modal-client-id').text(clientId);
             $('#modal-client-name').text(clientName);
             $('#modal-client-lastname').text(clientLastname);
             $('#modal-client-email').text(clientEmail);
-            $('#modal-client-phone-number').text(clientPhoneNumber)
+            $('#modal-client-phone-number').text(clientPhoneNumber);
+            $('#modalDelete form').attr('action', clientDeleteRoute);
         });
     </script>
 
