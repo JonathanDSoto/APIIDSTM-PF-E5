@@ -121,7 +121,7 @@
             $('#modal-client-lastname').text(clientLastname);
             $('#modal-client-email').text(clientEmail);
             $('#modal-client-phone-number').text(clientPhoneNumber);
-            $('#modalDelete form').attr('action', clientDeleteRoute);
+            $('#modalDelete').attr('action', clientDeleteRoute);
         });
     </script>
 
