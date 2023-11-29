@@ -21,7 +21,7 @@ class CategorySeeder extends Seeder
 
         if ($response->ok()) {
             $contents = $response->body();
-            $filename = 'app/public/images/placeholder.png';
+            $filename = 'images/placeholder.png';
             Storage::put($filename, $contents);
             $imageUrl = Storage::url($filename);
         }
