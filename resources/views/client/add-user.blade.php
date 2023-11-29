@@ -6,8 +6,9 @@
                 <button type="button" class="btn-close text-reset" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-
-                <form class="addNewUser pt-0 row g-2" id="form-addNewUser">
+                <form action="{{ route('client.store') }}" method="POST" class="addNewUser pt-0 row g-2" id="form-addNewUser">
+                    @csrf
+                    @method('POST')
                     <div class="col-sm-12">
                         <label class="form-label" for="name">Name</label>
                         <div class="input-group input-group-merge">
@@ -17,14 +18,14 @@
                         </div>
                     </div>
                     <div class="col-sm-12">
-                        <label class="form-label" for="last-name">
+                        <label class="form-label" for="lastname">
                             Last name
                         </label>
                         <div class="input-group input-group-merge">
                             <span id="basicPost2" class="input-group-text">
                                 <i class="ti ti-user"></i>
                             </span>
-                            <input type="text" id="last-name" name="last-name" class="form-control dt-last-name"
+                            <input type="text" id="lastname" name="lastname" class="form-control dt-lastname"
                                 placeholder="Pancrasio" aria-label="Pancrasio" aria-describedby="basicPost2" />
                         </div>
                     </div>
@@ -39,13 +40,13 @@
                         </div>
                     </div>
                     <div class="col-sm-12">
-                        <label class="form-label" for="phone-number">
+                        <label class="form-label" for="phone">
                             Phone number
                         </label>
                         <div class="input-group input-group-merge">
                             <span class="input-group-text"><i class="ti ti-phone"></i></span>
-                            <input type="text" id="phone-number" name="phone-number"
-                                class="form-control dt-phone-number" placeholder="0123456789" aria-label="0123456789" />
+                            <input type="text" id="phone" name="phone"
+                                class="form-control dt-phone" placeholder="0123456789" aria-label="0123456789" />
                         </div>
                     </div>
                     <div class="col-sm-12">

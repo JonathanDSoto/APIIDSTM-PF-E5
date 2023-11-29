@@ -38,6 +38,7 @@
                                 <i class="ti ti-plus"></i>
                             </button>
                         </div>
+                        <x-validation-errors class="my-4" />
                         <div class="card-datatable overflow-auto">
                             <table class="table table-hover">
                                 <thead class="table-border-bottom-0">
@@ -76,7 +77,9 @@
                                                     data-client-name="{{ $client->name }}"
                                                     data-client-lastname="{{ $client->lastname }}"
                                                     data-client-email="{{ $client->email }}"
-                                                    data-client-phone-number={{ $client->phone }}>
+                                                    data-client-phone-number={{ $client->phone }}
+                                                    data-client-edit-route={{ route('client.update', $client->id) }}
+                                                    >
                                                     <i class="ti ti-pencil"></i>
                                                 </button>
                                             </td>
@@ -134,12 +137,14 @@
             var clientLastname = button.data('client-lastname');
             var clientEmail = button.data('client-email');
             var clientPhoneNumber = button.data('client-phone-number');
+            var clientEditRoute = button.data('client-edit-route');
 
             // Set the initial values of the form fields
             $('#name-edit').val(clientName);
             $('#last-name-edit').val(clientLastname);
             $('#email-edit').val(clientEmail);
-            $('#phone-number-edit').val(clientPhoneNumber)
+            $('#phone-number-edit').val(clientPhoneNumber);
+            $('#modalEdit').attr('action', clientEditRoute);
         });
     </script>
 @endsection
