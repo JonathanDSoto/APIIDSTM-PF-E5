@@ -62,13 +62,25 @@ function fillTable() {
         </td>
         <td>${data.last_name}</td>
         <td>${data.email}</td>
-        <td class="actions">
-            <button type="button" class="btn btn-danger p-2" data-bs-toggle="modal" data-bs-target="#modalDelete" >
-                <i class="ti ti-trash"></i>
-            </button>
-            <button type="button" class="btn btn-primary p-2" data-bs-toggle="modal" data-bs-target="#modalEdit" >
-                <i class="ti ti-pencil"></i>
-            </button>
+        <td>
+            <div class="actions d-flex gap-2">
+                <button
+                    type="button"
+                    class="btn btn-danger p-2"
+                    data-bs-toggle="modal"
+                    data-bs-target="#modalDelete"
+                >
+                    <i class="ti ti-trash"></i>
+                </button>
+                <button
+                    type="button"
+                    class="btn btn-primary p-2"
+                    data-bs-toggle="modal"
+                    data-bs-target="#modalEdit"
+                >
+                    <i class="ti ti-pencil"></i>
+                </button>
+            </div>
         </td>
         `;
         document.querySelector("tbody").appendChild(tr);
