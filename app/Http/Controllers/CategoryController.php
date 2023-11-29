@@ -13,7 +13,8 @@ class CategoryController extends Controller
     public function index()
     {
         //
-        return view('category.index', [
+
+        return view('home', [
             'categories' => Category::all()
         ]);
     }
@@ -32,10 +33,14 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
+        $imagen = $request->file('image_url')->store('public/images');
+        $url = asset($imagen);
+        $request->merge(['image_url' => $url]);
+        error_log($url);
         //
         $validatedData = $request->validate([
             'name' => 'required|max:255',
-            'image_url' => 'required|max:255'
+            'image_url' => 'required|image|max:2048'
         ]);
         Category::create([
             'name' => $validatedData['name'],
