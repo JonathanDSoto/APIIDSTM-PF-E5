@@ -37,7 +37,6 @@ class ClientController extends Controller
             'name' => 'required|max:255',
             'lastname' => 'max:255',
             'email' => 'required|email|unique:clients',
-            'password' => 'min:4',
             'phone' => 'required|numeric',
         ]);
 
@@ -48,7 +47,6 @@ class ClientController extends Controller
             'email' => $validatedData['email'],
             'phone' => $validatedData['phone'],
             'phone2' => $validatedData['phone2'] ?? null,
-            'password' => $validatedData['password']
         ]);
 
         return redirect(route('client.index'));
@@ -86,7 +84,6 @@ class ClientController extends Controller
             'name' => 'required|max:255',
             'lastname' => 'max:255',
             'email' => 'required|email|unique:clients,email,' . $client->id,
-            'password' => 'required|min:4',
             'phone' => 'required|numeric',
         ]);
 
@@ -96,7 +93,6 @@ class ClientController extends Controller
             'email' => $validatedData['email'],
             'phone' => $validatedData['phone'],
             'phone2' => $validatedData['phone2'] ?? null,
-            'password' => bcrypt($validatedData['password'])
         ]);
 
         return redirect(route('client.index'))->with('message', 'Cliente actualizado correctamente');
