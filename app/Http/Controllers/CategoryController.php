@@ -13,14 +13,16 @@ class CategoryController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(){
+    public function index()
+    {
         //
         return view('category.index', [
             'categories' => Category::all()
         ]);
     }
 
-    public function home(){
+    public function home()
+    {
         //
         return view('home', [
             'categories' => Category::all()
@@ -30,7 +32,8 @@ class CategoryController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create(){
+    public function create()
+    {
         //
         return view('category.create');
     }
@@ -41,9 +44,12 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         $response = Http::get('https://placehold.co/600x400/000000/FFFFFF/png');
+
         if ($response->ok()) {
-            $url = $response->url();
-            $request->merge(['image_url' => $url]);
+            $contents = $response->body();
+            $filename = 'images/placeholder.png';
+            Storage::put($filename, $contents);
+            $imageUrl = Storage::url($filename);
         }
 
         $validatedData = $request->validate([
@@ -51,16 +57,9 @@ class CategoryController extends Controller
             'image_url' => 'image|max:2048'
         ]);
 
-        $imagePath = $request->file('image_url')->store('public/images');
-        $imageUrl = null;
-
-        if (!Storage::exists($imagePath)) {
-            $imageUrl = asset(Storage::url($imagePath));
-        }
-
         Category::create([
             'name' => $validatedData['name'],
-            'image_url' => $imageUrl
+            'image_url' => $imageUrl ?? null
         ]);
         return redirect(route('home'));
     }
