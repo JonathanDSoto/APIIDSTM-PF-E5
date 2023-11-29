@@ -13,6 +13,9 @@ class ServicesController extends Controller
     public function index()
     {
         //
+        return view('services.index', [
+            'services' => Services::all()
+        ]);
     }
 
     /**
@@ -21,6 +24,7 @@ class ServicesController extends Controller
     public function create()
     {
         //
+        return view('services.create');
     }
 
     /**
@@ -29,14 +33,35 @@ class ServicesController extends Controller
     public function store(Request $request)
     {
         //
+        $validatedData = $request->validate([
+            'name' => 'required|max:255',
+            'resume' => 'required|max:255',
+            'is_active' => 'required',
+            'available_days' => 'required|max:255',
+            'category_id' => 'required',
+            'adultPrice' => 'required',
+            'childPrice' => 'required',
+        ]);
+        Services::create([
+            'name' => $validatedData['name'],
+            'resume' => $validatedData['resume'],
+            'is_active' => $validatedData['is_active'],
+            'available_days' => $validatedData['available_days'],
+            'category_id' => $validatedData['category_id'],
+            'adultPrice' => $validatedData['adultPrice'],
+            'childPrice' => $validatedData['childPrice'],
+        ]);
+        return redirect(route('service.index'))->with('message', 'Servicio creado correctamente');
     }
-
     /**
      * Display the specified resource.
      */
     public function show(Services $services)
     {
         //
+        return view('services.show', [
+            'services' => $services
+        ]);
     }
 
     /**
@@ -45,6 +70,9 @@ class ServicesController extends Controller
     public function edit(Services $services)
     {
         //
+        return view('services.edit', [
+            'services' => $services
+        ]);
     }
 
     /**
@@ -53,6 +81,25 @@ class ServicesController extends Controller
     public function update(Request $request, Services $services)
     {
         //
+        $validatedData = $request->validate([
+            'name' => 'required|max:255',
+            'resume' => 'required|max:255',
+            'is_active' => 'required',
+            'available_days' => 'required|max:255',
+            'category_id' => 'required',
+            'adultPrice' => 'required',
+            'childPrice' => 'required',
+        ]);
+        $services->update([
+            'name' => $validatedData['name'],
+            'resume' => $validatedData['resume'],
+            'is_active' => $validatedData['is_active'],
+            'available_days' => $validatedData['available_days'],
+            'category_id' => $validatedData['category_id'],
+            'adultPrice' => $validatedData['adultPrice'],
+            'childPrice' => $validatedData['childPrice'],
+        ]);
+        return redirect(route('service.index'))->with('message', 'Servicio actualizado correctamente');
     }
 
     /**
@@ -61,5 +108,7 @@ class ServicesController extends Controller
     public function destroy(Services $services)
     {
         //
+        $services->delete();
+        return redirect(route('service.index'))->with('message', 'Servicio eliminado correctamente');
     }
 }

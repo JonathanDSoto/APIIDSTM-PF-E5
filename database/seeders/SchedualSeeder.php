@@ -15,13 +15,13 @@ class SchedualSeeder extends Seeder
     {
         //
         Schedual::create([
-            'day' => 'Monday',
+            'day' => 'Lunes',
             'start' => '08:00:00',
             'end' => '17:00:00',
         ]);
 
         Schedual::create([
-            'day' => 'Friday',
+            'day' => 'Martes',
             'start' => '08:00:00',
             'end' => '17:00:00',
         ]);
