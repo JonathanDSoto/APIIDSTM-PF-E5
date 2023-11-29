@@ -39,8 +39,8 @@ Route::middleware(['auth'])->group(function (){
     })->name('home');
 
     Route::get('/dashboard', function() {
-        return view('dashboard');
-    })->name('dashboard');
+        return view('home');
+    })->name('home');
 
     // Crud de los clientes
     Route::group(['prefix' => 'clients'], function () {
