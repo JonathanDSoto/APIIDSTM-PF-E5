@@ -69,5 +69,11 @@
                 <div data-i18n="Dashboard">Dashboard</div>
             </a>
         </li>
+        <li class="menu-item {{ request()->is('client') ? 'active' : '' }}">
+            <a href="{{ route('client.index') }}" class="menu-link">
+                <i class="menu-icon tf-icons ti ti-chart-bar"></i>
+                <div>Clients</div>
+            </a>
+        </li>
     </ul>
 </aside>
