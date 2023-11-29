@@ -20,6 +20,7 @@ class ServicesSeeder extends Seeder
             'duration' => '2 horas',
             'category_id' => 1,
             'prices_id' => 1,
+            'schedual_id' => 1,
         ]);
     }
 }

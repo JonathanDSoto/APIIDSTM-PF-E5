@@ -16,7 +16,7 @@
                 <tr>
                     <td>
                         <i class="ti ti-brand-angular ti-lg text-info me-3"></i>
-                        {{-- <a href="{{ route('services', 'Motor') }}"> --}}
+                        <a href="{{ route('service.index') }}">
                             <span class="fw-medium">Motor</span>
                         </a>
                     </td>
@@ -78,7 +78,7 @@
                         <i
                             class="ti ti-brand-react-native ti-lg text-info me-3"
                         ></i>
-                        {{-- <a href="{{ route('services', 'Motor') }}"> --}}
+                        <a href="{{ route('service.index') }}">
                             <span class="fw-medium">Neumatico</span>
                         </a>
                     </td>
@@ -138,7 +138,7 @@
                 <tr>
                     <td>
                         <i class="ti ti-brand-vue ti-lg text-info me-3"></i>
-                        {{-- <a href="{{ route('services', 'Motor') }}"> --}}
+                        <a href="{{ route('service.index') }}">
                             <span class="fw-medium">Refaccion</span>
                         </a>
                     </td>
@@ -200,7 +200,7 @@
                         <i
                             class="ti ti-brand-react-native ti-lg text-info me-3"
                         ></i>
-                        {{-- <a href="{{ route('services', 'Motor') }}"> --}}
+                        <a href="{{ route('service.index') }}">
                             <span class="fw-medium">Electrico</span>
                         </a>
                     </td>
