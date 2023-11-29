@@ -16,7 +16,7 @@
                         <div
                             class="container container-p-y d-flex justify-content-between gap-2"
                         >
-                            <div>
+                            {{-- <div>
                                 <select
                                     class="form-select"
                                     aria-label="Default select example"
@@ -34,10 +34,11 @@
                                     class="form-control"
                                     placeholder="Search"
                                 />
-                            </div>
+                            </div> --}}
                             <button
                                 class="dt-button create-new btn btn-primary"
-                                aria-controls="DataTables_Table_0"
+                                data-bs-target="#addNewUser"
+                                data-bs-toggle="modal"
                                 tabindex="0"
                                 type="button"
                             >
@@ -48,54 +49,54 @@
                             <table class="table table-hover">
                                 <thead class="table-border-bottom-0">
                                     <tr>
-                                        <th>
-                                            <input
-                                                type="checkbox"
-                                                name="all"
-                                                id="all"
-                                            />
-                                        </th>
                                         <th>Id</th>
                                         <th>Name</th>
                                         <th>Last name</th>
                                         <th>Email</th>
+                                        <th>Phone Number</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>
-                                            <input
-                                                type="checkbox"
-                                                name="all"
-                                                id="all"
-                                            />
-                                        </td>
-                                        <td>1</td>
-                                        <td>
-                                            <a href="{{route('client.show', 1)}}"> Angel Daniel </a>
-                                        </td>
-                                        <td>Almanza Trejo</td>
-                                        <td>trejo@gmail.com</td>
-                                        <td class="actions">
-                                            <button
-                                                type="button"
-                                                class="btn btn-danger p-2"
-                                                data-bs-toggle="modal"
-                                                data-bs-target="#modalDelete"
-                                            >
-                                                <i class="ti ti-trash"></i>
-                                            </button>
-                                            <button
-                                                type="button"
-                                                class="btn btn-primary p-2"
-                                                data-bs-toggle="modal"
-                                                data-bs-target="#modalEdit"
-                                            >
-                                                <i class="ti ti-pencil"></i>
-                                            </button>
-                                        </td>
-                                    </tr>
+                                    @foreach ($clients as $client)
+                                        <tr>
+                                            <td>{{ $client->id }}</td>
+                                            <td>
+                                                <a href="{{route('client.show', $client->id)}}">{{ $client->name }}</a>
+                                            </td>
+                                            <td>{{ $client->lastname }}</td>
+                                            <td>{{ $client->email }}</td>
+                                            <td>{{ $client->phone }}</td>
+                                            <td class="actions">
+                                                <button
+                                                    type="button"
+                                                    class="btn btn-danger p-2"
+                                                    data-bs-toggle="modal"
+                                                    data-bs-target="#modalDelete"
+                                                    data-client-id="{{ $client->id }}"
+                                                    data-client-name="{{ $client->name }}"
+                                                    data-client-lastname="{{ $client->lastname }}"
+                                                    data-client-email="{{ $client->email }}"
+                                                    data-client-phone-number={{ $client->phone }}
+                                                >
+                                                    <i class="ti ti-trash"></i>
+                                                </button>
+                                                <button
+                                                    type="button"
+                                                    class="btn btn-primary p-2"
+                                                    data-bs-toggle="modal"
+                                                    data-bs-target="#modalEdit"
+                                                    data-client-id="{{ $client->id }}"
+                                                    data-client-name="{{ $client->name }}"
+                                                    data-client-lastname="{{ $client->lastname }}"
+                                                    data-client-email="{{ $client->email }}"
+                                                    data-client-phone-number={{ $client->phone }}
+                                                >
+                                                    <i class="ti ti-pencil"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
@@ -126,19 +127,11 @@
                         ></button>
                     </div>
                     <div class="modal-body col">
-                        <span class="row"> ID: <strong>1</strong> </span>
-                        <span class="row">
-                            Name:
-                            <strong>Angel Daniel</strong>
-                        </span>
-                        <span class="row">
-                            Last name:
-                            <strong>Almanza Trejo</strong>
-                        </span>
-                        <span class="row">
-                            Email:
-                            <strong>trejo@gmail.com</strong>
-                        </span>
+                        <span class="row"> ID: <strong id="modal-client-id"></strong> </span>
+                        <span class="row"> Name: <strong id="modal-client-name"></strong> </span>
+                        <span class="row"> Last name: <strong id="modal-client-lastname"></strong> </span>
+                        <span class="row"> Email: <strong id="modal-client-email"></strong> </span>
+                        <span class="row"> Phone Number: <strong id="modal-client-phone-number"></strong> </span>
                     </div>
                     <div class="modal-footer">
                         <button
@@ -181,46 +174,20 @@
                     <div class="modal-body">
                         <form>
                             <div class="mb-3">
-                                <label
-                                    for="name-edit"
-                                    class="col-form-label"
-                                >
-                                    Name:
-                                </label>
-                                <input
-                                    type="text"
-                                    class="form-control"
-                                    id="name-edit"
-                                    placeholder="Juan"
-                                />
+                                <label for="name-edit" class="col-form-label">Name:</label>
+                                <input type="text" class="form-control" id="name-edit" placeholder="Juan">
                             </div>
                             <div class="mb-3">
-                                <label
-                                    for="last-name-edit"
-                                    class="col-form-label"
-                                >
-                                    Message:
-                                </label>
-                                <input
-                                    type="text"
-                                    class="form-control"
-                                    id="last-name-edit"
-                                    placeholder="Hernadez"
-                                />
+                                <label for="last-name-edit" class="col-form-label">Lastname:</label>
+                                <input type="text" class="form-control" id="last-name-edit" placeholder="Hernandez">
                             </div>
                             <div class="mb-3">
-                                <label
-                                    for="email-edit"
-                                    class="col-form-label"
-                                >
-                                    Email:
-                                </label>
-                                <input
-                                    type="text"
-                                    class="form-control"
-                                    id="email-edit"
-                                    placeholder="juan@example.com"
-                                />
+                                <label for="email-edit" class="col-form-label">Email:</label>
+                                <input type="text" class="form-control" id="email-edit" placeholder="juan@example.com">
+                            </div>
+                            <div class="mb-3">
+                                <label for="phpne-number-edit" class="col-form-label">Phone Number:</label>
+                                <input type="text" class="form-control" id="phone-number-edit" placeholder="0000000000">
                             </div>
                         </form>
                     </div>
@@ -242,100 +209,164 @@
         <!-- /Modal edit -->
 
         <!-- Create new user -->
-        <div class="offcanvas offcanvas-end" id="add-new-user">
-            <div class="offcanvas-header border-bottom">
-                <h5 class="offcanvas-title" id="exampleModalLabel">
-                    New User
-                </h5>
-                <button
-                    type="button"
-                    class="btn-close text-reset"
-                    data-bs-dismiss="offcanvas"
-                    aria-label="Close"
-                ></button>
+        <div
+            class="modal fade"
+            id="addNewUser"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="modal-title fs-5">Add Client</h2>
+                        <button
+                            type="button"
+                            class="btn-close text-reset"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                        ></button>
+                    </div>
+                    <div class="modal-body">
+
+                        <form
+                            class="addNewUser pt-0 row g-2"
+                            id="form-addNewUser"
+                        >
+                            <div class="col-sm-12">
+                                <label class="form-label" for="name">Name</label>
+                                <div class="input-group input-group-merge">
+                                    <span
+                                        id="basicFullname2"
+                                        class="input-group-text"
+                                        ><i class="ti ti-user"></i
+                                    ></span>
+                                    <input
+                                        type="text"
+                                        id="name"
+                                        class="form-control dt-name"
+                                        name="name"
+                                        placeholder="Filomeno"
+                                        aria-label="Filomeno"
+                                        aria-describedby="basicFullname2"
+                                    />
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <label class="form-label" for="last-name">
+                                    Last name
+                                </label>
+                                <div class="input-group input-group-merge">
+                                    <span id="basicPost2" class="input-group-text">
+                                        <i class="ti ti-user"></i>
+                                    </span>
+                                    <input
+                                        type="text"
+                                        id="last-name"
+                                        name="last-name"
+                                        class="form-control dt-last-name"
+                                        placeholder="Pancrasio"
+                                        aria-label="Pancrasio"
+                                        aria-describedby="basicPost2"
+                                    />
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <label class="form-label" for="email">
+                                    Email
+                                </label>
+                                <div class="input-group input-group-merge">
+                                    <span class="input-group-text"
+                                        ><i class="ti ti-mail"></i
+                                    ></span>
+                                    <input
+                                        type="text"
+                                        id="email"
+                                        name="email"
+                                        class="form-control dt-email"
+                                        placeholder="elbergalarga@example.com"
+                                        aria-label="elbergalarga@example.com"
+                                    />
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <label class="form-label" for="phone-number">
+                                    Phone number
+                                </label>
+                                <div class="input-group input-group-merge">
+                                    <span class="input-group-text"
+                                        ><i class="ti ti-phone"></i
+                                    ></span>
+                                    <input
+                                        type="text"
+                                        id="phone-number"
+                                        name="phone-number"
+                                        class="form-control dt-phone-number"
+                                        placeholder="0123456789"
+                                        aria-label="0123456789"
+                                    />
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <button
+                                    type="submit"
+                                    class="btn btn-primary data-submit me-sm-3 me-1"
+                                >
+                                    Save
+                                </button>
+                                <button
+                                    type="reset"
+                                    class="btn btn-outline-secondary text-reset"
+                                    data-bs-dismiss="modal"
+                                    aria-label="Cancel"
+                                >
+                                    Cancel
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
             <div class="offcanvas-body flex-grow-1">
-                <form
-                    class="add-new-user pt-0 row g-2"
-                    id="form-add-new-user"
-                    onsubmit="return false"
-                >
-                    <div class="col-sm-12">
-                        <label class="form-label" for="name">Name</label>
-                        <div class="input-group input-group-merge">
-                            <span
-                                id="basicFullname2"
-                                class="input-group-text"
-                                ><i class="ti ti-user"></i
-                            ></span>
-                            <input
-                                type="text"
-                                id="name"
-                                class="form-control dt-name"
-                                name="name"
-                                placeholder="John Doe"
-                                aria-label="John Doe"
-                                aria-describedby="basicFullname2"
-                            />
-                        </div>
-                    </div>
-                    <div class="col-sm-12">
-                        <label class="form-label" for="last-name">
-                            Last name
-                        </label>
-                        <div class="input-group input-group-merge">
-                            <span id="basicPost2" class="input-group-text">
-                                <i class="ti ti-user"></i>
-                            </span>
-                            <input
-                                type="text"
-                                id="last-name"
-                                name="last-name"
-                                class="form-control dt-last-name"
-                                placeholder="Hernadez"
-                                aria-label="Hernadez"
-                                aria-describedby="basicPost2"
-                            />
-                        </div>
-                    </div>
-                    <div class="col-sm-12">
-                        <label class="form-label" for="email">
-                            Email
-                        </label>
-                        <div class="input-group input-group-merge">
-                            <span class="input-group-text"
-                                ><i class="ti ti-mail"></i
-                            ></span>
-                            <input
-                                type="text"
-                                id="email"
-                                name="email"
-                                class="form-control dt-email"
-                                placeholder="john.doe@example.com"
-                                aria-label="john.doe@example.com"
-                            />
-                        </div>
-                        <div class="form-text">
-                            You can use letters, numbers & periods
-                        </div>
-                    </div>
-                    <div class="col-sm-12">
-                        <button
-                            type="submit"
-                            class="btn btn-primary data-submit me-sm-3 me-1"
-                        >
-                            Save
-                        </button>
-                        <button
-                            type="reset"
-                            class="btn btn-outline-secondary"
-                            data-bs-dismiss="offcanvas"
-                        >
-                            Cancel
-                        </button>
-                    </div>
-                </form>
             </div>
         </div>
     </div>
+@endsection
+@section('scripts')
+{{-- Script to delete an user --}}
+<script>
+    $('#modalDelete').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget); // Button that triggered the modal
+        var clientId = button.data('client-id'); // Extract info from data-* attributes
+        var clientName = button.data('client-name');
+        var clientLastname = button.data('client-lastname');
+        var clientEmail = button.data('client-email');
+        var clientPhoneNumber = button.data('client-phone-number');
+
+        // Update the modal's content with the extracted info
+        $('#modal-client-id').text(clientId);
+        $('#modal-client-name').text(clientName);
+        $('#modal-client-lastname').text(clientLastname);
+        $('#modal-client-email').text(clientEmail);
+        $('#modal-client-phone-number').text(clientPhoneNumber)
+    });
+</script>
+
+{{-- Script to edit an user --}}
+<script>
+    $('#modalEdit').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget); // Button that triggered the modal
+        var clientId = button.data('client-id'); // Extract info from data-* attributes
+        var clientName = button.data('client-name');
+        var clientLastname = button.data('client-lastname');
+        var clientEmail = button.data('client-email');
+        var clientPhoneNumber = button.data('client-phone-number');
+
+        // Set the initial values of the form fields
+        $('#name-edit').val(clientName);
+        $('#last-name-edit').val(clientLastname);
+        $('#email-edit').val(clientEmail);
+        $('#phone-number-edit').val(clientPhoneNumber)
+    });
+</script>
 @endsection
