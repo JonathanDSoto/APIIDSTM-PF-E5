@@ -24,7 +24,7 @@
                     class="menu-item {{ Request::is('services/motor') ? 'active' : '' }}"
                 >
                     <a
-                        href="{{ route('services', 'motor') }}"
+                        {{-- href="{{ route('services', 'motor') }}" --}}
                         class="menu-link"
                     >
                         <div>Motor Service</div>
@@ -34,7 +34,7 @@
                     class="menu-item {{ Request::is('services/refaccion') ? 'active' : '' }}"
                 >
                     <a
-                        href="{{ route('services', 'refaccion') }}"
+                        {{-- href="{{ route('services', 'refaccion') }}" --}}
                         class="menu-link"
                     >
                         <div>Refaccion Service</div>
@@ -44,7 +44,7 @@
                     class="menu-item {{ Request::is('services/neumatico') ? 'active' : '' }}"
                 >
                     <a
-                        href="{{ route('services', 'neumatico') }}"
+                        {{-- href="{{ route('services', 'neumatico') }}" --}}
                         class="menu-link"
                     >
                         <div>Neumatico Service</div>
@@ -54,7 +54,7 @@
                     class="menu-item {{ Request::is('services/electrico') ? 'active' : '' }}"
                 >
                     <a
-                        href="{{ route('services', 'electrico') }}"
+                        {{-- href="{{ route('services', 'electrico') }}" --}}
                         class="menu-link"
                     >
                         <div>Electrico Service</div>
@@ -64,16 +64,9 @@
         </li>
         <!-- dashboard -->
         <li class="menu-item {{ request()->is('dashboard') ? 'active' : '' }}">
-            <a href="{{ route('dashboard') }}" class="menu-link">
+            <a href="{{ route('home') }}" class="menu-link">
                 <i class="menu-icon tf-icons ti ti-chart-bar"></i>
                 <div data-i18n="Dashboard">Dashboard</div>
-            </a>
-        </li>
-        <!-- cliente -->
-        <li class="menu-item {{ request()->is('clients') ? 'active' : '' }}">
-            <a href="{{ route('clients') }}" class="menu-link">
-                <i class="menu-icon tf-icons ti ti-user"></i>
-                <div data-i18n="Clients">Clients</div>
             </a>
         </li>
     </ul>
