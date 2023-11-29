@@ -9,7 +9,7 @@
         <p class="card-text">{{ $description }}</p>
         <p class="card-text">${{ $price }}</p>
         <a
-            href="{{ route('service-details', ['slug' => 'Motor', 'service' => 'Oil Change']) }}"
+            {{-- href="{{ route('service-details', ['slug' => 'Motor', 'service' => 'Oil Change']) }}" --}}
             class="btn btn-primary"
         >
             Detalles
