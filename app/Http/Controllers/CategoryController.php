@@ -13,6 +13,9 @@ class CategoryController extends Controller
     public function index()
     {
         //
+        return view('category.index', [
+            'categories' => Category::all()
+        ]);
     }
 
     /**
@@ -21,6 +24,7 @@ class CategoryController extends Controller
     public function create()
     {
         //
+        return view('category.create');
     }
 
     /**
@@ -29,6 +33,15 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         //
+        $validatedData = $request->validate([
+            'name' => 'required|max:255',
+            'image_url' => 'required|max:255'
+        ]);
+        Category::create([
+            'name' => $validatedData['name'],
+            'image_url' => $validatedData['image_url']
+        ]);
+        return redirect(route('category.index'));
     }
 
     /**
@@ -37,6 +50,10 @@ class CategoryController extends Controller
     public function show(Category $category)
     {
         //
+        $category->load('services');
+        return view('category.show', [
+            'category' => $category
+        ]);
     }
 
     /**
@@ -45,6 +62,9 @@ class CategoryController extends Controller
     public function edit(Category $category)
     {
         //
+        return view('category.edit', [
+            'category' => $category
+        ]);
     }
 
     /**
@@ -53,6 +73,15 @@ class CategoryController extends Controller
     public function update(Request $request, Category $category)
     {
         //
+        $validatedData = $request->validate([
+            'name' => 'required|max:255',
+            'image_url' => 'required|max:255'
+        ]);
+        $category->update([
+            'name' => $validatedData['name'],
+            'image_url' => $validatedData['image_url']
+        ]);
+        return redirect(route('category.index'))->with('message', 'Categoria actualizado correctamente');
     }
 
     /**
@@ -61,5 +90,7 @@ class CategoryController extends Controller
     public function destroy(Category $category)
     {
         //
+        $category->delete();
+        return redirect(route('category.index'))->with('message', 'Categoria eliminada correctamente');
     }
 }
