@@ -56,7 +56,7 @@ function fillTable() {
         </td>
         <td>${data.id}</td>
         <td>
-            <a href="${clientShowUrl}">
+            <a href="">
                 ${data.name}
             </a>
         </td>

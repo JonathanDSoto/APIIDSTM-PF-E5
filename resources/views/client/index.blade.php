@@ -18,11 +18,11 @@
         <div class="layout-wrapper layout-content-navbar">
             <div class="layout-container">
                 <!-- Menu -->
-                {{-- @include('layouts.menu') --}}
+                @include('layouts.menu')
                 <!-- Layout container -->
                 <div class="layout-page">
                     <!-- Navbar -->
-                    {{-- @include('layouts.navbar') --}}
+                    @include('layouts.navbar')
 
                     <!-- Content wrapper -->
                     <div class="container-xxl flex-grow-1 container-p-y">
@@ -90,13 +90,16 @@
                                             </td>
                                             <td>1</td>
                                             <td>
-                                                {{-- <a
+                                                {{--
+                                                <a
                                                     href="{{
                                                         route('client.show')
                                                     }}"
                                                 >
                                                     Angel Daniel
-                                                </a> --}}
+                                                </a>
+                                                --}}
+                                                <a href=""> Angel Daniel </a>
                                             </td>
                                             <td>Almanza Trejo</td>
                                             <td>trejo@gmail.com</td>
@@ -388,9 +391,7 @@
             }}"></script>
 
         <!-- Page JS -->
-        <script>
-            var clientShowUrl = "{{ e(route('client.show')) }}";
-        </script>
+
         <script src="{{ asset('assets/js/table-clients.js') }}"></script>
         <script src="{{ asset('assets/js/main.js') }}"></script>
     </body>
