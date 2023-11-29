@@ -18,7 +18,6 @@ class ClientSeeder extends Seeder
             'name' => 'Angel',
             'lastname' => 'Almanza',
             'email' => 'almanza@test.com',
-            'password' => bcrypt('secret'),
             'phone' => '1234567890',
         ]);
 
@@ -26,7 +25,6 @@ class ClientSeeder extends Seeder
             'name' => 'Carlos',
             'lastname' => 'Duverney',
             'email' => 'duverney@test.com',
-            'password' => bcrypt('secret'),
             'phone' => '1234567890',
         ]);
 
@@ -34,7 +32,6 @@ class ClientSeeder extends Seeder
             'name' => 'Eduardo',
             'lastname' => 'Murillo',
             'email' => 'murillo@test.com',
-            'password' => bcrypt('secret'),
             'phone' => '1234567890',
         ]);
 
@@ -42,7 +39,6 @@ class ClientSeeder extends Seeder
             'name' => 'Fernanda',
             'lastname' => 'Lopez',
             'email' => 'lopez@test.com',
-            'password' => bcrypt('secret'),
             'phone' => '1234567890',
         ]);
 
@@ -50,7 +46,6 @@ class ClientSeeder extends Seeder
             'name' => 'Gabriel',
             'lastname' => 'Ramirez',
             'email' => 'ramirez@test.com',
-            'password' => bcrypt('secret'),
             'phone' => '1234567890',
         ]);
 
@@ -58,7 +53,6 @@ class ClientSeeder extends Seeder
             'name' => 'Isabel',
             'lastname' => 'Gutierrez',
             'email' => 'gutierrez@test.com',
-            'password' => bcrypt('secret'),
             'phone' => '1234567890',
         ]);
 
@@ -66,7 +60,6 @@ class ClientSeeder extends Seeder
             'name' => 'Hector',
             'lastname' => 'Diaz',
             'email' => 'diaz@test.com',
-            'password' => bcrypt('secret'),
             'phone' => '1234567890',
         ]);
 
@@ -74,7 +67,6 @@ class ClientSeeder extends Seeder
             'name' => 'Karla',
             'lastname' => 'Martinez',
             'email' => 'martinez@test.com',
-            'password' => bcrypt('secret'),
             'phone' => '1234567890',
         ]);
 
@@ -82,7 +74,6 @@ class ClientSeeder extends Seeder
             'name' => 'Luis',
             'lastname' => 'Vargas',
             'email' => 'vargas@test.com',
-            'password' => bcrypt('secret'),
             'phone' => '1234567890',
         ]);
 
@@ -90,7 +81,6 @@ class ClientSeeder extends Seeder
             'name' => 'Monica',
             'lastname' => 'Perez',
             'email' => 'perez@test.com',
-            'password' => bcrypt('secret'),
             'phone' => '1234567890',
         ]);
     }
