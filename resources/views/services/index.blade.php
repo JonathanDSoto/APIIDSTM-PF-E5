@@ -10,42 +10,42 @@
                     <h1>Service/Test</h1>
                     <div class="container">
                         <div class="row row-cols-3 gap-3">
-                            <x-service-card
+                            <x-generic-card
                                 title="Change the engine oil"
                                 description="Replacing engine oil is crucial to maintaining high performance."
                                 price="350"
                             />
-                            <x-service-card
+                            <x-generic-card
                                 title="Change the engine oil"
                                 description="Replacing engine oil is crucial to maintaining high performance."
                                 price="350"
                             />
-                            <x-service-card
+                            <x-generic-card
                                 title="Change the engine oil"
                                 description="Replacing engine oil is crucial to maintaining high performance."
                                 price="350"
                             />
-                            <x-service-card
+                            <x-generic-card
                                 title="Change the engine oil"
                                 description="Replacing engine oil is crucial to maintaining high performance."
                                 price="350"
                             />
-                            <x-service-card
+                            <x-generic-card
                                 title="Change the engine oil"
                                 description="Replacing engine oil is crucial to maintaining high performance."
                                 price="350"
                             />
-                            <x-service-card
+                            <x-generic-card
                                 title="Change the engine oil"
                                 description="Replacing engine oil is crucial to maintaining high performance."
                                 price="350"
                             />
-                            <x-service-card
+                            <x-generic-card
                                 title="Change the engine oil"
                                 description="Replacing engine oil is crucial to maintaining high performance."
                                 price="350"
                             />
-                            <x-service-card
+                            <x-generic-card
                                 title="Change the engine oil"
                                 description="Replacing engine oil is crucial to maintaining high performance."
                                 price="350"

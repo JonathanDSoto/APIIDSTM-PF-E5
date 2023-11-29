@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="row row-cols-3 gap-3">
+        <x-generic-card
+            title="Category"
+            description=""
+            price=""
+        />
+        <x-generic-card
+            title="Category"
+            description=""
+            price=""
+        />
+        <x-generic-card
+            title="Category"
+            description=""
+            price=""
+        />
+        <x-generic-card
+            title="Category"
+            description=""
+            price=""
+        />
+        <x-generic-card
+            title="Category"
+            description=""
+            price=""
+        />
+        <x-generic-card
+            title="Category"
+            description=""
+            price=""
+        />
+    </div>
+</div>

@@ -57,6 +57,9 @@
         <script src="{{asset('assets/vendor/js/template-customizer.js')}}"></script>
         <script src="{{asset('assets/js/config.js')}}"></script>
 
+        {{-- Extras CSS --}}
+        @yield('css')
+
         <!-- Vite -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
 
