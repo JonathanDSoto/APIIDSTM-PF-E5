@@ -21,7 +21,7 @@ class CategorySeeder extends Seeder
 
         if ($response->ok()) {
             $contents = $response->body();
-            $filename = 'public/images/placeholder.png';
+            $filename = 'app/public/images/placeholder.png';
             Storage::put($filename, $contents);
             $imageUrl = Storage::url($filename);
         }
@@ -33,119 +33,77 @@ class CategorySeeder extends Seeder
 
         Category::create([
             'name' => 'Tour en Cuatrimoto',
+            'image_url' => $imageUrl ?? null
         ]);
 
         Category::create([
             'name' => 'Ruta Escénica en Coche',
+            'image_url' => $imageUrl ?? null
         ]);
 
         Category::create([
             'name' => 'Excursión en Barco',
+            'image_url' => $imageUrl ?? null
         ]);
 
         Category::create([
             'name' => 'Ciclismo de Montaña',
+            'image_url' => $imageUrl ?? null
         ]);
 
         Category::create([
             'name' => 'Exploración de Cuevas',
+            'image_url' => $imageUrl ?? null
         ]);
 
         Category::create([
             'name' => 'Tour en Segway',
+            'image_url' => $imageUrl ?? null
         ]);
 
         Category::create([
             'name' => 'Paseo a Caballo',
+            'image_url' => $imageUrl ?? null
         ]);
 
         Category::create([
             'name' => 'Visita a Viñedos',
+            'image_url' => $imageUrl ?? null
         ]);
 
         Category::create([
             'name' => 'Recorrido en Globo Aerostático',
+            'image_url' => $imageUrl ?? null
         ]);
 
         Category::create([
             'name' => 'Pesca Deportiva',
+            'image_url' => $imageUrl ?? null
         ]);
 
         Category::create([
             'name' => 'Clases de Surf',
+            'image_url' => $imageUrl ?? null
         ]);
 
         Category::create([
             'name' => 'Turismo Fotográfico',
+            'image_url' => $imageUrl ?? null
         ]);
 
         Category::create([
             'name' => 'Visita a Parques Nacionales',
+            'image_url' => $imageUrl ?? null
         ]);
 
         Category::create([
             'name' => 'Observación de Estrellas',
+            'image_url' => $imageUrl ?? null
         ]);
 
         Category::create([
             'name' => 'Tour de Arte Urbano',
+            'image_url' => $imageUrl ?? null
         ]);
-
-        Category::create([
-            'name' => 'Parapente',
-        ]);
-
-        Category::create([
-            'name' => 'Tour de Compras',
-        ]);
-
-        Category::create([
-            'name' => 'Excursión de Avistamiento de Ballenas',
-        ]);
-
-        Category::create([
-            'name' => 'Descenso de Aguas Bravas',
-        ]);
-
-        Category::create([
-            'name' => 'Recorrido Histórico a Pie',
-        ]);
-
-        Category::create([
-            'name' => 'Exploración de Ruinas Antiguas',
-        ]);
-
-        Category::create([
-            'name' => 'Tour de Aventuras',
-        ]);
-
-        Category::create([
-            'name' => 'Visita a Reservas Naturales',
-        ]);
-
-        Category::create([
-            'name' => 'Tour de Sabores Locales',
-        ]);
-
-        Category::create([
-            'name' => 'Caminata Nocturna',
-        ]);
-
-        Category::create([
-            'name' => 'Experiencia de Observación de Aves',
-        ]);
-
-        Category::create([
-            'name' => 'Recorrido en Kayak',
-        ]);
-
-        Category::create([
-            'name' => 'Tour de Arquitectura Histórica',
-        ]);
-
-        Category::create([
-            'name' => 'Paseo en Lancha Rápida',
-        ]);
-
     }
 }
