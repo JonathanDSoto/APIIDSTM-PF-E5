@@ -24,6 +24,7 @@ class ClientController extends Controller
     public function create()
     {
         //
+        return view('client.create');
     }
 
     /**
@@ -31,7 +32,26 @@ class ClientController extends Controller
      */
     public function store(Request $request)
     {
+
+        $validatedData = $request->validate([
+            'name' => 'required|max:255',
+            'lastname' => 'max:255',
+            'email' => 'required|email|unique:clients',
+            'password' => 'required|min:4',
+            'phone' => 'required|numeric',
+        ]);
+
         //
+        Client::create([
+            'name' => $validatedData['name'],
+            'lastname' => $validatedData['lastname'],
+            'email' => $validatedData['email'],
+            'phone' => $validatedData['phone'],
+            'phone2' => $validatedData['phone2'] ?? null,
+            'password' => bcrypt($validatedData['password'])
+        ]);
+
+        return redirect(route('client.index'));
     }
 
     /**
@@ -40,6 +60,9 @@ class ClientController extends Controller
     public function show(Client $client)
     {
         //
+        return view('client.show', [
+            'client' => $client
+        ]);
     }
 
     /**
@@ -48,6 +71,9 @@ class ClientController extends Controller
     public function edit(Client $client)
     {
         //
+        return view('client.edit', [
+            'client' => $client
+        ]);
     }
 
     /**
@@ -56,6 +82,24 @@ class ClientController extends Controller
     public function update(Request $request, Client $client)
     {
         //
+        $validatedData = $request->validate([
+            'name' => 'required|max:255',
+            'lastname' => 'max:255',
+            'email' => 'required|email|unique:clients,email,' . $client->id,
+            'password' => 'required|min:4',
+            'phone' => 'required|numeric',
+        ]);
+
+        $client->update([
+            'name' => $validatedData['name'],
+            'lastname' => $validatedData['lastname'],
+            'email' => $validatedData['email'],
+            'phone' => $validatedData['phone'],
+            'phone2' => $validatedData['phone2'] ?? null,
+            'password' => bcrypt($validatedData['password'])
+        ]);
+
+        return redirect(route('client.index'))->with('success', 'Cliente actualizado correctamente');
     }
 
     /**

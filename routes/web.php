@@ -46,6 +46,11 @@ Route::middleware(['auth'])->group(function (){
     Route::group(['prefix' => 'clients'], function () {
         Route::get('/', [ClientController::class, 'index'])->name('client.index');
         Route::get('/create', [ClientController::class, 'create'])->name('client.create');
+        Route::post('/store', [ClientController::class, 'store'])->name('client.store');
+        Route::get('/{client}', [ClientController::class, 'show'])->name('client.show');
+        Route::get('/{client}/edit', [ClientController::class, 'edit'])->name('client.edit');
+        Route::put('/{client}/update', [ClientController::class, 'update'])->name('client.update');
+        Route::delete('/{client}', [ClientController::class, 'destroy'])->name('client.destroy');
     });
 
     // Crud de los servicios
