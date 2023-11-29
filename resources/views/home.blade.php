@@ -1,4 +1,7 @@
 @extends('layouts.auth')
+@section('title')
+    Home
+@endsection
 @section('content')
     <div class="layout-wrapper layout-content-navbar">
         <div class="layout-container">
