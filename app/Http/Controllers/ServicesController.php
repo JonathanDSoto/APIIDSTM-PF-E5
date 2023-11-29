@@ -51,7 +51,7 @@ class ServicesController extends Controller
             'adultPrice' => $validatedData['adultPrice'],
             'childPrice' => $validatedData['childPrice'],
         ]);
-        return redirect(route('service.index'))->with('message', 'Servicio creado correctamente');
+        return redirect(route('category.show', ['category' => $validatedData['category_id']]))->with('message', 'Servicio creado correctamente');
     }
     /**
      * Display the specified resource.
@@ -100,7 +100,7 @@ class ServicesController extends Controller
             'adultPrice' => $validatedData['adultPrice'],
             'childPrice' => $validatedData['childPrice'],
         ]);
-        return redirect(route('service.index'))->with('message', 'Servicio actualizado correctamente');
+        return redirect(route('category.show', ['category' => $validatedData['category_id']]))->with('message', 'Servicio creado correctamente');
     }
 
     /**
@@ -110,6 +110,6 @@ class ServicesController extends Controller
     {
         //
         $services->delete();
-        return redirect(route('service.index'))->with('message', 'Servicio eliminado correctamente');
+        return redirect(route('category.index'))->with('message', 'Servicio eliminado correctamente');
     }
 }
