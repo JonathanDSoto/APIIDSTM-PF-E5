@@ -37,7 +37,7 @@ class ClientController extends Controller
             'name' => 'required|max:255',
             'lastname' => 'max:255',
             'email' => 'required|email|unique:clients',
-            'password' => 'required|min:4',
+            'password' => 'min:4',
             'phone' => 'required|numeric',
         ]);
 
@@ -48,7 +48,7 @@ class ClientController extends Controller
             'email' => $validatedData['email'],
             'phone' => $validatedData['phone'],
             'phone2' => $validatedData['phone2'] ?? null,
-            'password' => bcrypt($validatedData['password'])
+            'password' => $validatedData['password']
         ]);
 
         return redirect(route('client.index'));

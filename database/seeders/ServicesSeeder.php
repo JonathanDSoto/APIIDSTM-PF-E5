@@ -29,7 +29,7 @@ class ServicesSeeder extends Seeder
             'available_days' => 'Lunes, Martes, Miercoles, Jueves, Viernes, Sabado, Domingo',
             'is_active' => true,
             'category_id' => 1,
-            'prices_id' => 2,
+            'prices_id' => 1,
         ]);
 
         Services::create([
@@ -38,7 +38,7 @@ class ServicesSeeder extends Seeder
             'available_days' => 'Lunes, Martes, Miercoles, Jueves, Viernes, Sabado, Domingo',
             'is_active' => true,
             'category_id' => 1,
-            'prices_id' => 3,
+            'prices_id' => 1,
         ]);
     }
 }
