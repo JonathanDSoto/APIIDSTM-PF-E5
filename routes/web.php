@@ -50,7 +50,7 @@ Route::middleware(['auth'])->group(function (){
         Route::get('/{client}', [ClientController::class, 'show'])->name('client.show');
         Route::get('/{client}/edit', [ClientController::class, 'edit'])->name('client.edit');
         Route::put('/{client}/update', [ClientController::class, 'update'])->name('client.update');
-        Route::delete('/{client}', [ClientController::class, 'destroy'])->name('client.destroy');
+        Route::delete('/{client}/destroy', [ClientController::class, 'destroy'])->name('client.destroy');
     });
 
     // Crud de los servicios

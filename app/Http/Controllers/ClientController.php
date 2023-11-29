@@ -99,7 +99,7 @@ class ClientController extends Controller
             'password' => bcrypt($validatedData['password'])
         ]);
 
-        return redirect(route('client.index'))->with('success', 'Cliente actualizado correctamente');
+        return redirect(route('client.index'))->with('message', 'Cliente actualizado correctamente');
     }
 
     /**
@@ -108,5 +108,7 @@ class ClientController extends Controller
     public function destroy(Client $client)
     {
         //
+        $client->delete();
+        return redirect(route('client.index'))->with('message', 'Cliente eliminado correctamente');
     }
 }
