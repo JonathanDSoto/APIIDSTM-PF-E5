@@ -16,6 +16,6 @@ class Images extends Model
 
 
     public function services(){
-        return $this->belongsToMany(Service::class);
+        return $this->belongsToMany(Services::class);
     }
 }

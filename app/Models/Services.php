@@ -11,10 +11,11 @@ class Services extends Model
 
     protected $fillable = [
         'name',
-        'description',
+        'resume',
+        'duration',
         'category_id',
         'price_id',
-        'image_id'
+        'schedual_id',
     ];
 
     public function Images(){
