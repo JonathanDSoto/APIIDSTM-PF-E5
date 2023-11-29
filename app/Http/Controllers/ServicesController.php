@@ -39,8 +39,8 @@ class ServicesController extends Controller
             'is_active' => 'required',
             'available_days' => 'required|max:255',
             'category_id' => 'required',
-            'adultPrice' => 'required',
-            'childPrice' => 'required',
+            'adultPrice' => 'required|numeric',
+            'childPrice' => 'required|numeric',
         ]);
         Services::create([
             'name' => $validatedData['name'],
@@ -88,8 +88,8 @@ class ServicesController extends Controller
             'is_active' => 'required',
             'available_days' => 'required|max:255',
             'category_id' => 'required',
-            'adultPrice' => 'required',
-            'childPrice' => 'required',
+            'adultPrice' => 'required|numeric',
+            'childPrice' => 'required|numeric',
         ]);
         $services->update([
             'name' => $validatedData['name'],
