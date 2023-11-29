@@ -36,7 +36,7 @@
                         <div class="input-group input-group-merge">
                             <span class="input-group-text"><i class="ti ti-mail"></i></span>
                             <input type="text" id="email" name="email" class="form-control dt-email"
-                                placeholder="elbergalarga@example.com" aria-label="elbergalarga@example.com" />
+                                placeholder="example@example.com" aria-label="example@example.com" />
                         </div>
                     </div>
                     <div class="col-sm-12">

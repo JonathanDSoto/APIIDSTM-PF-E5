@@ -6,6 +6,7 @@
                 description=""
                 price=""
                 imagePath="{{ $category->image_url }}"
+                route="{{ route('category.show', $category->id) }}"
             />
         @endforeach
     </div>

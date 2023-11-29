@@ -17,6 +17,7 @@
                                 <i class="ti ti-plus"></i>
                             </button>
                         </div>
+                        <x-validation-errors />
                         @include('category.categories-table')
                     </div>
                     <div class="content-backdrop fade"></div>

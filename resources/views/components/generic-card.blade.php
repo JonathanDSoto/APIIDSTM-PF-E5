@@ -2,7 +2,7 @@
     <img
         src="{{ $imagePath }}"
         class="card-img-top"
-        alt="..."
+        alt="Image of {{ $title }}"
     />
     <div class="card-body">
         <h5 class="card-title">{{ $title }}</h5>
@@ -11,7 +11,7 @@
             <p class="card-text">${{ $price }}</p>
         @endif
         <a
-            {{-- href="{{ route('service-details', ['slug' => 'Motor', 'service' => 'Oil Change']) }}" --}}
+            href="{{ $route }}"
             class="btn btn-primary"
         >
             Detalles
