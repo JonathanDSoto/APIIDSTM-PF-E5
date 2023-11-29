@@ -59,6 +59,7 @@ class ServicesController extends Controller
     public function show(Services $services)
     {
         //
+        $services->load('images');
         return view('services.show', [
             'services' => $services
         ]);

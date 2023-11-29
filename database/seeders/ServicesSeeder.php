@@ -15,30 +15,75 @@ class ServicesSeeder extends Seeder
     {
         //
         Services::create([
-            'name' => 'Caminata',
-            'resume' => 'Caminata por el bosque',
-            'available_days' => 'Lunes, Martes, Miercoles, Jueves, Viernes, Sabado, Domingo',
+            'name' => 'Observación de Aves',
+            'resume' => 'Excursión para observar aves en su hábitat natural',
+            'available_days' => 'Martes, Jueves, Sábado, Domingo',
             'is_active' => true,
             'category_id' => 1,
-            'prices_id' => 1,
         ]);
 
         Services::create([
-            'name' => 'Ski acuatico',
-            'resume' => 'Ski acuatico en el lago',
-            'available_days' => 'Lunes, Martes, Miercoles, Jueves, Viernes, Sabado, Domingo',
+            'name' => 'Recorrido Histórico',
+            'resume' => 'Descubre la historia de la ciudad con un recorrido guiado',
+            'available_days' => 'Lunes, Miércoles, Viernes, Sábado',
             'is_active' => true,
             'category_id' => 1,
-            'prices_id' => 1,
         ]);
 
         Services::create([
-            'name' => 'Paseo de Camellos',
-            'resume' => 'Paseo de Camellos por el desierto',
-            'available_days' => 'Lunes, Martes, Miercoles, Jueves, Viernes, Sabado, Domingo',
+            'name' => 'Clases de Yoga',
+            'resume' => 'Practica yoga al aire libre con un instructor experimentado',
+            'available_days' => 'Lunes, Miércoles, Viernes',
             'is_active' => true,
             'category_id' => 1,
-            'prices_id' => 1,
+        ]);
+
+        Services::create([
+            'name' => 'Ruta en Bicicleta',
+            'resume' => 'Explora rutas panorámicas en bicicleta por la naturaleza circundante',
+            'available_days' => 'Martes, Jueves, Sábado',
+            'is_active' => true,
+            'category_id' => 1,
+        ]);
+
+        Services::create([
+            'name' => 'Tour Gastronómico',
+            'resume' => 'Descubre la deliciosa gastronomía local con este tour culinario',
+            'available_days' => 'Miércoles, Viernes, Domingo',
+            'is_active' => true,
+            'category_id' => 1,
+        ]);
+
+        Services::create([
+            'name' => 'Escalada en Roca',
+            'resume' => 'Experimenta la emoción de la escalada en las impresionantes montañas locales',
+            'available_days' => 'Lunes, Jueves, Sábado',
+            'is_active' => true,
+            'category_id' => 1,
+        ]);
+
+        Services::create([
+            'name' => 'Paseo en Barco',
+            'resume' => 'Disfruta de un relajante paseo en barco por el lago al atardecer',
+            'available_days' => 'Martes, Viernes, Domingo',
+            'is_active' => true,
+            'category_id' => 1,
+        ]);
+
+        Services::create([
+            'name' => 'Curso de Fotografía',
+            'resume' => 'Aprende técnicas de fotografía mientras exploras paisajes impresionantes',
+            'available_days' => 'Miércoles, Sábado',
+            'is_active' => true,
+            'category_id' => 1,
+        ]);
+
+        Services::create([
+            'name' => 'Recorrido en Helicóptero',
+            'resume' => 'Experimenta vistas aéreas espectaculares con un emocionante recorrido en helicóptero',
+            'available_days' => 'Jueves, Sábado, Domingo',
+            'is_active' => true,
+            'category_id' => 1,
         ]);
     }
 }
