@@ -1,16 +1,13 @@
-@extends('layouts.auth')
-@section('title')
-    Cliente
-@endsection
+@extends('layouts.auth') @section('title') Clients @endsection
 @section('content')
-    <div class="layout-wrapper layout-content-navbar">
-        <div class="layout-container">
-            @include('layouts.menu')
-            <div class="layout-page">
-                @include('layouts.navbar')
+<div class="layout-wrapper layout-content-navbar">
+    <div class="layout-container">
+        @include('layouts.menu')
+        <div class="layout-page">
+            @include('layouts.navbar')
 
-                <div class="container-xxl flex-grow-1 container-p-y">
-                    <h1>Clients</h1>
+            <div class="container-xxl flex-grow-1 container-p-y">
+                <h1>Clients</h1>
 
                     <div class="card container table-data my-5 p-3">
                         <div

@@ -58,7 +58,9 @@
             </a>
         </li>
         <!-- cliente -->
-        <li class="menu-item {{ request()->is('client') ? 'active' : '' }}">
+        <li
+            class="menu-item {{ request()->routeIs('client.index') ? 'active' : '' }}"
+        >
             <a href="{{ route('client.index') }}" class="menu-link">
                 <i class="menu-icon tf-icons ti ti-user"></i>
                 <div data-i18n="Clients">Clients</div>

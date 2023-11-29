@@ -37,5 +37,61 @@ class ClientSeeder extends Seeder
             'password' => bcrypt('secret'),
             'phone' => '1234567890',
         ]);
+
+        Client::create([
+            'name' => 'Fernanda',
+            'lastname' => 'Lopez',
+            'email' => 'lopez@test.com',
+            'password' => bcrypt('secret'),
+            'phone' => '1234567890',
+        ]);
+
+        Client::create([
+            'name' => 'Gabriel',
+            'lastname' => 'Ramirez',
+            'email' => 'ramirez@test.com',
+            'password' => bcrypt('secret'),
+            'phone' => '1234567890',
+        ]);
+
+        Client::create([
+            'name' => 'Isabel',
+            'lastname' => 'Gutierrez',
+            'email' => 'gutierrez@test.com',
+            'password' => bcrypt('secret'),
+            'phone' => '1234567890',
+        ]);
+
+        Client::create([
+            'name' => 'Hector',
+            'lastname' => 'Diaz',
+            'email' => 'diaz@test.com',
+            'password' => bcrypt('secret'),
+            'phone' => '1234567890',
+        ]);
+
+        Client::create([
+            'name' => 'Karla',
+            'lastname' => 'Martinez',
+            'email' => 'martinez@test.com',
+            'password' => bcrypt('secret'),
+            'phone' => '1234567890',
+        ]);
+
+        Client::create([
+            'name' => 'Luis',
+            'lastname' => 'Vargas',
+            'email' => 'vargas@test.com',
+            'password' => bcrypt('secret'),
+            'phone' => '1234567890',
+        ]);
+
+        Client::create([
+            'name' => 'Monica',
+            'lastname' => 'Perez',
+            'email' => 'perez@test.com',
+            'password' => bcrypt('secret'),
+            'phone' => '1234567890',
+        ]);
     }
 }

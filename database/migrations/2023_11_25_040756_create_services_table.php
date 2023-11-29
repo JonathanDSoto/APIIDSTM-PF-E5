@@ -17,9 +17,11 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->longText('resume');
-            $table->string('duration');
+            $table->boolean('is_active')->default(true);
+            $table->string('available_days');
             $table->foreignIdFor(Category::class)->constrained();
-            $table->foreignIdFor(Prices::class)->constrained();
+            $table->float('adultPrice', 8, 2)->default(0);
+            $table->float('childPrice', 8, 2)->default(0);
             $table->timestamps();
         });
     }
