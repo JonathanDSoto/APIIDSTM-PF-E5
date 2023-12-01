@@ -35,5 +35,13 @@
                 <div data-i18n="Reservations">Reservations</div>
             </a>
         </li>
+        <li
+            class="menu-item {{ request()->routeIs('category.index') || request()->routeIs('category.show') ? 'active' : '' }}"
+        >
+            <a href="{{ route('category.index') }}" class="menu-link">
+                <i class="menu-icon tf-icons ti ti-hotel-service"></i>
+                <div data-i18n="Categories">Categories</div>
+            </a>
+        </li>
     </ul>
 </aside>

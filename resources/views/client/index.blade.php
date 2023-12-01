@@ -1,4 +1,4 @@
-@extends('layouts.auth') @section('title') Clients @endsection
+@extends('layouts.auth') @section('title') Categories @endsection
 @section('content')
 <div class="layout-wrapper layout-content-navbar">
     <div class="layout-container">
