@@ -1,76 +1,74 @@
-<!DOCTYPE html>
+@extends('layouts.auth') @section('title') Clients @endsection
+@section('content')
+<div class="layout-wrapper layout-content-navbar">
+    <div class="layout-container">
+        @include('layouts.menu')
+        <div class="layout-page">
+            @include('layouts.navbar')
 
-<html
-    lang="en"
-    class="light-style layout-navbar-fixed layout-menu-fixed layout-compact"
-    dir="ltr"
-    data-theme="theme-default"
-    data-assets-path="../../assets/"
-    data-template="vertical-menu-template"
->
-    <head>
-        @include('layouts.head')
-        <title>Reservations</title>
-    </head>
+            <div class="container-xxl flex-grow-1 container-p-y">
+                <h1>Clients</h1>
 
-    <body>
-        <!-- Layout wrapper -->
-        <div class="layout-wrapper layout-content-navbar">
-            <div class="layout-container">
-                <!-- Menu -->
-                @include('layouts.menu')
-                <!-- Layout container -->
-                <div class="layout-page">
-                    <!-- Navbar -->
-                    @include('layouts.navbar')
-
-                    <!-- Content wrapper -->
-                    <div class="content-wrapper">
-                        <!-- Content -->
-                        <div class="container-xxl flex-grow-1 container-p-y">
-                            @include('layouts.calendar')
-                        </div>
-                        <!-- / Content -->
-                        <div class="content-backdrop fade"></div>
-                    </div>
-                    <!-- Content wrapper -->
-                </div>
-                <!-- / Layout page -->
+                @include('layouts.calendar')
             </div>
-
-            <!-- Overlay -->
-            <div class="layout-overlay layout-menu-toggle"></div>
-
-            <!-- Drag Target Area To SlideIn Menu On Small Screens -->
-            <div class="drag-target"></div>
         </div>
-        <!-- / Layout wrapper -->
+    </div>
 
-        <!-- Core JS -->
-        <!-- build:js assets/vendor/js/core.js -->
+    {{-- Modal  delete --}}
+    @include('client.delete-user')
+    {{-- Modal  delete --}}
 
-        <script src="../../assets/vendor/libs/jquery/jquery.js"></script>
-        <script src="../../assets/vendor/libs/popper/popper.js"></script>
-        <script src="../../assets/vendor/js/bootstrap.js"></script>
-        <script src="../../assets/vendor/libs/node-waves/node-waves.js"></script>
-        <script src="../../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
-        <script src="../../assets/vendor/libs/hammer/hammer.js"></script>
-        <script src="../../assets/vendor/libs/i18n/i18n.js"></script>
-        <script src="../../assets/vendor/libs/typeahead-js/typeahead.js"></script>
-        <script src="../../assets/vendor/js/menu.js"></script>
+    {{-- Modal  edit --}}
+    @include('client.edit-user')
+    {{-- Modal  edit --}}
 
-        <!-- endbuild -->
+    {{-- Modal create --}}
+    @include('client.add-user')
+    {{-- Modal create --}}
+</div>
+@endsection @section('scripts')
 
-        <!-- Vendors JS -->
-        <script src="../../assets/vendor/libs/select2/select2.js"></script>
-        <script src="../../assets/vendor/libs/plyr/plyr.js"></script>
+{{-- Script to responsive table --}}
+<script src="{{ asset('assets/js/table-clients.js') }}"></script>
 
-        <!-- Main JS -->
-        <script src="../../assets/js/main.js"></script>
+{{-- Script to delete an user --}}
+<script>
+    $("#modalDelete").on("show.bs.modal", function (event) {
+        var button = $(event.relatedTarget); // Button that triggered the modal
+        var clientId = button.data("client-id"); // Extract info from data-* attributes
+        var clientName = button.data("client-name");
+        var clientLastname = button.data("client-lastname");
+        var clientEmail = button.data("client-email");
+        var clientPhoneNumber = button.data("client-phone-number");
+        var clientDeleteRoute = button.data("client-delete-route");
 
-        <!-- Page JS -->
-        <script src="../../assets/js/app-academy-course.js"></script>
-    </body>
-</html>
+        // Update the modal's content with the extracted info
+        $("#modal-client-id").text(clientId);
+        $("#modal-client-name").text(clientName);
+        $("#modal-client-lastname").text(clientLastname);
+        $("#modal-client-email").text(clientEmail);
+        $("#modal-client-phone-number").text(clientPhoneNumber);
+        $("#modalDelete").attr("action", clientDeleteRoute);
+    });
+</script>
 
-<!-- beautify ignore:end -->
+{{-- Script to edit an user --}}
+<script>
+    $("#modalEdit").on("show.bs.modal", function (event) {
+        var button = $(event.relatedTarget); // Button that triggered the modal
+        var clientId = button.data("client-id"); // Extract info from data-* attributes
+        var clientName = button.data("client-name");
+        var clientLastname = button.data("client-lastname");
+        var clientEmail = button.data("client-email");
+        var clientPhoneNumber = button.data("client-phone-number");
+        var clientEditRoute = button.data("client-edit-route");
+
+        // Set the initial values of the form fields
+        $("#name-edit").val(clientName);
+        $("#last-name-edit").val(clientLastname);
+        $("#email-edit").val(clientEmail);
+        $("#phone-number-edit").val(clientPhoneNumber);
+        $("#modalEdit").attr("action", clientEditRoute);
+    });
+</script>
+@endsection

@@ -34,6 +34,10 @@ Route::get('register', function () {
     return view('auth.register');
 })->name('register');
 
+Route::get('reservation', function () {
+    return view('reservation.index');
+})->name('reservation');
+
 Route::middleware(['auth'])->group(function (){
     Route::get('/home', [CategoryController::class, 'home'])->name('home');
 

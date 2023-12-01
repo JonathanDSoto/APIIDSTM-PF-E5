@@ -10,12 +10,14 @@
         </li>
 
         <!-- dashboard -->
-        {{-- <li class="menu-item {{ request()->is('dashboard') ? 'active' : '' }}">
+        {{--
+        <li class="menu-item {{ request()->is('dashboard') ? 'active' : '' }}">
             <a href="{{ route('home') }}" class="menu-link">
                 <i class="menu-icon tf-icons ti ti-chart-bar"></i>
                 <div data-i18n="Dashboard">Dashboard</div>
             </a>
-        </li> --}}
+        </li>
+        --}}
         <!-- cliente -->
         <li
             class="menu-item {{ request()->routeIs('client.index') ? 'active' : '' }}"
@@ -23,6 +25,14 @@
             <a href="{{ route('client.index') }}" class="menu-link">
                 <i class="menu-icon tf-icons ti ti-user"></i>
                 <div data-i18n="Clients">Clients</div>
+            </a>
+        </li>
+        <li
+            class="menu-item {{ request()->routeIs('reservation.index') ? 'active' : '' }}"
+        >
+            <a href="{{ route('reservation.index') }}" class="menu-link">
+                <i class="menu-icon tf-icons ti ti-calendar-event"></i>
+                <div data-i18n="Reservations">Reservations</div>
             </a>
         </li>
     </ul>

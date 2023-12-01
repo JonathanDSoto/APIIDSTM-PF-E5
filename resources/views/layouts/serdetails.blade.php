@@ -8,7 +8,7 @@
         </div>
         <div class="col-md-8">
             <div class="card-body">
-                <h5 class="card-title">Title</h5>
+                <h5 class="card-title">Name</h5>
                 <p class="card-text">
                     This is a wider card with supporting text below as a natural
                     lead-in to additional content. This content is a little bit
@@ -98,15 +98,15 @@
                 id="form-tabs-performed"
                 role="tabpanel"
             >
-                <h2 class="card-header">Reservaciones</h2>
+                <h2 class="card-header">Reservations</h2>
                 <table class="table">
                     <thead>
                         <tr class="text-no-wrap">
                             <th>#</th>
-                            <th>Servicio</th>
-                            <th>Cliente</th>
-                            <th>Fecha inicio</th>
-                            <th>Costo</th>
+                            <th>Service</th>
+                            <th>Client</th>
+                            <th>start date</th>
+                            <th>Cost</th>
                         </tr>
                     </thead>
                     <tbody>
