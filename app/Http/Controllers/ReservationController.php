@@ -13,6 +13,9 @@ class ReservationController extends Controller
     public function index()
     {
         //
+        return view('reservation.index', [
+            'reservations' => Reservation::all()
+        ]);
     }
 
     /**
@@ -21,6 +24,7 @@ class ReservationController extends Controller
     public function create()
     {
         //
+        return view('reservation.create');
     }
 
     /**
@@ -29,6 +33,7 @@ class ReservationController extends Controller
     public function store(Request $request)
     {
         //
+
     }
 
     /**
@@ -61,5 +66,7 @@ class ReservationController extends Controller
     public function destroy(Reservation $reservation)
     {
         //
+        $reservation->delete();
+        return redirect(route('reservation.index'))->with('message', 'Reservación eliminada correctamente');
     }
 }
