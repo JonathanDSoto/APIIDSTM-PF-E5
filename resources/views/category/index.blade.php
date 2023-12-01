@@ -1,17 +1,12 @@
-@extends('layouts.auth') @section('title') Categories @endsection
-@section('content')
-<div class="layout-wrapper layout-content-navbar">
-    <div class="layout-container">
-        @include('layouts.menu')
-        <div class="layout-page">
-            @include('layouts.navbar')
+@extends('layouts.auth')
 
-            <div class="container-xxl container-p-y">
-                <h1>Categories</h1>
-                @include('category.categories-table')
-            </div>
-        </div>
-    </div>
+@section('title')
+    Categories
+@endsection
+
+@section('content')
+    <h1>Categories</h1>
+    @include('category.categories-table')
 
     {{-- Modal  delete --}}
     @include('client.delete-user')
@@ -24,5 +19,4 @@
     {{-- Modal create --}}
     @include('client.add-user')
     {{-- Modal create --}}
-</div>
-@endsection @section('scripts') @endsection
+@endsection

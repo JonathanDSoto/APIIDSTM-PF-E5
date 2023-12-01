@@ -10,14 +10,12 @@
                     id="form-addNewCategory">
                     @csrf
                     @method('POST')
-                    <div class="col-sm-12">
-                        <label class="form-label" for="name">Name</label>
-                        <div class="input-group input-group-merge">
-                            <span id="basicFullname2" class="input-group-text"><i class="ti ti-category"></i></span>
-                            <input type="text" id="name" class="form-control dt-name" name="name"
-                                placeholder="Filomeno" aria-label="Filomeno" aria-describedby="basicFullname2" />
-                        </div>
-                    </div>
+                    <x-input-field
+                        label="Name"
+                        id="name"
+                        name="name"
+                        placeholder="Name of category"
+                    />
                     <div class="col-sm-12">
                         <button type="submit" class="btn btn-primary data-submit me-sm-3 me-1">
                             Save

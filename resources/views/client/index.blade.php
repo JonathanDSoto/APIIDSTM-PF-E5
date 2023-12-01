@@ -1,101 +1,95 @@
-@extends('layouts.auth') @section('title') Categories @endsection
+@extends('layouts.auth')
+
+@section('title')
+    Categories
+@endsection
+
 @section('content')
-<div class="layout-wrapper layout-content-navbar">
-    <div class="layout-container">
-        @include('layouts.menu')
-        <div class="layout-page">
-            @include('layouts.navbar')
-
-            <div class="container-xxl flex-grow-1 container-p-y">
-                <h1>Clients</h1>
-
-                <div class="card container table-data my-5 p-3">
-                    <div
-                        class="container container-p-y d-flex justify-content-between gap-2"
-                    >
-                        <div class="d-flex align-items-center gap-2">
-                            <input
-                                type="text"
-                                id="search-client"
-                                class="form-control"
-                                placeholder="Search"
-                            />
-                        </div>
-                        <button
-                            class="dt-button create-new btn btn-primary"
-                            data-bs-target="#addNewUser"
-                            data-bs-toggle="modal"
-                            tabindex="0"
-                            type="button"
-                        >
-                            <i class="ti ti-plus"></i>
-                        </button>
-                    </div>
-                    <x-validation-errors class="my-4" />
-                    <div class="card-datatable overflow-auto">
-                        <table class="table table-hover">
-                            <thead class="table-border-bottom-0">
-                                <tr>
-                                    <th>Id</th>
-                                    <th>Name</th>
-                                    <th>Last name</th>
-                                    <th>Email</th>
-                                    <th>Phone Number</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody id="data-table">
-                                @foreach ($clients as $client)
-                                <tr>
-                                    <td>{{ $client->id }}</td>
-                                    <td>
-                                        <a
-                                            href="{{ route('client.show', $client->id) }}"
-                                            >{{ $client->name }}</a
-                                        >
-                                    </td>
-                                    <td>{{ $client->lastname }}</td>
-                                    <td>{{ $client->email }}</td>
-                                    <td>{{ $client->phone }}</td>
-                                    <td class="actions">
-                                        <button
-                                            type="button"
-                                            class="btn btn-danger p-2"
-                                            data-bs-toggle="modal"
-                                            data-bs-target="#modalDelete"
-                                            data-client-id="{{ $client->id }}"
-                                            data-client-name="{{ $client->name }}"
-                                            data-client-lastname="{{ $client->lastname }}"
-                                            data-client-email="{{ $client->email }}"
-                                            data-client-phone-number="{{ $client->phone }}"
-                                            data-client-delete-route={{ route('client.destroy', $client->id) }}
-                                            >
-                                            <i class="ti ti-trash"></i>
-                                        </button>
-                                        <button
-                                            type="button"
-                                            class="btn btn-primary p-2"
-                                            data-bs-toggle="modal"
-                                            data-bs-target="#modalEdit"
-                                            data-client-id="{{ $client->id }}"
-                                            data-client-name="{{ $client->name }}"
-                                            data-client-lastname="{{ $client->lastname }}"
-                                            data-client-email="{{ $client->email }}"
-                                            data-client-phone-number="{{$client->phone }}"
-                                            data-client-edit-route={{ route('client.update', $client->id) }}
-                                            >
-                                            <i class="ti ti-pencil"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
-                    </div>
-                    @include('client.pagination')
-                </div>
+    <h1>Clients</h1>
+    <div class="card container table-data my-5 p-3">
+        <div
+            class="container container-p-y d-flex justify-content-between gap-2"
+        >
+            <div class="d-flex align-items-center gap-2">
+                <input
+                    type="text"
+                    id="search-client"
+                    class="form-control"
+                    placeholder="Search"
+                />
             </div>
+            <button
+                class="dt-button create-new btn btn-primary"
+                data-bs-target="#addNewUser"
+                data-bs-toggle="modal"
+                tabindex="0"
+                type="button"
+            >
+                <i class="ti ti-plus"></i>
+            </button>
         </div>
+        <x-validation-errors class="my-4" />
+        <div class="card-datatable overflow-auto">
+            <table class="table table-hover">
+                <thead class="table-border-bottom-0">
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Last name</th>
+                        <th>Email</th>
+                        <th>Phone Number</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="data-table">
+                    @foreach ($clients as $client)
+                    <tr>
+                        <td>{{ $client->id }}</td>
+                        <td>
+                            <a
+                                href="{{ route('client.show', $client->id) }}"
+                                >{{ $client->name }}</a
+                            >
+                        </td>
+                        <td>{{ $client->lastname }}</td>
+                        <td>{{ $client->email }}</td>
+                        <td>{{ $client->phone }}</td>
+                        <td class="actions">
+                            <button
+                                type="button"
+                                class="btn btn-danger p-2"
+                                data-bs-toggle="modal"
+                                data-bs-target="#modalDelete"
+                                data-client-id="{{ $client->id }}"
+                                data-client-name="{{ $client->name }}"
+                                data-client-lastname="{{ $client->lastname }}"
+                                data-client-email="{{ $client->email }}"
+                                data-client-phone-number="{{ $client->phone }}"
+                                data-client-delete-route={{ route('client.destroy', $client->id) }}
+                                >
+                                <i class="ti ti-trash"></i>
+                            </button>
+                            <button
+                                type="button"
+                                class="btn btn-primary p-2"
+                                data-bs-toggle="modal"
+                                data-bs-target="#modalEdit"
+                                data-client-id="{{ $client->id }}"
+                                data-client-name="{{ $client->name }}"
+                                data-client-lastname="{{ $client->lastname }}"
+                                data-client-email="{{ $client->email }}"
+                                data-client-phone-number="{{$client->phone }}"
+                                data-client-edit-route={{ route('client.update', $client->id) }}
+                                >
+                                <i class="ti ti-pencil"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+        @include('client.pagination')
     </div>
 
     {{-- Modal  delete --}}
@@ -109,8 +103,9 @@
     {{-- Modal create --}}
     @include('client.add-user')
     {{-- Modal create --}}
-</div>
-@endsection @section('scripts')
+@endsection
+
+@section('scripts')
 
 {{-- Script to responsive table --}}
 <script src="{{asset('assets/js/table-clients.js')}}"></script>

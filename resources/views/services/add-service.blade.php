@@ -10,43 +10,37 @@
                     id="form-addNewService">
                     @csrf
                     @method('POST')
-                    <div class="col-sm-12">
-                        <label class="form-label" for="name">Name</label>
-                        <div class="input-group input-group-merge">
-                            <span id="basicFullname2" class="input-group-text"><i class="ti ti-category"></i></span>
-                            <input type="text" id="name" class="form-control dt-name" name="name"
-                                placeholder="Name" aria-label="Name" aria-describedby="basicFullname2" />
-                        </div>
-                    </div>
-                    <div class="col-sm-12">
-                        <label class="form-label" for="resume">Resume</label>
-                        <div class="input-group input-group-merge">
-                            <span id="basicFullname2" class="input-group-text"><i class="ti ti-category"></i></span>
-                            <input type="text" id="resume" class="form-control dt-resume" name="resume"
-                                placeholder="Resume" aria-label="Resume" aria-describedby="basicFullname2" />
-                        </div>
-                    </div>
-                    <div class="col-sm-12">
-                        <label class="form-label" for="adultPrice">Adult Price</label>
-                        <div class="input-group input-group-merge">
-                            <span id="basicFullname2" class="input-group-text"><i class="ti ti-category"></i></span>
-                            <input type="text" id="adultPrice" class="form-control dt-resume" name="adultPrice"
-                            placeholder="Adult Price" aria-label="adultPrice" aria-describedby="basicFullname2" />
-                        </div>
-                    </div>
-                    <div class="col-sm-12">
-                        <label class="form-label" for="childPrice">Child Price</label>
-                        <div class="input-group input-group-merge">
-                            <span id="basicFullname2" class="input-group-text"><i class="ti ti-category"></i></span>
-                            <input type="text" id="childPrice" class="form-control dt-resume" name="childPrice"
-                            placeholder="Child Price" aria-label="childPrice" aria-describedby="basicFullname2" />
-                        </div>
-                    </div>
+                    <x-input-field
+                        label="Name"
+                        id="name"
+                        name="name"
+                        placeholder="Name"
+                    />
+                    <x-input-field
+                        label="Description"
+                        id="resume"
+                        name="resume"
+                        placeholder="Description"
+                    />
+                    <x-input-field
+                        label="Adult Price"
+                        id="adultPrice"
+                        name="adultPrice"
+                        placeholder="Adult Price"
+                        type="number"
+                        />
+                        <x-input-field
+                        label="Child Price"
+                        id="childPrice"
+                        name="childPrice"
+                        placeholder="Child Price"
+                        type="number"
+                    />
                     <input type="hidden" id="isActive" class="form-check dt-resume ms-1" name="is_active" value="1" />
                     <input type="hidden" id="availableDays" class="form-control dt-resume" name="available_days"
-                        placeholder="available_days" aria-label="available_days" aria-describedby="basicFullname2" value="Lunes" />
+                        placeholder="available_days" value="Lunes" />
                     <input type="hidden" id="category_id" class="form-control dt-resume" name="category_id"
-                        placeholder="category_id" aria-label="category_id" aria-describedby="basicFullname2" value="{{ $category->id }}" />
+                        placeholder="category_id" value="{{ $category->id }}" />
                     <div class="col-sm-12">
                         <button type="submit" class="btn btn-primary data-submit me-sm-3 me-1">
                             Save
@@ -59,7 +53,5 @@
                 </form>
             </div>
         </div>
-    </div>
-    <div class="offcanvas-body flex-grow-1">
     </div>
 </div>

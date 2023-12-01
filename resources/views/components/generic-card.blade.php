@@ -1,3 +1,5 @@
+@props(['title', 'description', 'price' => '', 'route', 'idElement', 'routeDelete', 'routeEdit'])
+
 <div class="card col p-0 shadow position-relative" style="width: 18rem">
     <div class="dropdown position-absolute end-0">
         <button
@@ -16,6 +18,10 @@
                         class="btn btn-primary"
                         style="width: 100%"
                         type="button"
+                        data-bs-toggle="modal"
+                        data-bs-target="#modalEdit"
+                        data-element-id="{{ $idElement }}"
+                        data-element-edit-route="{{ route($routeEdit, $idElement) }}"
                     >
                         <i class="menu-icon tf-icons ti ti-pencil"></i>
                         <span>Edit</span>
@@ -28,6 +34,10 @@
                         class="btn btn-danger"
                         style="width: 100%"
                         type="button"
+                        data-bs-toggle="modal"
+                        data-bs-target="#modalDelete"
+                        data-element-id="{{ $idElement }}"
+                        data-element-delete-route="{{ route($routeDelete, $idElement) }}"
                     >
                         <i class="menu-icon tf-icons ti ti-trash"></i>
                         <span>Delete</span>

@@ -65,8 +65,18 @@
 
     </head>
     <body>
-        <div>
-            @yield('content')
+        <div class="layout-wrapper layout-content-navbar">
+            <div class="layout-container">
+                @include('layouts.menu')
+                <div class="layout-page">
+                    @include('layouts.navbar')
+                    <div class="content-wrapper">
+                        <div class="container-xxl flex-grow-1 container-p-y">
+                            @yield('content')
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
     </body>
