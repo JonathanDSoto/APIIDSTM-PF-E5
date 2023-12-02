@@ -1,4 +1,8 @@
-<aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
+<aside
+    id="layout-menu"
+    class="layout-menu position-fixed menu-vertical menu bg-menu-theme"
+    style="z-index: +1; height: 100vh"
+>
     <div class="menu-inner-shadow"></div>
     <ul class="menu-inner py-1">
         <!-- Motor -->
@@ -39,9 +43,14 @@
             class="menu-item {{ request()->routeIs('category.index') || request()->routeIs('category.show') ? 'active' : '' }}"
         >
             <a href="{{ route('category.index') }}" class="menu-link">
-                <i class="menu-icon tf-icons ti ti-hotel-service"></i>
+                <i class="menu-icon tf-icons ti ti-category-2"></i>
                 <div data-i18n="Categories">Categories</div>
             </a>
         </li>
     </ul>
 </aside>
+<aside
+    id="layout-menu"
+    class="layout-menu menu-vertical menu bg-menu-theme"
+    style="z-index: -1"
+></aside>

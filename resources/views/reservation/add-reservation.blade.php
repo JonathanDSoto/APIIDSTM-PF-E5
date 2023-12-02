@@ -1,6 +1,6 @@
 <div
     class="modal fade"
-    id="addNewService"
+    id="add-new-reservation"
     tabindex="-1"
     aria-labelledby="exampleModalLabel"
     aria-hidden="true"
@@ -8,7 +8,7 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h2 class="modal-title fs-5">Add Service</h2>
+                <h2 class="modal-title fs-5">Add Reservation</h2>
                 <button
                     type="button"
                     class="btn-close text-reset"
@@ -24,51 +24,65 @@
                     id="form-addNewService"
                 >
                     @csrf @method('POST')
-                    <div class="col-sm-12">
-                        <label for="formFile" class="form-label">
-                            Default file input example
+                    <x-input-field
+                        label="Tittle"
+                        id="tittle"
+                        name="tittle"
+                        placeholder="Tittle"
+                    />
+                    <div>
+                        <label for="description" class="form-label">
+                            Description
                         </label>
-                        <div class="input-group input-group-merge">
-                            <input
-                                class="form-control"
-                                type="file"
-                                id="formFile"
-                            />
-                        </div>
+                        <textarea
+                            class="form-control"
+                            id="description"
+                            rows="3"
+                        ></textarea>
                     </div>
-                    <x-input-field
-                        label="Name"
-                        id="name"
-                        name="name"
-                        placeholder="Name"
-                    />
-                    <x-input-field
-                        label="Description"
-                        id="resume"
-                        name="resume"
-                        placeholder="Description"
-                    />
-                    <div class="row p-1">
-                        <div class="col">
-                            <x-input-field
-                                label="Adult Price"
-                                id="adultPrice"
-                                name="adultPrice"
-                                placeholder="Adult Price"
-                                type="number"
-                            />
-                        </div>
-                        <div class="col">
-                            <x-input-field
-                                label="Child Price"
-                                id="childPrice"
-                                name="childPrice"
-                                placeholder="Child Price"
-                                type="number"
-                            />
-                        </div>
-                    </div>
+                    <!-- Date -->
+                    <div class="input-group">
+                        <span class="input-group-text">From</span>
+                        <input
+                            type="date"
+                            id="datepicker"
+                            class="form-control"
+                        />
 
+                        <span class="input-group-text">To</span>
+                        <input type="date" class="form-control" />
+
+                        <span class="input-group-text">
+                            <input
+                                class="form-check-input mt-0"
+                                type="checkbox"
+                                checked
+                                aria-label="Checkbox for following text input"
+                            />
+                        </span>
+                    </div>
+                    <!-- /Date -->
+
+                    <!-- hours -->
+                    <div class="input-group">
+                        <span class="input-group-text">From</span>
+                        <input
+                            type="time"
+                            id="hour-start"
+                            class="form-control"
+                        />
+
+                        <span class="input-group-text">To</span>
+                        <input type="time" id="hour-end" class="form-control" />
+
+                        <span class="input-group-text">
+                            <input
+                                class="form-check-input mt-0 invisible"
+                                type="checkbox"
+                            />
+                        </span>
+                    </div>
+                    <!-- /hours -->
                     <input
                         type="hidden"
                         id="isActive"
@@ -90,7 +104,6 @@
                         class="form-control dt-resume"
                         name="category_id"
                         placeholder="category_id"
-                        value="{{ $category->id }}"
                     />
                     <div class="col-sm-12">
                         <button
