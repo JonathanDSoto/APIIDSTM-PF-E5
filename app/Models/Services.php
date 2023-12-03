@@ -18,7 +18,12 @@ class Services extends Model
         'price_id',
     ];
 
-    public function Images(){
+    public function Images()
+    {
         return $this->belongsToMany(Images::class);
+    }
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
     }
 }

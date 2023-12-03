@@ -49,7 +49,7 @@ class ClientController extends Controller
             'phone2' => $validatedData['phone2'] ?? null,
         ]);
 
-        return redirect(route('client.index'));
+        return redirect(route('client.index'))->with('message', 'Cliente creado correctamente');
     }
 
     /**

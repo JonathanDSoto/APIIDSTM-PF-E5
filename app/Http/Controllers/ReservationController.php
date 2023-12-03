@@ -33,7 +33,31 @@ class ReservationController extends Controller
     public function store(Request $request)
     {
         //
+        $validatedData = $request->validate([
+            'client_id' => 'required',
+            'service_id' => 'required',
+            'startDate' => 'required',
+            'endDate' => 'required',
+            'startTime' => 'required',
+            'endTime' => 'required',
+            'adultTotal' => 'required',
+            'childTotal' => 'required',
+            'total' => 'required',
+        ]);
 
+        Reservation::create([
+            'client_id' => $validatedData['client_id'],
+            'service_id' => $validatedData['service_id'],
+            'startDate' => $validatedData['startDate'],
+            'endDate' => $validatedData['endDate'],
+            'startTime' => $validatedData['startTime'],
+            'endTime' => $validatedData['endTime'],
+            'adultTotal' => $validatedData['adultTotal'],
+            'childTotal' => $validatedData['childTotal'],
+            'total' => $validatedData['total'],
+        ]);
+
+        return redirect()->back()->with('message', 'Reservación creada correctamente');
     }
 
     /**
@@ -42,6 +66,9 @@ class ReservationController extends Controller
     public function show(Reservation $reservation)
     {
         //
+        return view('reservation.show', [
+            'reservation' => $reservation
+        ]);
     }
 
     /**
@@ -50,6 +77,9 @@ class ReservationController extends Controller
     public function edit(Reservation $reservation)
     {
         //
+        return view('reservation.edit', [
+            'reservation' => $reservation
+        ]);
     }
 
     /**
@@ -58,6 +88,31 @@ class ReservationController extends Controller
     public function update(Request $request, Reservation $reservation)
     {
         //
+        $validatedData = $request->validate([
+            'client_id' => 'required',
+            'service_id' => 'required',
+            'startDate' => 'required',
+            'endDate' => 'required',
+            'startTime' => 'required',
+            'endTime' => 'required',
+            'adultTotal' => 'required',
+            'childTotal' => 'required',
+            'total' => 'required',
+        ]);
+
+        $reservation->update([
+            'client_id' => $validatedData['client_id'],
+            'service_id' => $validatedData['service_id'],
+            'startDate' => $validatedData['startDate'],
+            'endDate' => $validatedData['endDate'],
+            'startTime' => $validatedData['startTime'],
+            'endTime' => $validatedData['endTime'],
+            'adultTotal' => $validatedData['adultTotal'],
+            'childTotal' => $validatedData['childTotal'],
+            'total' => $validatedData['total'],
+        ]);
+
+        return redirect()->back()->with('message', 'Reservación actualizada correctamente');
     }
 
     /**
@@ -67,6 +122,6 @@ class ReservationController extends Controller
     {
         //
         $reservation->delete();
-        return redirect(route('reservation.index'))->with('message', 'Reservación eliminada correctamente');
+        return redirect()->back()->with('message', 'Reservación eliminada correctamente');
     }
 }

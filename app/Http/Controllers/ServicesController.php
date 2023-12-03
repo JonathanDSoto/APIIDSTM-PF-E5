@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Services;
 use Illuminate\Http\Request;
 
@@ -108,9 +109,10 @@ class ServicesController extends Controller
      */
     public function destroy(Services $services)
     {
-        //
-        $category_id = $services->category_id;
         $services->delete();
-        return redirect(route('category.show', ['category' => $category_id]))->with('message', 'Servicio eliminado correctamente');
+        return redirect()->back()->with('message', 'Servicio eliminado correctamente');
     }
 }
+
+
+/* ->with('message', 'Servicio eliminado correctamente'); */
