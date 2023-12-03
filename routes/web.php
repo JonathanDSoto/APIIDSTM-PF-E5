@@ -33,16 +33,8 @@ Route::get('register', function () {
     return view('auth.register');
 })->name('register');
 
-Route::get('reservation', function () {
-    return view('reservation.index');
-})->name('reservation');
-
 Route::middleware(['auth'])->group(function (){
     Route::get('/home', [CategoryController::class, 'home'])->name('home');
-
-    /* Route::get('/dashboard', function() {
-        return view('dashboard');
-    })->name('dashboard'); */
 
     // Crud de los clientes
     Route::group(['prefix' => 'clients'], function () {

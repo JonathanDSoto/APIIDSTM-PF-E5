@@ -15,10 +15,8 @@ return new class extends Migration
             $table->id();
             $table->foreignId('client_id')->constrained();
             $table->foreignId('service_id')->constrained();
-            $table->date('startDate');
-            $table->date('endDate');
-            $table->integer('startTime');
-            $table->integer('endTime');
+            $table->dateTime('startDate', $presicion = 0);
+            $table->dateTime('endDate', $presicion = 0);
             $table->integer('adultTotal');
             $table->integer('childTotal');
             $table->float('total');

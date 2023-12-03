@@ -13,8 +13,6 @@ class Reservation extends Model
         'service_id',
         'startDate',
         'endDate',
-        'startTime',
-        'endTime',
         'adultTotal',
         'childTotal',
         'total'
