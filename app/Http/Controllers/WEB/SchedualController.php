@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Web;
 
+use App\Http\Controllers\Controller;
+use App\Models\Schedual;
 use Illuminate\Http\Request;
-use Illuminate\View\View;
-use App\Models\User;
 
-class UserController extends Controller
+class SchedualController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -30,29 +30,20 @@ class UserController extends Controller
     public function store(Request $request)
     {
         //
-        $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => bcrypt($request->password)
-        ]);
-        
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id): View
+    public function show(Schedual $schedual)
     {
         //
-        return view('user.profile', [ // SE OCUPA CREAR LA CARPETA USER EN VIEWS CON EL BLADE PHP DE PROFILE
-            'user' => User::findOrFail($id)
-        ]);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Schedual $schedual)
     {
         //
     }
@@ -60,7 +51,7 @@ class UserController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Schedual $schedual)
     {
         //
     }
@@ -68,7 +59,7 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Schedual $schedual)
     {
         //
     }

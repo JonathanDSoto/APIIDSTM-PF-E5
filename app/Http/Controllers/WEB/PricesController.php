@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Web;
 
-use App\Models\Schedual;
+use App\Http\Controllers\Controller;
+use App\Models\Prices;
 use Illuminate\Http\Request;
 
-class SchedualController extends Controller
+class PricesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -34,7 +35,7 @@ class SchedualController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Schedual $schedual)
+    public function show(Prices $prices)
     {
         //
     }
@@ -42,7 +43,7 @@ class SchedualController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Schedual $schedual)
+    public function edit(Prices $prices)
     {
         //
     }
@@ -50,7 +51,7 @@ class SchedualController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Schedual $schedual)
+    public function update(Request $request, Prices $prices)
     {
         //
     }
@@ -58,7 +59,7 @@ class SchedualController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Schedual $schedual)
+    public function destroy(Prices $prices)
     {
         //
     }

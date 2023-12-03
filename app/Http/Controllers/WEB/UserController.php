@@ -1,11 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Web;
 
-use App\Models\Coupon;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
+use App\Models\User;
 
-class CouponController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -29,20 +31,29 @@ class CouponController extends Controller
     public function store(Request $request)
     {
         //
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => bcrypt($request->password)
+        ]);
+
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Coupon $coupon)
+    public function show(string $id): View
     {
         //
+        return view('user.profile', [ // SE OCUPA CREAR LA CARPETA USER EN VIEWS CON EL BLADE PHP DE PROFILE
+            'user' => User::findOrFail($id)
+        ]);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Coupon $coupon)
+    public function edit(string $id)
     {
         //
     }
@@ -50,7 +61,7 @@ class CouponController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Coupon $coupon)
+    public function update(Request $request, string $id)
     {
         //
     }
@@ -58,7 +69,7 @@ class CouponController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Coupon $coupon)
+    public function destroy(string $id)
     {
         //
     }

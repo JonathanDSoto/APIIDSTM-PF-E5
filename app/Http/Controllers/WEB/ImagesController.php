@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Web;
 
-use App\Models\Prices;
+use App\Http\Controllers\Controller;
+use App\Models\Images;
 use Illuminate\Http\Request;
 
-class PricesController extends Controller
+class ImagesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -34,7 +35,7 @@ class PricesController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Prices $prices)
+    public function show(Images $images)
     {
         //
     }
@@ -42,7 +43,7 @@ class PricesController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Prices $prices)
+    public function edit(Images $images)
     {
         //
     }
@@ -50,7 +51,7 @@ class PricesController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Prices $prices)
+    public function update(Request $request, Images $images)
     {
         //
     }
@@ -58,7 +59,7 @@ class PricesController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Prices $prices)
+    public function destroy(Images $images)
     {
         //
     }

@@ -1,11 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Web;
 
-use App\Models\Images;
+use App\Http\Controllers\Controller;
+
+use App\Models\Coupon;
 use Illuminate\Http\Request;
 
-class ImagesController extends Controller
+class CouponController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -34,7 +36,7 @@ class ImagesController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Images $images)
+    public function show(Coupon $coupon)
     {
         //
     }
@@ -42,7 +44,7 @@ class ImagesController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Images $images)
+    public function edit(Coupon $coupon)
     {
         //
     }
@@ -50,7 +52,7 @@ class ImagesController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Images $images)
+    public function update(Request $request, Coupon $coupon)
     {
         //
     }
@@ -58,7 +60,7 @@ class ImagesController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Images $images)
+    public function destroy(Coupon $coupon)
     {
         //
     }

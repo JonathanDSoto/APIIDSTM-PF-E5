@@ -1,11 +1,10 @@
 <?php
 
-use App\Models\reservation;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ClientController;
-use App\Http\Controllers\ServicesController;
-use App\Http\Controllers\ReservationController;
-use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\Web\ClientController;
+use App\Http\Controllers\Web\ServicesController;
+use App\Http\Controllers\Web\ReservationController;
+use App\Http\Controllers\Web\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
