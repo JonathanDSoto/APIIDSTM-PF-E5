@@ -14,8 +14,10 @@ class ReservationController extends Controller
     public function index()
     {
         //
+        $reservations = Reservation::with('user', 'service.category')->get();
+
         return view('reservation.index', [
-            'reservations' => Reservation::all()
+            'reservations' => $reservations
         ]);
     }
 
