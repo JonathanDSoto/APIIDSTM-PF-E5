@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
 use App\Models\Reservation;
+use App\Models\Client;
+use App\Models\Services;
 use Illuminate\Http\Request;
 
 class ReservationController extends Controller
@@ -14,10 +16,13 @@ class ReservationController extends Controller
     public function index()
     {
         //
-        $reservations = Reservation::with('user', 'service.category')->get();
+        $clients = Client::all();
+        $services = Services::with('category')->get()->groupBy('category.name');
+
 
         return view('reservation.index', [
-            'reservations' => $reservations
+            'clients' => $clients,
+            'services' => $services,
         ]);
     }
 
