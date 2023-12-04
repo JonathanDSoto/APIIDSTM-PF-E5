@@ -124,4 +124,5 @@ class ReservationController extends Controller
         $reservation->delete();
         return redirect()->back()->with('message', 'Reservación eliminada correctamente');
     }
+
 }
