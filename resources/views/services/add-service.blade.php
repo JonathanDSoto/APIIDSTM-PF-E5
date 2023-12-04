@@ -26,7 +26,7 @@
                     @csrf @method('POST')
                     <div class="col-sm-12">
                         <label for="formFile" class="form-label">
-                            Default file input example
+                            Select an image to your service
                         </label>
                         <div class="input-group input-group-merge">
                             <input

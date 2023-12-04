@@ -1,4 +1,9 @@
-@extends('layouts.auth') @section('title') Services @endsection
+@extends('layouts.auth')
+
+@section('title')
+    Services
+@endsection
+
 @section('content')
 <div class="container container-p-y d-flex align-items-center gap-2">
     <h1>{{ $category->name }} / Services</h1>
@@ -28,14 +33,18 @@
             routeDelete="service.destroy"
             routeEdit="service.update"
         />
-        @endforeach @if(count($category->services) === 0)
+        @endforeach
+        @if(count($category->services) === 0)
         <p>No hay servicios disponibles</p>
         @endif
     </div>
 </div>
 <div class="content-backdrop fade"></div>
 <x-delete-modal message="Are you sure to delete this service?" />
-@include('services.add-service') @include('services.edit-service') @endsection
+@include('services.add-service')
+@include('services.edit-service')
+@endsection
+
 @section('scripts')
 <script src="{{ asset('assets/js/add-button.js') }}"></script>
 <script>
