@@ -81,7 +81,7 @@ class ServicesController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Services $services)
+    public function update(Request $request, Services $service)
     {
         //
         $validatedData = $request->validate([
@@ -93,7 +93,7 @@ class ServicesController extends Controller
             'adultPrice' => 'required|numeric',
             'childPrice' => 'required|numeric',
         ]);
-        $services->update([
+        $service->update([
             'name' => $validatedData['name'],
             'resume' => $validatedData['resume'],
             'is_active' => $validatedData['is_active'],
@@ -108,9 +108,9 @@ class ServicesController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Services $services)
+    public function destroy(Services $service)
     {
-        $services->delete();
+        $service->delete();
         return redirect()->back()->with('message', 'Servicio eliminado correctamente');
     }
 }
