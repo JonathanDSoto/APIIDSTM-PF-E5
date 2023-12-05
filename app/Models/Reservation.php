@@ -8,6 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Reservation extends Model
 {
     use HasFactory;
+
+
+
     protected $fillable = [
         'client_id',
         'service_id',
@@ -17,4 +20,14 @@ class Reservation extends Model
         'childTotal',
         'total'
     ];
+
+    public function client()
+    {
+        return $this->belongsTo(Client::class, 'client_id');
+    }
+
+    public function service()
+    {
+        return $this->belongsTo(Services::class, 'service_id');
+    }
 }
