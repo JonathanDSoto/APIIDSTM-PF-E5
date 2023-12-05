@@ -17,4 +17,9 @@ class Reservation extends Model
         'childTotal',
         'total'
     ];
+
+    public function client()
+    {
+        return $this->belongsTo(Client::class);
+    }
 }
