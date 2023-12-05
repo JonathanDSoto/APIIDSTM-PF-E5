@@ -16,6 +16,8 @@ class Services extends Model
         'available_days',
         'category_id',
         'price_id',
+        'adultPrice',
+        'childPrice',
     ];
 
     public function Images()

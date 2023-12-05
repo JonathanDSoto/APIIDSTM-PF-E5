@@ -13,13 +13,14 @@ class ServicesSeeder extends Seeder
      */
     public function run(): void
     {
-        //
         Services::create([
             'name' => 'Observación de Aves',
             'resume' => 'Excursión para observar aves en su hábitat natural',
             'available_days' => 'Martes, Jueves, Sábado, Domingo',
             'is_active' => true,
             'category_id' => 1,
+            'adultPrice' => 25.99,
+            'childPrice' => 15.99,
         ]);
 
         Services::create([
@@ -28,6 +29,8 @@ class ServicesSeeder extends Seeder
             'available_days' => 'Lunes, Miércoles, Viernes, Sábado',
             'is_active' => true,
             'category_id' => 1,
+            'adultPrice' => 20.99,
+            'childPrice' => 12.99,
         ]);
 
         Services::create([
@@ -36,6 +39,8 @@ class ServicesSeeder extends Seeder
             'available_days' => 'Lunes, Miércoles, Viernes',
             'is_active' => true,
             'category_id' => 1,
+            'adultPrice' => 15.99,
+            'childPrice' => 9.99,
         ]);
 
         Services::create([
@@ -44,6 +49,8 @@ class ServicesSeeder extends Seeder
             'available_days' => 'Martes, Jueves, Sábado',
             'is_active' => true,
             'category_id' => 1,
+            'adultPrice' => 18.99,
+            'childPrice' => 11.99,
         ]);
 
         Services::create([
@@ -52,6 +59,8 @@ class ServicesSeeder extends Seeder
             'available_days' => 'Miércoles, Viernes, Domingo',
             'is_active' => true,
             'category_id' => 1,
+            'adultPrice' => 30.99,
+            'childPrice' => 20.99,
         ]);
 
         Services::create([
@@ -60,6 +69,8 @@ class ServicesSeeder extends Seeder
             'available_days' => 'Lunes, Jueves, Sábado',
             'is_active' => true,
             'category_id' => 1,
+            'adultPrice' => 22.99,
+            'childPrice' => 15.99,
         ]);
 
         Services::create([
@@ -68,6 +79,8 @@ class ServicesSeeder extends Seeder
             'available_days' => 'Martes, Viernes, Domingo',
             'is_active' => true,
             'category_id' => 1,
+            'adultPrice' => 35.99,
+            'childPrice' => 25.99,
         ]);
 
         Services::create([
@@ -76,6 +89,8 @@ class ServicesSeeder extends Seeder
             'available_days' => 'Miércoles, Sábado',
             'is_active' => true,
             'category_id' => 1,
+            'adultPrice' => 28.99,
+            'childPrice' => 18.99,
         ]);
 
         Services::create([
@@ -84,6 +99,8 @@ class ServicesSeeder extends Seeder
             'available_days' => 'Jueves, Sábado, Domingo',
             'is_active' => true,
             'category_id' => 1,
+            'adultPrice' => 50.99,
+            'childPrice' => 40.99,
         ]);
     }
 }

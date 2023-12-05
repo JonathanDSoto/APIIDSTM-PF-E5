@@ -15,14 +15,14 @@ class ReservationController extends Controller
      */
     public function index()
     {
-        //
         $clients = Client::all();
         $services = Services::with('category')->get()->groupBy('category.name');
-
+        $reservations = Reservation::all();
 
         return view('reservation.index', [
             'clients' => $clients,
             'services' => $services,
+            'reservations' => $reservations,
         ]);
     }
 
@@ -31,7 +31,6 @@ class ReservationController extends Controller
      */
     public function create()
     {
-        //
         return view('reservation.create');
     }
 
@@ -40,22 +39,27 @@ class ReservationController extends Controller
      */
     public function store(Request $request)
     {
-        //
         $validatedData = $request->validate([
             'client_id' => 'required',
             'service_id' => 'required',
-            'startDate' => 'required',
-            'endDate' => 'required',
+            'start_date' => 'required|date_format:Y-m-d',
+            'end_date' => 'required|date_format:Y-m-d',
+            'start_hour' => 'required|date_format:H:i',
+            'end_hour' => 'required|date_format:H:i',
             'adultTotal' => 'required',
             'childTotal' => 'required',
             'total' => 'required',
         ]);
 
+        // Combine date and time fields
+        $startDate = date('Y-m-d H:i:s', strtotime($validatedData['start_date'] . ' ' . $validatedData['start_hour']));
+        $endDate = date('Y-m-d H:i:s', strtotime($validatedData['end_date'] . ' ' . $validatedData['end_hour']));
+
         Reservation::create([
             'client_id' => $validatedData['client_id'],
             'service_id' => $validatedData['service_id'],
-            'startDate' => $validatedData['startDate'],
-            'endDate' => $validatedData['endDate'],
+            'startDate' => $startDate,
+            'endDate' => $endDate,
             'adultTotal' => $validatedData['adultTotal'],
             'childTotal' => $validatedData['childTotal'],
             'total' => $validatedData['total'],
@@ -69,7 +73,6 @@ class ReservationController extends Controller
      */
     public function show(Reservation $reservation)
     {
-        //
         return view('reservation.show', [
             'reservation' => $reservation
         ]);
@@ -80,7 +83,6 @@ class ReservationController extends Controller
      */
     public function edit(Reservation $reservation)
     {
-        //
         return view('reservation.edit', [
             'reservation' => $reservation
         ]);
@@ -91,22 +93,27 @@ class ReservationController extends Controller
      */
     public function update(Request $request, Reservation $reservation)
     {
-        //
         $validatedData = $request->validate([
             'client_id' => 'required',
             'service_id' => 'required',
-            'startDate' => 'required',
-            'endDate' => 'required',
+            'start_date' => 'required|date_format:Y-m-d',
+            'end_date' => 'required|date_format:Y-m-d',
+            'start_hour' => 'required|date_format:H:i',
+            'end_hour' => 'required|date_format:H:i',
             'adultTotal' => 'required',
             'childTotal' => 'required',
             'total' => 'required',
         ]);
 
+        // Combine date and time fields
+        $startDate = date('Y-m-d H:i:s', strtotime($validatedData['start_date'] . ' ' . $validatedData['start_hour']));
+        $endDate = date('Y-m-d H:i:s', strtotime($validatedData['end_date'] . ' ' . $validatedData['end_hour']));
+
         $reservation->update([
             'client_id' => $validatedData['client_id'],
             'service_id' => $validatedData['service_id'],
-            'startDate' => $validatedData['startDate'],
-            'endDate' => $validatedData['endDate'],
+            'startDate' => $startDate,
+            'endDate' => $endDate,
             'adultTotal' => $validatedData['adultTotal'],
             'childTotal' => $validatedData['childTotal'],
             'total' => $validatedData['total'],
@@ -120,9 +127,7 @@ class ReservationController extends Controller
      */
     public function destroy(Reservation $reservation)
     {
-        //
         $reservation->delete();
         return redirect()->back()->with('message', 'Reservación eliminada correctamente');
     }
-
 }
