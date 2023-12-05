@@ -6,3 +6,13 @@
     <!-- / Calendar -->
 </div>
 <script src="{{ asset('assets/js/calendar.js') }}"></script>
+<script>
+    @foreach ($reservations as $reservation)
+        calendar.addEvent({
+            title: "Reserva de {{ $reservation->client->name }}",
+            start: "{{ $reservation->startDate }}",
+            end: "{{ $reservation->endDate }}",
+            allDay: false,
+        });
+    @endforeach
+</script>

@@ -18,96 +18,107 @@
             </div>
             <div class="modal-body">
                 <form
-                    action="{{ route('service.store') }}"
+                    action="{{ route('reservation.store') }}"
                     method="POST"
-                    class="addNewService pt-0 row g-2"
-                    id="form-addNewService"
+                    class="addNewReservation pt-0 row g-2"
+                    id="form-addNewReservation"
                 >
-                    @csrf @method('POST')
-                    <x-input-field
-                        label="Tittle"
-                        id="tittle"
-                        name="tittle"
-                        placeholder="Tittle"
-                    />
-                    <div>
-                        <label for="description" class="form-label">
-                            Description
-                        </label>
-                        <textarea
-                            class="form-control"
-                            id="description"
-                            rows="3"
-                        ></textarea>
+                    @csrf
+                    @method('POST')
+
+                    <div class="mb-4">
+                        <label for="selectClient" class="form-label">Client</label>
+                        <select name="client_id" id="selectClient" class="select2-icons form-select">
+                            @foreach ($clients as $client)
+                                <option value="{{ $client->id }}">{{ $client->name }} {{ $client->lastname }}</option>
+                            @endforeach
+                        </select>
                     </div>
+
+                    <div class="mb-4">
+                        <label for="selectService" class="form-label">Service</label>
+                        <select name="service_id" id="selectService" class="select2-icons form-select">
+                            @foreach ($services as $categoryName => $servicesInCategory)
+                            <optgroup label="{{ $categoryName }}">
+                                @foreach ($servicesInCategory as $service)
+                                    <option
+                                        value="{{ $service->id }}"
+                                        data-adult-price="{{ $service->adultPrice }}"
+                                        data-children-price="{{ $service->childPrice }}"
+                                    >
+                                        {{ $service->name }}
+                                    </option>
+                                @endforeach
+                            </optgroup>
+                            @endforeach
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <x-input-field
+                            label="How many adults will go?"
+                            id="adultTotal"
+                            name="adultTotal"
+                            placeholder="Adults"
+                            type="number"
+                        />
+                        <x-input-field
+                            label="How many children will go?"
+                            id="childTotal"
+                            name="childTotal"
+                            placeholder="Children"
+                            type="number"
+                        />
+                    </div>
+
                     <!-- Date -->
-                    <div class="input-group">
+                    <div class="input-group mb-3">
                         <span class="input-group-text">From</span>
                         <input
                             type="date"
                             id="datepicker"
+                            name="start_date"
                             class="form-control"
                         />
-
                         <span class="input-group-text">To</span>
-                        <input type="date" class="form-control" />
-
-                        <span class="input-group-text">
-                            <input
-                                class="form-check-input mt-0"
-                                type="checkbox"
-                                checked
-                                aria-label="Checkbox for following text input"
-                            />
-                        </span>
+                        <input
+                            type="date"
+                            name="end_date"
+                            class="form-control"
+                        />
                     </div>
                     <!-- /Date -->
 
                     <!-- hours -->
-                    <div class="input-group">
+                    <div class="input-group mb-3">
                         <span class="input-group-text">From</span>
                         <input
                             type="time"
                             id="hour-start"
+                            name="start_hour"
                             class="form-control"
                         />
 
                         <span class="input-group-text">To</span>
-                        <input type="time" id="hour-end" class="form-control" />
+                        <input
+                            type="time"
+                            id="hour-end"
+                            name="end_hour"
+                            class="form-control"
+                        />
 
-                        <span class="input-group-text">
-                            <input
-                                class="form-check-input mt-0 invisible"
-                                type="checkbox"
-                            />
-                        </span>
                     </div>
                     <!-- /hours -->
-                    <input
-                        type="hidden"
-                        id="isActive"
-                        class="form-check dt-resume ms-1"
-                        name="is_active"
-                        value="1"
-                    />
-                    <input
-                        type="hidden"
-                        id="availableDays"
-                        class="form-control dt-resume"
-                        name="available_days"
-                        placeholder="available_days"
-                        value="Lunes"
-                    />
-                    <input
-                        type="hidden"
-                        id="category_id"
-                        class="form-control dt-resume"
-                        name="category_id"
-                        placeholder="category_id"
-                    />
+
+                    <div class="mb-3">
+                        <label for="total" class="form-label">Total</label>
+                        <input type="text" name="total" id="total" class="form-control" readonly>
+                    </div>
+
                     <div class="col-sm-12">
                         <button
                             type="submit"
+                            id="submitBtn"
                             class="btn btn-primary data-submit me-sm-3 me-1"
                         >
                             Save

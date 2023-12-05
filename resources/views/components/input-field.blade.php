@@ -1,4 +1,4 @@
-@props(['label', 'type' => 'text', 'id', 'name', 'placeholder'])
+@props(['label', 'type' => 'text', 'id', 'name', 'placeholder', 'value' => null])
 
 <div class="col-sm-12">
     <label class="form-label" for="{{ $id }}">{{ $label }}</label>
@@ -9,6 +9,8 @@
             type="{{ $type }}"
             name="{{ $name }}"
             placeholder="{{ $placeholder }}"
+            @if ($value !== null) value="{{ $value }}"
+            @endif
         />
     </div>
 </div>

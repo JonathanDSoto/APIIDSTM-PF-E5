@@ -1,10 +1,14 @@
-<div
+<form
     class="modal fade"
-    id="confirmModal"
+    id="modalDelete"
     tabindex="-1"
     aria-labelledby="confirmModalLabel"
     aria-hidden="true"
+    action=""
+    method="POST"
 >
+    @csrf
+    @method('DELETE')
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
@@ -19,7 +23,7 @@
                 ></button>
             </div>
             <div class="modal-body">
-                Are you sure you want to perform this action?
+                Are you sure you delete this reservation?
             </div>
             <div class="modal-footer">
                 <button
@@ -27,10 +31,10 @@
                     class="btn btn-secondary"
                     data-bs-dismiss="modal"
                 >
-                    cancel
+                    Cancel
                 </button>
-                <button type="button" class="btn btn-danger">Confirm</button>
+                <button type="submit" class="btn btn-danger">Confirm</button>
             </div>
         </div>
     </div>
-</div>
+</form>
