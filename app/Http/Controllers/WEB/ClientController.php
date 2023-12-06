@@ -59,7 +59,7 @@ class ClientController extends Controller
     public function show(Client $client)
     {
         //
-        $client->load('reservation');
+        $client->load('reservations');
         return view('client.show', [
             'client' => $client
         ]);
