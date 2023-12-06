@@ -1,10 +1,11 @@
 <?php
 
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Web\ClientController;
+use App\Http\Controllers\Web\CategoryController;
 use App\Http\Controllers\Web\ServicesController;
 use App\Http\Controllers\Web\ReservationController;
-use App\Http\Controllers\Web\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,7 +35,7 @@ Route::get('register', function () {
 })->name('register');
 
 Route::middleware(['auth'])->group(function (){
-    Route::get('/home', [CategoryController::class, 'home'])->name('home');
+    Route::get('/home', [Controller::class, 'home'])->name('home');
 
     // Crud de los clientes
     Route::group(['prefix' => 'clients'], function () {
