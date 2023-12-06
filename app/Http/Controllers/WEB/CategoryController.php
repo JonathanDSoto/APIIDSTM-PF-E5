@@ -54,7 +54,7 @@ class CategoryController extends Controller
         }
 
         $validatedData = $request->validate([
-            'name' => 'required|max:255',
+            'name' => 'required|max:255|alpha',
             'image_url' => 'image|max:2048'
         ]);
 
@@ -95,7 +95,7 @@ class CategoryController extends Controller
     {
         //
         $validatedData = $request->validate([
-            'name' => 'required|max:255',
+            'name' => 'required|max:255|alpha',
             /* 'image_url' => 'max:255' */
         ]);
         $category->update([

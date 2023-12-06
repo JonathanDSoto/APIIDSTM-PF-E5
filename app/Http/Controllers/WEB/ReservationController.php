@@ -46,9 +46,9 @@ class ReservationController extends Controller
             'end_date' => 'required|date_format:Y-m-d',
             'start_hour' => 'required|date_format:H:i',
             'end_hour' => 'required|date_format:H:i',
-            'adultTotal' => 'required',
-            'childTotal' => 'required',
-            'total' => 'required',
+            'adultTotal' => 'required|numeric',
+            'childTotal' => 'required|numeric',
+            'total' => 'required|numeric',
         ]);
 
         // Combine date and time fields
@@ -100,9 +100,9 @@ class ReservationController extends Controller
             'end_date' => 'required|date_format:Y-m-d',
             'start_hour' => 'required|date_format:H:i',
             'end_hour' => 'required|date_format:H:i',
-            'adultTotal' => 'required',
-            'childTotal' => 'required',
-            'total' => 'required',
+            'adultTotal' => 'required|numeric',
+            'childTotal' => 'required|numeric',
+            'total' => 'required|numeric',
         ]);
 
         // Combine date and time fields
