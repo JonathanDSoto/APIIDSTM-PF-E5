@@ -83,5 +83,111 @@ class ClientSeeder extends Seeder
             'email' => 'perez@test.com',
             'phone' => '1234567890',
         ]);
+
+        Client::create([
+            'name' => 'Javier',
+            'lastname' => 'Gomez',
+            'email' => 'gomez@test.com',
+            'phone' => '1234567890',
+        ]);
+
+        Client::create([
+            'name' => 'Laura',
+            'lastname' => 'Torres',
+            'email' => 'torres@test.com',
+            'phone' => '1234567890',
+        ]);
+
+        Client::create([
+            'name' => 'Nelson',
+            'lastname' => 'Hernandez',
+            'email' => 'hernandez@test.com',
+            'phone' => '1234567890',
+        ]);
+
+        Client::create([
+            'name' => 'Olga',
+            'lastname' => 'Ramirez',
+            'email' => 'ramirez@test.com',
+            'phone' => '1234567890',
+        ]);
+
+        Client::create([
+            'name' => 'Pedro',
+            'lastname' => 'Cruz',
+            'email' => 'cruz@test.com',
+            'phone' => '1234567890',
+        ]);
+
+        Client::create([
+            'name' => 'Quetzal',
+            'lastname' => 'Lopez',
+            'email' => 'quetzal@test.com',
+            'phone' => '1234567890',
+        ]);
+
+        Client::create([
+            'name' => 'Rosa',
+            'lastname' => 'Garcia',
+            'email' => 'garcia@test.com',
+            'phone' => '1234567890',
+        ]);
+
+        Client::create([
+            'name' => 'Sergio',
+            'lastname' => 'Martinez',
+            'email' => 'martinez@test.com',
+            'phone' => '1234567890',
+        ]);
+
+        Client::create([
+            'name' => 'Tania',
+            'lastname' => 'Fernandez',
+            'email' => 'fernandez@test.com',
+            'phone' => '1234567890',
+        ]);
+
+        Client::create([
+            'name' => 'Uriel',
+            'lastname' => 'Castro',
+            'email' => 'castro@test.com',
+            'phone' => '1234567890',
+        ]);
+
+        Client::create([
+            'name' => 'Vanessa',
+            'lastname' => 'Mendoza',
+            'email' => 'mendoza@test.com',
+            'phone' => '1234567890',
+        ]);
+
+        Client::create([
+            'name' => 'Walter',
+            'lastname' => 'Ortega',
+            'email' => 'ortega@test.com',
+            'phone' => '1234567890',
+        ]);
+
+        Client::create([
+            'name' => 'Ximena',
+            'lastname' => 'Soto',
+            'email' => 'soto@test.com',
+            'phone' => '1234567890',
+        ]);
+
+        Client::create([
+            'name' => 'Yasmine',
+            'lastname' => 'Herrera',
+            'email' => 'herrera@test.com',
+            'phone' => '1234567890',
+        ]);
+
+        Client::create([
+            'name' => 'Zacarias',
+            'lastname' => 'Vasquez',
+            'email' => 'vasquez@test.com',
+            'phone' => '1234567890',
+        ]);
+
     }
 }
