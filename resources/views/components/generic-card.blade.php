@@ -62,6 +62,6 @@
         @if ($price !== '')
         <p class="card-text">${{ $price }}</p>
         @endif
-        <a href="{{ $route }}" class="btn btn-primary"> Detalles </a>
+        <a href="{{ $route }}" class="btn btn-primary"> Details </a>
     </div>
 </div>

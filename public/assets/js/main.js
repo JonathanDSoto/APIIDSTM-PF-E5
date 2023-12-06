@@ -1,5 +1,5 @@
 "use strict";
-var isRtl = window.Helpers.isRtl(),
+let isRtl = window.Helpers.isRtl(),
     isDarkStyle = window.Helpers.isDarkStyle(),
     menu,
     animate,
