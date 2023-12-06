@@ -13,7 +13,7 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, ValidatesRequests;
 
-    public function index()
+    public function home()
     {
         $clients = Client::all();
         $reservations = Reservation::all();
