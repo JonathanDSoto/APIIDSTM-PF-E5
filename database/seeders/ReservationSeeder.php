@@ -13,7 +13,7 @@ class ReservationSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        Reservation::factory()->count(400)->create();
         Reservation::create([
             'client_id' => 1,
             'service_id' => 1,
