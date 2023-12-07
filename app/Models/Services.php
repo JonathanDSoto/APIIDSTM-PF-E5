@@ -28,4 +28,8 @@ class Services extends Model
     {
         return $this->belongsTo(Category::class);
     }
+    public function reservation(){
+        return $this->hasMany(Reservation::class);
+    }
+
 }
