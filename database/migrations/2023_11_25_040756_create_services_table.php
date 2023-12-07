@@ -22,6 +22,7 @@ return new class extends Migration
             $table->foreignIdFor(Category::class)->constrained();
             $table->float('adultPrice', 8, 2)->default(0);
             $table->float('childPrice', 8, 2)->default(0);
+            $table->softDeletes();
             $table->timestamps();
         });
     }

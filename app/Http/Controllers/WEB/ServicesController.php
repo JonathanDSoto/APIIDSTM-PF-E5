@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
-use App\Models\Services;
+use App\Models\Service;
 use Illuminate\Http\Request;
 
 class ServicesController extends Controller
@@ -16,7 +16,7 @@ class ServicesController extends Controller
     {
         //
         return view('services.index', [
-            'services' => Services::all()
+            'services' => Service::all()
         ]);
     }
 
@@ -44,7 +44,7 @@ class ServicesController extends Controller
             'adultPrice' => 'required|numeric',
             'childPrice' => 'required|numeric',
         ]);
-        Services::create([
+        Service::create([
             'name' => $validatedData['name'],
             'resume' => $validatedData['resume'],
             'is_active' => $validatedData['is_active'],
@@ -58,11 +58,11 @@ class ServicesController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Services $services)
+    public function show(Service $services)
     {
         //
         /* $services->load('images'); */
-        $services->load('reservation');
+        $services->load('reservations');
         return view('services.show', [
             'services' => $services
         ]);
@@ -71,7 +71,7 @@ class ServicesController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Services $services)
+    public function edit(Service $services)
     {
         //
         return view('services.edit', [
@@ -82,7 +82,7 @@ class ServicesController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Services $service)
+    public function update(Request $request, Service $service)
     {
         //
         $validatedData = $request->validate([
@@ -109,8 +109,9 @@ class ServicesController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Services $service)
+    public function destroy(Service $service)
     {
+        $service->reservation()->delete();
         $service->delete();
         return redirect()->back()->with('message', 'Servicio eliminado correctamente');
     }
