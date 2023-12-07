@@ -3,7 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Reservation;
-use App\Models\Services;
+use App\Models\Service;
 use App\Models\Client;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -18,7 +18,7 @@ class ReservationFactory extends Factory
 
         return [
             'client_id' => Client::all()->random()->id,
-            'service_id' => Services::all()->random()->id,
+            'service_id' => Service::all()->random()->id,
             'startDate' => $startDate,
             'endDate' => $endDate,
             'adultTotal' => $this->faker->numberBetween(1, 5),
