@@ -82,6 +82,11 @@
                                     >
                                     <i class="ti ti-pencil"></i>
                                 </button>
+                                <button>
+                                    <a href="{{ route('reservation.pdf', $reservation->id) }}" class="btn btn-success p-2">
+                                        <i class="ti ti-printer"></i>
+                                    </a>
+                                </button>
                             </td>
                         </tr>
                     @endforeach

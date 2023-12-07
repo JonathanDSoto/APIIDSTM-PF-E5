@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\pdfController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Web\ClientController;
 use App\Http\Controllers\Web\CategoryController;
@@ -27,7 +28,7 @@ Route::get('/login', function(){
 })->name('login');
 
 Route::get('logout/view', function () {
-    return view('logout');
+    return redirect('/');
 });
 
 Route::get('register', function () {
@@ -79,5 +80,7 @@ Route::middleware(['auth'])->group(function (){
         Route::get('/{reservation}/edit', [ReservationController::class, 'edit'])->name('reservation.edit');
         Route::put('/{reservation}/update', [ReservationController::class, 'update'])->name('reservation.update');
         Route::delete('/{reservation}/destroy', [ReservationController::class, 'destroy'])->name('reservation.destroy');
+        Route::get('/download/{reservation}', [ReservationController::class, 'download'])->name('reservation.pdf');
     });
+
 });

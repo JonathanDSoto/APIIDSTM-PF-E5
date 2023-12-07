@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\Web;
 
-use App\Http\Controllers\Controller;
-use App\Models\Reservation;
 use App\Models\Client;
 use App\Models\Services;
+use Barryvdh\DomPDF\Facade\Pdf;
+use App\Models\Reservation;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class ReservationController extends Controller
 {
@@ -130,4 +131,30 @@ class ReservationController extends Controller
         $reservation->delete();
         return redirect()->back()->with('message', 'Reservación eliminada correctamente');
     }
+
+    public function download(Reservation $reservation)
+    {
+        $client = Client::find($reservation->client_id);
+        $services = Services::find($reservation->service_id);
+
+        $pdf = PDF::loadView('reservation.pdf', [
+            'reservation' => $reservation,
+            'client' => $client,
+            'services' => $services
+        ]);
+        $creationDate = $reservation->created_at->format('Y-m-d');
+
+        $pdf->setPaper([0, 0, 595.28, 841.89], 'portrait');
+
+        $pdf->setOptions([
+            'margin-top' => 72,
+            'margin-right' => 72,
+            'margin-bottom' => 72,
+            'margin-left' => 72,
+        ]);
+
+        return $pdf->download("{$creationDate}_{$reservation->id}_machape_reservation.pdf");
+    }
 }
+
+/* return $pdf->download('reservation'. $reservation->id . '.pdf'); */

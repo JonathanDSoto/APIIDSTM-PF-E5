@@ -20,6 +20,7 @@ class pdfController extends Controller
     public function create()
     {
         //
+        return back();
     }
 
     /**
@@ -28,6 +29,25 @@ class pdfController extends Controller
     public function store(Request $request)
     {
         //
+        $validateData = $request->validate([
+            'clientName' => 'required',
+            'clientLastname',
+            'clientEmail',
+            'clientPhone',
+            'clientPhone2',
+            'serviceName',
+            'serviceDescription',
+            'servicePrice',
+            'serviceCategory',
+            'serviceImage',
+            'reservationStartDate',
+            'reservationEndDate',
+            'reservationAdultTotal',
+            'reservationChildTotal',
+            'reservationTotal',
+            'reservationId',
+            'reservationCreatedAt',
+        ]);
     }
 
     /**
