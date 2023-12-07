@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Web;
 
 use App\Models\Client;
-use App\Models\Services;
+use App\Models\Service;
 use Barryvdh\DomPDF\Facade\Pdf;
 use App\Models\Reservation;
 use Illuminate\Http\Request;
@@ -17,7 +17,7 @@ class ReservationController extends Controller
     public function index()
     {
         $clients = Client::all();
-        $services = Services::with('category')->get()->groupBy('category.name');
+        $services = Service::with('categories')->get()->groupBy('category.name');
         $reservations = Reservation::all();
 
         return view('reservation.index', [

@@ -28,6 +28,10 @@ class Reservation extends Model
 
     public function service()
     {
-        return $this->belongsTo(Services::class, 'service_id');
+        return $this->belongsTo(Service::class, 'service_id');
+    }
+
+    public function categories(){
+        return $this->hasManyThrough(Category::class, Service::class);
     }
 }

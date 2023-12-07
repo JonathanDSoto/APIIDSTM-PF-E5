@@ -107,6 +107,7 @@ class ClientController extends Controller
     public function destroy(Client $client)
     {
         //
+        $client->reservations()->delete();
         $client->delete();
         return redirect(route('client.index'))->with('message', 'Cliente eliminado correctamente');
     }

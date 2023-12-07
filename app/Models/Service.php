@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Services extends Model
+class Service extends Model
 {
     use HasFactory;
 
@@ -20,15 +20,15 @@ class Services extends Model
         'childPrice',
     ];
 
-    public function Images()
+    public function images()
     {
         return $this->belongsToMany(Images::class);
     }
-    public function category()
+    public function categories()
     {
         return $this->belongsTo(Category::class);
     }
-    public function reservation(){
+    public function reservations(){
         return $this->hasMany(Reservation::class);
     }
 
