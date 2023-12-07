@@ -17,20 +17,20 @@ class Controller extends BaseController
     public function home()
     {
         $clients = Client::all()->count();
-        $services = Service::with('category')->get()->groupBy('category.name');
-        $topServices = Service::select('services.*')
+        $services = Service::with('categories')->get()->groupBy('category.name');
+        $topServices = Service::select('services.id', 'services.name')
             ->join('reservations', 'services.id', '=', 'reservations.service_id')
             ->selectRaw('SUM(reservations.total) as total_revenue')
-            ->groupBy('services.id')
+            ->groupBy('services.id', 'services.name')
             ->orderBy('total_revenue', 'desc')
             ->limit(3)
             ->get();
 
         foreach ($topServices as $service) {
             $reservations = Reservation::where('service_id', $service->id)
-            ->orderBy('created_at', 'asc')
-            ->limit(10)
-            ->get();
+                ->orderBy('created_at', 'asc')
+                ->limit(10)
+                ->get();
             $service->reservations = $reservations;
         }
 
