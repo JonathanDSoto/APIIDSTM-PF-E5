@@ -82,4 +82,9 @@
     </body>
     @include('layouts.scripts')
     @yield('scripts')
+    <script>
+        document.getElementById('hamburger-button').addEventListener('click', function() {
+            document.getElementById('layout-menu').classList.toggle('show-menu');
+        });
+    </script>
 </html>

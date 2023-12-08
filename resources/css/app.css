@@ -1,0 +1,11 @@
+@media (max-width: 768px) {
+    #layout-menu {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    #layout-menu.show-menu {
+        transform: translateX(0);
+        background-color: transparent;
+    }
+}
