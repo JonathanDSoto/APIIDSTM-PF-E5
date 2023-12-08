@@ -13,9 +13,10 @@ class ClientController extends Controller
      */
     public function index()
     {
-        // Comentario de prueba
+        // Comentario de prueba}
+        $clients = Client::paginate(15);
         return view('client.index', [
-            'clients' => Client::all()
+            'clients' => $clients
         ]);
     }
 
