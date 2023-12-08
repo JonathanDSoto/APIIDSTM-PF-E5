@@ -14,7 +14,6 @@
                     name="name"
                     placeholder="Name of category"
                 />
-                <div id="error-name" class="text-danger" style="display: none;"></div>
             </div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Close</button>
@@ -23,31 +22,3 @@
         </div>
     </div>
 </form>
-
-<script>
-    function validateEditCategoryForm() {
-        resetEditCategoryErrorMessages();
-
-        var categoryName = document.getElementById('name').value.trim();
-
-        if (categoryName === '') {
-
-            displayEditCategoryError('error-name', 'Category name is required.');
-            return false;
-        }
-
-        return true;
-    }
-
-    function resetEditCategoryErrorMessages() {
-        var errorElement = document.getElementById('error-name');
-        errorElement.style.display = 'none';
-        errorElement.innerText = '';
-    }
-
-    function displayEditCategoryError(elementId, errorMessage) {
-        var errorElement = document.getElementById(elementId);
-        errorElement.style.display = 'block';
-        errorElement.innerText = errorMessage;
-    }
-</script>

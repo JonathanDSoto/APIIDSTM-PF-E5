@@ -1,4 +1,4 @@
-@props(['title', 'description', 'price' => '', 'route', 'idElement',
+@props(['title', 'description', 'childPrice' => null, 'adultPrice' => null, 'route', 'idElement',
 'routeDelete', 'routeEdit'])
 
 <div class="card col p-0 shadow position-relative" style="width: 18rem">
@@ -59,9 +59,19 @@
     <div class="card-body">
         <h5 class="card-title">{{ $title }}</h5>
         <p class="card-text">{{ $description }}</p>
-        @if ($price !== '')
-        <p class="card-text">${{ $price }}</p>
+
+        @if ($childPrice !== null)
+            <p class="card-text">
+                <strong>Child Price:</strong> ${{ $childPrice }}
+            </p>
         @endif
+
+        @if ($adultPrice !== null)
+            <p class="card-text">
+                <strong>Adult Price:</strong> ${{ $adultPrice }}
+            </p>
+        @endif
+
         <a href="{{ $route }}" class="btn btn-primary"> Details </a>
     </div>
 </div>

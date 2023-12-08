@@ -10,8 +10,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <div id="editValidationErrors" class="alert alert-danger" style="display: none;"></div>
-                <div id="editSuccessMessage" class="alert alert-success" style="display: none;">Service successfully updated!</div>
+
 
                 <x-input-field
                     label="Name"
@@ -56,56 +55,6 @@
         </div>
     </div>
 
-    <script>
-    function validateEditForm() {
-        document.getElementById('editValidationErrors').style.display = 'none';
-        document.getElementById('editValidationErrors').innerHTML = '';
-        document.getElementById('editSuccessMessage').style.display = 'none';
-
-        var name = document.getElementById('name').value.trim();
-        var resume = document.getElementById('resume').value.trim();
-        var adultPrice = document.getElementById('adultPrice').value.trim();
-        var childPrice = document.getElementById('childPrice').value.trim();
-
-        var errors = [];
-
-        if (name === '') {
-            errors.push('Name is required.');
-        }
-
-        if (resume === '') {
-            errors.push('Description is required.');
-        }
-
-        if (adultPrice === '') {
-            errors.push('Adult Price is required.');
-        }
-
-        if (childPrice === '') {
-            errors.push('Child Price is required.');
-        }
-
-        if (errors.length > 0) {
-            displayEditValidationErrors(errors);
-            return false;
-        } else {
-            displayEditSuccessMessage();
-            return true;
-        }
-    }
-
-    function displayEditValidationErrors(errors) {
-        var editValidationErrorsDiv = document.getElementById('editValidationErrors');
-        var errorsHtml = '';
-        errors.forEach(function (error) {
-            errorsHtml += '<li>' + error + '</li>';
-        });
-        errorsHtml += '</ul>';
-        editValidationErrorsDiv.innerHTML = errorsHtml;
-        editValidationErrorsDiv.style.display = 'block';
-    }
-
-    </script>
 
 
 </form>
