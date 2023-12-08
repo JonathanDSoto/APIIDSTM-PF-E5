@@ -10,14 +10,6 @@
         <div
             class="container container-p-y d-flex justify-content-between gap-2"
         >
-            <div class="d-flex align-items-center gap-2">
-                <input
-                    type="text"
-                    id="search-client"
-                    class="form-control"
-                    placeholder="Search"
-                />
-            </div>
             <button
                 class="dt-button create-new btn btn-primary"
                 data-bs-target="#addNewUser"
