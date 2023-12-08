@@ -89,7 +89,9 @@
                 </tbody>
             </table>
         </div>
-        @include('client.pagination')
+        <div class="d-flex justify-content-center my-2">
+            {{ $clients->onEachSide(1)->links() }}
+        </div>
     </div>
 
     {{-- Modal  delete --}}
