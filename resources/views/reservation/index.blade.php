@@ -38,7 +38,7 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th>ID</th>
+                        {{-- <th>ID</th> --}}
                         <th>Client</th>
                         <th>Service</th>
                         <th>Start Date</th>
@@ -49,7 +49,7 @@
                 <tbody class="table-border-bottom-0">
                     @foreach ($reservations as $reservation)
                         <tr>
-                            <td><span class="fw-medium">{{ $reservation->id }}</span></td>
+                            {{-- <td><span class="fw-medium">{{ $reservation->id }}</span></td> --}}
                             <th>{{ $reservation->client->name }} {{ $reservation->client->lastname }}</th>
                             <th>{{ $reservation->service->name }}</th>
                             <td>{{ Carbon::parse($reservation->startDate)->format('d/m/Y H:i') }}</td>
@@ -82,16 +82,22 @@
                                     >
                                     <i class="ti ti-pencil"></i>
                                 </button>
-                                <button>
-                                    <a href="{{ route('reservation.pdf', $reservation->id) }}" class="btn btn-success p-2">
+                                <form action="{{ route('reservation.pdf', $reservation->id) }}" class="d-inline-block">
+                                    <button
+                                        type="submit"
+                                        class="btn btn-success px-2"
+                                    >
                                         <i class="ti ti-printer"></i>
-                                    </a>
-                                </button>
+                                    </button>
+                                </form>
                             </td>
                         </tr>
                     @endforeach
                 </tbody>
             </table>
+            <div class="d-flex justify-content-center my-2">
+                {{ $reservations->onEachSide(1)->links() }}
+            </div>
         </div>
     </div>
 
