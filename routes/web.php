@@ -1,10 +1,13 @@
 <?php
 
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Web\ClientController;
+use App\Http\Controllers\Web\CategoryController;
 use App\Http\Controllers\Web\ServicesController;
 use App\Http\Controllers\Web\ReservationController;
-use App\Http\Controllers\Web\CategoryController;
+use Illuminate\Support\Facades\Auth;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -26,15 +29,16 @@ Route::get('/login', function(){
 })->name('login');
 
 Route::get('logout/view', function () {
-    return view('logout');
-});
+    Auth::logout();
+    return redirect('/');
+})->name('logout');
 
 Route::get('register', function () {
     return view('auth.register');
 })->name('register');
 
 Route::middleware(['auth'])->group(function (){
-    Route::get('/home', [CategoryController::class, 'home'])->name('home');
+    Route::get('/home', [Controller::class, 'home'])->name('home');
 
     // Crud de los clientes
     Route::group(['prefix' => 'clients'], function () {
@@ -78,5 +82,7 @@ Route::middleware(['auth'])->group(function (){
         Route::get('/{reservation}/edit', [ReservationController::class, 'edit'])->name('reservation.edit');
         Route::put('/{reservation}/update', [ReservationController::class, 'update'])->name('reservation.update');
         Route::delete('/{reservation}/destroy', [ReservationController::class, 'destroy'])->name('reservation.destroy');
+        Route::get('/download/{reservation}', [ReservationController::class, 'download'])->name('reservation.pdf');
     });
+
 });

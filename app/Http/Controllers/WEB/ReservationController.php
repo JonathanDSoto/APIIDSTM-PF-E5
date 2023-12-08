@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\Web;
 
-use App\Http\Controllers\Controller;
-use App\Models\Reservation;
 use App\Models\Client;
-use App\Models\Services;
+use App\Models\Service;
+use Barryvdh\DomPDF\Facade\Pdf;
+use App\Models\Reservation;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class ReservationController extends Controller
 {
@@ -16,8 +17,8 @@ class ReservationController extends Controller
     public function index()
     {
         $clients = Client::all();
-        $services = Services::with('category')->get()->groupBy('category.name');
-        $reservations = Reservation::all();
+        $services = Service::with('categories')->get()->groupBy('category.name');
+        $reservations = Reservation::paginate(30);
 
         return view('reservation.index', [
             'clients' => $clients,
@@ -46,9 +47,9 @@ class ReservationController extends Controller
             'end_date' => 'required|date_format:Y-m-d',
             'start_hour' => 'required|date_format:H:i',
             'end_hour' => 'required|date_format:H:i',
-            'adultTotal' => 'required',
-            'childTotal' => 'required',
-            'total' => 'required',
+            'adultTotal' => 'required|numeric',
+            'childTotal' => 'required|numeric',
+            'total' => 'required|numeric',
         ]);
 
         // Combine date and time fields
@@ -100,9 +101,9 @@ class ReservationController extends Controller
             'end_date' => 'required|date_format:Y-m-d',
             'start_hour' => 'required|date_format:H:i',
             'end_hour' => 'required|date_format:H:i',
-            'adultTotal' => 'required',
-            'childTotal' => 'required',
-            'total' => 'required',
+            'adultTotal' => 'required|numeric',
+            'childTotal' => 'required|numeric',
+            'total' => 'required|numeric',
         ]);
 
         // Combine date and time fields
@@ -130,4 +131,30 @@ class ReservationController extends Controller
         $reservation->delete();
         return redirect()->back()->with('message', 'Reservación eliminada correctamente');
     }
+
+    public function download(Reservation $reservation)
+    {
+        $client = Client::find($reservation->client_id);
+        $services = Service::find($reservation->service_id);
+
+        $pdf = PDF::loadView('reservation.pdf', [
+            'reservation' => $reservation,
+            'client' => $client,
+            'services' => $services
+        ]);
+        $creationDate = $reservation->created_at->format('Y-m-d');
+
+        $pdf->setPaper([0, 0, 595.28, 841.89], 'portrait');
+
+        $pdf->setOptions([
+            'margin-top' => 72,
+            'margin-right' => 72,
+            'margin-bottom' => 72,
+            'margin-left' => 72,
+        ]);
+
+        return $pdf->download("{$creationDate}_{$reservation->id}_machape_reservation.pdf");
+    }
 }
+
+/* return $pdf->download('reservation'. $reservation->id . '.pdf'); */

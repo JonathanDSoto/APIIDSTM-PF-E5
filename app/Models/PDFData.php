@@ -8,4 +8,24 @@ use Illuminate\Database\Eloquent\Model;
 class PDFData extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'clientName',
+        'clientLastname',
+        'clientEmail',
+        'clientPhone',
+        'clientPhone2',
+        'serviceName',
+        'serviceDescription',
+        'servicePrice',
+        'serviceCategory',
+        'serviceImage',
+        'reservationStartDate',
+        'reservationEndDate',
+        'reservationAdultTotal',
+        'reservationChildTotal',
+        'reservationTotal',
+        'reservationId',
+        'reservationCreatedAt',
+    ];
 }

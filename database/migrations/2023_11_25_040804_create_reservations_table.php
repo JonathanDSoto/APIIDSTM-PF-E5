@@ -20,6 +20,7 @@ return new class extends Migration
             $table->integer('adultTotal');
             $table->integer('childTotal');
             $table->float('total');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

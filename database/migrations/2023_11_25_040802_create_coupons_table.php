@@ -17,6 +17,7 @@ return new class extends Migration
             $table->integer('discount');
             $table->enum('type', ['adult', 'child'])->nullable();
             $table->enum('status', ['active', 'inactive'])->default('active');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -54,7 +54,7 @@ class CategoryController extends Controller
         }
 
         $validatedData = $request->validate([
-            'name' => 'required|max:255',
+            'name' => 'required|max:255|alpha',
             'image_url' => 'image|max:2048'
         ]);
 
@@ -95,7 +95,7 @@ class CategoryController extends Controller
     {
         //
         $validatedData = $request->validate([
-            'name' => 'required|max:255',
+            'name' => 'required|max:255|alpha',
             /* 'image_url' => 'max:255' */
         ]);
         $category->update([
@@ -110,8 +110,14 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        //
+        $category->services()->each(function ($service) {
+            $service->reservations()->delete();
+        });
+
+        $category->services()->delete();
+
         $category->delete();
+
         return redirect(route('category.index'))->with('message', 'Categoria eliminada correctamente');
     }
 }

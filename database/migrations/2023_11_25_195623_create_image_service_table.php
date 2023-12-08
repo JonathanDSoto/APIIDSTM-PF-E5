@@ -17,6 +17,7 @@ return new class extends Migration
             $table->unsignedBigInteger('service_id');
             $table->foreign('image_id')->references('id')->on('images')->onDelete('cascade');
             $table->foreign('service_id')->references('id')->on('services')->onDelete('cascade');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

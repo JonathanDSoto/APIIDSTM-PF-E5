@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('password')->nullable()->default('secret');
             $table->string('phone');
             $table->string('phone2')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

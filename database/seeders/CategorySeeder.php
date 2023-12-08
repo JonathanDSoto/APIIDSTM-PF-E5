@@ -105,5 +105,81 @@ class CategorySeeder extends Seeder
             'name' => 'Tour de Arte Urbano',
             'image_url' => $imageUrl ?? null
         ]);
+
+        Category::create([
+            'name' => 'Tour en Kayak',
+            'image_url' => $imageUrl ?? null
+        ]);
+
+        Category::create([
+            'name' => 'Escalada en Roca',
+            'image_url' => $imageUrl ?? null
+        ]);
+
+        Category::create([
+            'name' => 'Avistamiento de Aves',
+            'image_url' => $imageUrl ?? null
+        ]);
+
+        Category::create([
+            'name' => 'Camping Nocturno',
+            'image_url' => $imageUrl ?? null
+        ]);
+
+        Category::create([
+            'name' => 'Rappel en Montañas',
+            'image_url' => $imageUrl ?? null
+        ]);
+
+        Category::create([
+            'name' => 'Tour de Comida Local',
+            'image_url' => $imageUrl ?? null
+        ]);
+
+        Category::create([
+            'name' => 'Visita a Museos Históricos',
+            'image_url' => $imageUrl ?? null
+        ]);
+
+        Category::create([
+            'name' => 'Buceo Submarino',
+            'image_url' => $imageUrl ?? null
+        ]);
+
+        Category::create([
+            'name' => 'Parapente',
+            'image_url' => $imageUrl ?? null
+        ]);
+
+        Category::create([
+            'name' => 'Caminata Nocturna',
+            'image_url' => $imageUrl ?? null
+        ]);
+
+        Category::create([
+            'name' => 'Tour de Arquitectura Moderna',
+            'image_url' => $imageUrl ?? null
+        ]);
+
+        Category::create([
+            'name' => 'Exploración de Ruinas Antiguas',
+            'image_url' => $imageUrl ?? null
+        ]);
+
+        Category::create([
+            'name' => 'Espeleología',
+            'image_url' => $imageUrl ?? null
+        ]);
+
+        Category::create([
+            'name' => 'Pesca en Hielo',
+            'image_url' => $imageUrl ?? null
+        ]);
+
+        Category::create([
+            'name' => 'Paddleboarding',
+            'image_url' => $imageUrl ?? null
+        ]);
+
     }
 }

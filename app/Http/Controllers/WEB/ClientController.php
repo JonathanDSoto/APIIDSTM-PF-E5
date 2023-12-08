@@ -35,10 +35,10 @@ class ClientController extends Controller
     {
 
         $validatedData = $request->validate([
-            'name' => 'required|max:255',
-            'lastname' => 'max:255',
+            'name' => 'required|max:255|alpha',
+            'lastname' => 'max:255|alpha',
             'email' => 'required|email|unique:clients',
-            'phone' => 'required|numeric',
+            'phone' => 'required|numeric|digits:10',
         ]);
 
         //
@@ -59,7 +59,7 @@ class ClientController extends Controller
     public function show(Client $client)
     {
         //
-        $client->load('reservation');
+        $client->load('reservations');
         return view('client.show', [
             'client' => $client
         ]);
@@ -83,11 +83,12 @@ class ClientController extends Controller
     {
         //
         $validatedData = $request->validate([
-            'name' => 'required|max:255',
-            'lastname' => 'max:255',
-            'email' => 'required|email|unique:clients,email,' . $client->id,
-            'phone' => 'required|numeric',
+            'name' => 'required|max:255|alpha',
+            'lastname' => 'max:255|alpha',
+            'email' => 'required|email|unique:clients'. $client->id,
+            'phone' => 'required|numeric|digits:10',
         ]);
+
 
         $client->update([
             'name' => $validatedData['name'],
@@ -106,6 +107,7 @@ class ClientController extends Controller
     public function destroy(Client $client)
     {
         //
+        $client->reservations()->delete();
         $client->delete();
         return redirect(route('client.index'))->with('message', 'Cliente eliminado correctamente');
     }
