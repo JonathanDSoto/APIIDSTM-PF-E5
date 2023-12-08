@@ -47,8 +47,8 @@ class ReservationController extends Controller
             'end_date' => 'required|date_format:Y-m-d',
             'start_hour' => 'required|date_format:H:i',
             'end_hour' => 'required|date_format:H:i',
-            'adultTotal' => 'required|numeric',
-            'childTotal' => 'required|numeric',
+            'adultTotal' => 'required|integer|min:0',
+            'childTotal' => 'required|integer|min:0',
             'total' => 'required|numeric',
         ]);
 
@@ -101,8 +101,8 @@ class ReservationController extends Controller
             'end_date' => 'required|date_format:Y-m-d',
             'start_hour' => 'required|date_format:H:i',
             'end_hour' => 'required|date_format:H:i',
-            'adultTotal' => 'required|numeric',
-            'childTotal' => 'required|numeric',
+            'adultTotal' => 'required|integer|min:0',
+            'childTotal' => 'required|integer|min:0',
             'total' => 'required|numeric',
         ]);
 
