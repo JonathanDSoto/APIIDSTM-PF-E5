@@ -2,10 +2,10 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\API\CategoryController;
-use App\Http\Controllers\API\ClientController;
-use App\Http\Controllers\API\ReservationController;
-use App\Http\Controllers\API\ServicesController;
+use App\Http\Controllers\Api\CategoryController;
+use App\Http\Controllers\Api\ClientController;
+use App\Http\Controllers\Api\ReservationController;
+use App\Http\Controllers\Api\ServicesController;
 use App\Http\Controllers\API\UserController;
 
 /*
