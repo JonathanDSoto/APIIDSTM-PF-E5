@@ -5,24 +5,12 @@
 >
     <div class="menu-inner-shadow"></div>
     <ul class="menu-inner py-1">
-        <!-- Motor -->
         <li class="menu-item {{ request()->is('home') ? 'active' : '' }}">
             <a href="{{ route('home') }}" class="menu-link">
                 <i class="menu-icon tf-icons ti ti-smart-home"></i>
                 <div data-i18n="Home">Home</div>
             </a>
         </li>
-
-        <!-- dashboard -->
-        {{--
-        <li class="menu-item {{ request()->is('dashboard') ? 'active' : '' }}">
-            <a href="{{ route('home') }}" class="menu-link">
-                <i class="menu-icon tf-icons ti ti-chart-bar"></i>
-                <div data-i18n="Dashboard">Dashboard</div>
-            </a>
-        </li>
-        --}}
-        <!-- cliente -->
         <li
             class="menu-item {{ request()->routeIs('client.index') ? 'active' : '' }}"
         >
@@ -45,6 +33,14 @@
             <a href="{{ route('category.index') }}" class="menu-link">
                 <i class="menu-icon tf-icons ti ti-category-2"></i>
                 <div data-i18n="Categories">Categories</div>
+            </a>
+        </li>
+    </ul>
+    <ul class="menu-inner py-2 justify-content-end">
+        <li class="menu-item">
+            <a href="{{ route('logout') }}" class="menu-link">
+                <i class="menu-icon tf-icons ti ti-logout"></i>
+                <div data-i18n="Log Out">Log Out</div>
             </a>
         </li>
     </ul>
