@@ -53,6 +53,7 @@ Route::group(['prefix' => 'clients'], function () {
     Route::get('/{client}/edit', [ClientController::class, 'edit'])->name('client.edit');
     Route::put('/{client}/update', [ClientController::class, 'update'])->name('client.update');
     Route::delete('/{client}/destroy', [ClientController::class, 'destroy'])->name('client.destroy');
+    Route::post('/login', [ClientController::class, 'login'])->name('client.login');
 });
 
 // Crud de las categorias
