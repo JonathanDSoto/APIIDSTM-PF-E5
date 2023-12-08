@@ -112,7 +112,7 @@ class ServicesController extends Controller
      */
     public function destroy(Service $service)
     {
-        $service->reservation()->delete();
+        $service->reservations()->delete();
         $service->delete();
         return redirect()->back()->with('message', 'Servicio eliminado correctamente');
     }
