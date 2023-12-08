@@ -58,14 +58,15 @@ class ServicesController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Service $services)
+    public function show(Service $service)
     {
         //
         /* $services->load('images'); */
-        $services->load('reservations');
+        $service->load('reservations');
         return view('services.show', [
-            'services' => $services
+            'service' => $service
         ]);
+
     }
 
     /**

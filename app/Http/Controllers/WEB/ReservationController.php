@@ -18,7 +18,7 @@ class ReservationController extends Controller
     {
         $clients = Client::all();
         $services = Service::with('categories')->get()->groupBy('category.name');
-        $reservations = Reservation::all();
+        $reservations = Reservation::paginate(30);
 
         return view('reservation.index', [
             'clients' => $clients,
