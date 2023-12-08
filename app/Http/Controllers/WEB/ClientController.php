@@ -13,7 +13,7 @@ class ClientController extends Controller
      */
     public function index()
     {
-        //
+        // Comentario de prueba
         return view('client.index', [
             'clients' => Client::all()
         ]);
@@ -85,10 +85,9 @@ class ClientController extends Controller
         $validatedData = $request->validate([
             'name' => 'required|max:255|alpha',
             'lastname' => 'max:255|alpha',
-            'email' => 'required|email|unique:clients'. $client->id,
+            'email' => 'required|email|unique:clients',
             'phone' => 'required|numeric|digits:10',
         ]);
-
 
         $client->update([
             'name' => $validatedData['name'],

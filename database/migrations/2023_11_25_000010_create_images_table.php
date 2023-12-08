@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->longText('url');
             $table->enum('type', ['preview', 'showoff']);
+            $table->softDeletes();
             $table->timestamps();
         });
     }
