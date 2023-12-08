@@ -135,12 +135,12 @@ class ReservationController extends Controller
     public function download(Reservation $reservation)
     {
         $client = Client::find($reservation->client_id);
-        $services = Service::find($reservation->service_id);
+        $service = Service::find($reservation->service_id);
 
         $pdf = PDF::loadView('reservation.pdf', [
             'reservation' => $reservation,
             'client' => $client,
-            'services' => $services
+            'services' => $service
         ]);
         $creationDate = $reservation->created_at->format('Y-m-d');
 
