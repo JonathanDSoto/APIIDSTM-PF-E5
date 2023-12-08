@@ -135,7 +135,7 @@ class ReservationController extends Controller
     public function download(Reservation $reservation)
     {
         $client = Client::find($reservation->client_id);
-        $services = Services::find($reservation->service_id);
+        $services = Service::find($reservation->service_id);
 
         $pdf = PDF::loadView('reservation.pdf', [
             'reservation' => $reservation,
