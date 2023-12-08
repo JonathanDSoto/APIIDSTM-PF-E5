@@ -1,12 +1,13 @@
 <?php
 
 use App\Http\Controllers\Controller;
-use App\Http\Controllers\pdfController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Web\ClientController;
 use App\Http\Controllers\Web\CategoryController;
 use App\Http\Controllers\Web\ServicesController;
 use App\Http\Controllers\Web\ReservationController;
+use Illuminate\Support\Facades\Auth;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -28,8 +29,9 @@ Route::get('/login', function(){
 })->name('login');
 
 Route::get('logout/view', function () {
+    Auth::logout();
     return redirect('/');
-});
+})->name('logout');
 
 Route::get('register', function () {
     return view('auth.register');
