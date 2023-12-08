@@ -140,7 +140,7 @@ class ReservationController extends Controller
         $pdf = PDF::loadView('reservation.pdf', [
             'reservation' => $reservation,
             'client' => $client,
-            'services' => $service
+            'service' => $service
         ]);
         $creationDate = $reservation->created_at->format('Y-m-d');
 
