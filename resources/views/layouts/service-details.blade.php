@@ -7,7 +7,7 @@
     <div class="row">
         <div class="col-md-4">
             <img
-                src="{{ asset('assets/img/machape/Logo.png') }}"
+                src="{{ asset('assets/img/machape/logo.png') }}"
                 class="img-fluid rounded-start"
             />
         </div>
