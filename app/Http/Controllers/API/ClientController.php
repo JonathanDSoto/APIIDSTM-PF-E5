@@ -19,7 +19,7 @@ class ClientController extends Controller
         $client->lastname = $request->input('lastname');
         $client->phone = $request->input('phone');
         $client->email = $request->input('email');
-
+        $client->password = $request->input('password');
         $client->save();
         return response()->json($client);
     }
@@ -43,6 +43,7 @@ class ClientController extends Controller
         $client->lastname = $request->input('lastname');
         $client->phone = $request->input('phone');
         $client->email = $request->input('email');
+        $client->password = $request->input('password');
         $client->save();
         return response()->json($client);
     }
@@ -55,5 +56,18 @@ class ClientController extends Controller
         }
         $client->delete();
         return response()->json(['message' => 'Client deleted']);
+    }
+
+    public function login(Request $request)
+    {
+        $client = Client::where('email', $request->input('email'))->first();
+        if (!$client) {
+            return response()->json(['message' => 'Client not found'], 404);
+        }
+        if ($client->password == $request->input('password')) {
+            return response()->json($client);
+        } else {
+            return response()->json(['message' => 'Wrong password'], 404);
+        }
     }
 }
