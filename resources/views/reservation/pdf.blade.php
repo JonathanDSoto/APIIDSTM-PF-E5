@@ -10,10 +10,10 @@
             <div class="table">
                 <div>
                     <h3><strong>Customer Details</strong></h3>
-                    <p><strong>Client ID:</strong> {{ client->id }}</p>
-                    <p><strong>Name:</strong> {{ client->name }} {{ client->lastname }}</p>
-                    <p><strong>Email:</strong> {{ client->email }}</p>
-                    <p><strong>Phone:</strong> {{ client->phone }}</p>
+                    <p><strong>Client ID:</strong> {{ $client->id }}</p>
+                    <p><strong>Name:</strong> {{ $client->name }} {{ $client->lastname }}</p>
+                    <p><strong>Email:</strong> {{ $client->email }}</p>
+                    <p><strong>Phone:</strong> {{ $client->phone }}</p>
                     @if ($client->phone2)
                         <p><strong>Emergency Phone:</strong> {{ $client->phone2 }}</p>
                     @endif

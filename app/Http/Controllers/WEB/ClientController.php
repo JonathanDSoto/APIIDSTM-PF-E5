@@ -36,7 +36,7 @@ class ClientController extends Controller
 
         $validatedData = $request->validate([
             'name' => 'required|max:255|alpha',
-            'lastname' => 'max:255|alpha',
+            'lastname' => 'max:255|regex:/^[a-zA-Z\s]+$/',
             'email' => 'required|email|unique:clients',
             'phone' => 'required|numeric|digits:10',
         ]);

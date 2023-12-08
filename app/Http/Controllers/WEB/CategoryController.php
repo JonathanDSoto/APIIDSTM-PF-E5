@@ -54,7 +54,7 @@ class CategoryController extends Controller
         }
 
         $validatedData = $request->validate([
-            'name' => 'required|max:255|alpha',
+            'name' => 'required|max:255|regex:/^[a-zA-Z\s]+$/',
             'image_url' => 'image|max:2048'
         ]);
 
