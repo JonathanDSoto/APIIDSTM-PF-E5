@@ -33,7 +33,7 @@
     </div>
 
     <div class="card mt-4">
-        <h5 class="card-header">Table Basic</h5>
+        <h5 class="card-header">Reservations</h5>
         <div class="table-responsive text-nowrap">
             <table class="table">
                 <thead>
