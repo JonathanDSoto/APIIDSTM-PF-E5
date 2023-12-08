@@ -36,8 +36,8 @@ class ServicesController extends Controller
     {
         //
         $validatedData = $request->validate([
-            'name' => 'required|max:255',
-            'resume' => 'required|max:255',
+            'name' => 'required|max:255|regex:/^[a-zA-Z\s]+$/',
+            'resume' => 'required|max:255|regex:/^[a-zA-Z\s]+$/',
             'is_active' => 'required',
             'available_days' => 'required|max:255',
             'category_id' => 'required',
@@ -58,14 +58,15 @@ class ServicesController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Service $services)
+    public function show(Service $service)
     {
         //
         /* $services->load('images'); */
-        $services->load('reservations');
+        $service->load('reservations');
         return view('services.show', [
-            'services' => $services
+            'service' => $service
         ]);
+
     }
 
     /**

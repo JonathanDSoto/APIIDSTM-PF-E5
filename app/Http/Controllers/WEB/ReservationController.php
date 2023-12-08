@@ -18,7 +18,7 @@ class ReservationController extends Controller
     {
         $clients = Client::all();
         $services = Service::with('categories')->get()->groupBy('category.name');
-        $reservations = Reservation::all();
+        $reservations = Reservation::paginate(30);
 
         return view('reservation.index', [
             'clients' => $clients,
@@ -135,12 +135,12 @@ class ReservationController extends Controller
     public function download(Reservation $reservation)
     {
         $client = Client::find($reservation->client_id);
-        $services = Services::find($reservation->service_id);
+        $service = Service::find($reservation->service_id);
 
         $pdf = PDF::loadView('reservation.pdf', [
             'reservation' => $reservation,
             'client' => $client,
-            'services' => $services
+            'services' => $service
         ]);
         $creationDate = $reservation->created_at->format('Y-m-d');
 

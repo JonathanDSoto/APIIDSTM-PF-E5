@@ -54,7 +54,7 @@ class CategoryController extends Controller
         }
 
         $validatedData = $request->validate([
-            'name' => 'required|max:255|alpha',
+            'name' => 'required|max:255|regex:/^[a-zA-Z\s]+$/',
             'image_url' => 'image|max:2048'
         ]);
 
@@ -62,7 +62,7 @@ class CategoryController extends Controller
             'name' => $validatedData['name'],
             'image_url' => $imageUrl ?? null
         ]);
-        return redirect(route('home'));
+        return redirect()->back();
     }
 
     /**
@@ -102,7 +102,7 @@ class CategoryController extends Controller
             'name' => $validatedData['name'],
             /* 'image_url' => $validatedData['image_url'] */
         ]);
-        return redirect(route('category.index'))->with('message', 'Categoria actualizado correctamente');
+        return redirect()->back()->with('message', 'Categoria actualizado correctamente');
     }
 
     /**
@@ -118,6 +118,6 @@ class CategoryController extends Controller
 
         $category->delete();
 
-        return redirect(route('category.index'))->with('message', 'Categoria eliminada correctamente');
+        return redirect()->back()->with('message', 'Categoria eliminada correctamente');
     }
 }

@@ -22,32 +22,40 @@
                     method="POST"
                     class="addNewService pt-0 row g-2"
                     id="form-addNewService"
+                    onsubmit="return validateServiceForm();"
                 >
                     @csrf @method('POST')
+
+                    <div id="error-name" class="text-danger" style="display: none;"></div>
+                    <div id="error-resume" class="text-danger" style="display: none;"></div>
+                    <div id="error-adultPrice" class="text-danger" style="display: none;"></div>
+                    <div id="error-childPrice" class="text-danger" style="display: none;"></div>
+
                     <div class="col-sm-12">
                         <label for="formFile" class="form-label">
-                            Select an image to your service
+                            Select an image for your service
                         </label>
                         <div class="input-group input-group-merge">
-                            <input
-                                class="form-control"
-                                type="file"
-                                id="formFile"
-                            />
+                            <input class="form-control" type="file" id="formFile" />
                         </div>
                     </div>
+
                     <x-input-field
                         label="Name"
                         id="name"
                         name="name"
                         placeholder="Name"
                     />
+                    <div id="error-name" class="text-danger" style="display: none;"></div>
+
                     <x-input-field
                         label="Description"
                         id="resume"
                         name="resume"
                         placeholder="Description"
                     />
+                    <div id="error-resume" class="text-danger" style="display: none;"></div>
+
                     <div class="row p-1">
                         <div class="col">
                             <x-input-field
@@ -57,6 +65,7 @@
                                 placeholder="Adult Price"
                                 type="number"
                             />
+                            <div id="error-adultPrice" class="text-danger" style="display: none;"></div>
                         </div>
                         <div class="col">
                             <x-input-field
@@ -66,6 +75,7 @@
                                 placeholder="Child Price"
                                 type="number"
                             />
+                            <div id="error-childPrice" class="text-danger" style="display: none;"></div>
                         </div>
                     </div>
 
@@ -92,6 +102,7 @@
                         placeholder="category_id"
                         value="{{ $category->id }}"
                     />
+
                     <div class="col-sm-12">
                         <button
                             type="submit"
@@ -113,3 +124,55 @@
         </div>
     </div>
 </div>
+
+<script>
+    function validateServiceForm() {
+        resetErrorMessages();
+
+        var name = document.getElementById('name').value;
+        var resume = document.getElementById('resume').value;
+        var adultPrice = document.getElementById('adultPrice').value;
+        var childPrice = document.getElementById('childPrice').value;
+
+        var isValid = true;
+
+        if (name === '') {
+            displayError('error-name', 'Name is required.');
+            isValid = false;
+        }
+
+        if (resume === '') {
+            displayError('error-resume', 'Description is required.');
+            isValid = false;
+        }
+
+        if (adultPrice === '') {
+            displayError('error-adultPrice', 'Adult Price is required.');
+            isValid = false;
+        }
+
+        if (childPrice === '') {
+            displayError('error-childPrice', 'Child Price is required.');
+            isValid = false;
+        }
+
+        if (!isValid) {
+            return false;
+        }
+        return true;
+    }
+
+    function resetErrorMessages() {
+        var errorElements = document.querySelectorAll('[id^="error-"]');
+        errorElements.forEach(function (element) {
+            element.style.display = 'none';
+            element.innerText = '';
+        });
+    }
+
+    function displayError(elementId, errorMessage) {
+        var errorElement = document.getElementById(elementId);
+        errorElement.style.display = 'block';
+        errorElement.innerText = errorMessage;
+    }
+</script>
